@@ -18,7 +18,9 @@ goals, connections, approvals, model/voice configuration and agent controls.
 
 Each agent has a separate database, files, encrypted preference namespace,
 execution gate and background job tag. Clearing one agent does not cancel the
-host's unrelated jobs or clear another agent's records. Notification taps and
+host's unrelated jobs or clear another agent's records. Clearing also removes the
+gallery message preview. Deletion first disposes the chat UI and awaits its
+ViewModel resources, so a slow worker cannot leave the UI using a closed store. Notification taps and
 read-only attachment URIs carry the owning agent's identity.
 
 Fonts, icons, image assets and tool schemas are embedded. All 110 original Kotlin

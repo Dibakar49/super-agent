@@ -106,17 +106,26 @@ class AgentGalleryJourneyTest {
         val manager=androidx.work.WorkManager.getInstance(root)
         manager.enqueue(request).result.get(5,TimeUnit.SECONDS)
         val hostFile=File(root.filesDir,"attachments/host.txt").apply{requireNotNull(parentFile).mkdirs();writeText("Host data")}
+        AgentStudioProfiles.preview(root,planner.id,"Private planning context",now)
         choose("Settings")
         compose.onNodeWithTag("clear-local-data").performScrollTo().performClick()
         compose.onNodeWithTag("confirm-clear-local-data").performClick()
         compose.waitUntil(20_000){compose.onAllNodesWithTag("confirm-clear-local-data").fetchSemanticsNodes().isEmpty()}
+        assertEquals("",requireNotNull(AgentStudioProfiles.get(root,planner.id)).preview)
         assertEquals("Host data",hostFile.readText())
         assertNotEquals(androidx.work.WorkInfo.State.CANCELLED,requireNotNull(manager.getWorkInfoById(request.id).get(5,TimeUnit.SECONDS)).state)
         LocalStore(research).use{store->assertEquals(2,store.messages(channel).size);assertEquals("Research-only note",store.memories().single().content)}
         LocalStore(planning).use{assertEquals(planner.id,it.bots().single().id);assertEquals(planner.instruction,it.bots().single().instruction)}
         compose.onNodeWithTag("agent-back").performClick() // Settings -> chat.
         choose("Delete agent")
-        compose.onNodeWithTag("delete-agent").performClick()
+        // A slow/cancelling worker must not keep a screen observing a cleared ViewModel.
+        val deleteGate=AgentStudioProfiles.gate(planning)
+        kotlinx.coroutines.runBlocking { deleteGate.lock() }
+        try {
+            compose.onNodeWithTag("delete-agent").performClick()
+            compose.waitUntil(20_000){compose.onAllNodesWithTag("create-agent").fetchSemanticsNodes().isNotEmpty()}
+            compose.onNodeWithTag("agent-"+planner.id).assertDoesNotExist()
+        } finally { deleteGate.unlock() }
         compose.waitUntil(20_000){AgentStudioProfiles.list(root).none{it.id==planner.id}}
         compose.waitUntil(20_000){compose.onAllNodesWithTag("create-agent").fetchSemanticsNodes().isNotEmpty()}
         assertEquals(listOf(researcher.id),AgentStudioProfiles.list(root).map{it.id})
