@@ -1,0 +1,1036 @@
+git_status,upstream_path,native_review_status
+M,.claude/skills/openbot-copy/SKILL.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,.github/workflows/ci.yml,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,.github/workflows/desktop-build.yml,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,.github/workflows/downloads-sync.yml,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,CHANGELOG.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,Dockerfile,todo: inspect native applicability; no parity claim
+M,README.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,agent-bot/tests/history.test.ts,todo: inspect native applicability; no parity claim
+M,agent-claude-sdk/src/adapter.py,todo: inspect native applicability; no parity claim
+M,agent-claude-sdk/src/replay.py,todo: inspect native applicability; no parity claim
+A,agent-claude-sdk/tests/fixtures/server-instructions.json,todo: inspect native applicability; no parity claim
+M,agent-claude-sdk/tests/test_model_mode.py,todo: inspect native applicability; no parity claim
+A,agent-claude-sdk/tests/test_openbot_instructions.py,todo: inspect native applicability; no parity claim
+A,agent-claude-sdk/tests/test_prompt_too_long.py,todo: inspect native applicability; no parity claim
+A,agent-claude-sdk/tests/test_saved_tool_results.py,todo: inspect native applicability; no parity claim
+M,agent-claude-sdk/tests/test_thread_history.py,todo: inspect native applicability; no parity claim
+M,agent-computer/Dockerfile,todo: inspect native applicability; no parity claim
+M,agent-computer/bun.lock,todo: inspect native applicability; no parity claim
+M,agent-computer/package.json,todo: inspect native applicability; no parity claim
+M,agent-computer/src/aria-snapshot.ts,todo: inspect native applicability; no parity claim
+A,agent-computer/src/browser-turns.ts,todo: inspect native applicability; no parity claim
+M,agent-computer/src/index.ts,todo: inspect native applicability; no parity claim
+M,agent-computer/src/sessions.ts,todo: inspect native applicability; no parity claim
+M,agent-computer/tests/aria-snapshot.test.ts,todo: inspect native applicability; no parity claim
+M,agent-computer/tests/bot-browser-computer.test.ts,todo: inspect native applicability; no parity claim
+A,agent-computer/tests/parallel-actions-computer.test.ts,todo: inspect native applicability; no parity claim
+M,agent-langgraph-agui/src/tool_runtime.py,todo: inspect native applicability; no parity claim
+M,agent-langgraph-agui/tests/test_tool_protocol.py,todo: inspect native applicability; no parity claim
+A,agent-langgraph/src/browser-order.ts,todo: inspect native applicability; no parity claim
+M,agent-langgraph/src/index.ts,todo: inspect native applicability; no parity claim
+A,agent-langgraph/tests/browser-order.test.ts,todo: inspect native applicability; no parity claim
+M,app/package.json,todo: inspect native applicability; no parity claim
+A,app/src/components/admin/admin-sections.ts,todo: inspect native applicability; no parity claim
+M,app/src/components/admin/admin-sidebar.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/admin/controls/capabilities-section.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/admin/controls/computer-sections.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/admin/controls/describe-capabilities.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/admin/controls/network-describe.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/admin/controls/recording-section.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/admin/controls/sign-in-section.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/admin/controls/skill-sharing-section.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/agents/agent-profile.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/agents/bot-orb.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/agents/new-bot-sheet.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/app-sidebar/app-sidebar.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/app-sidebar/channel.tsx,partial: see module map
+M,app/src/components/approvals/ask-first-copy.ts,todo: inspect native applicability; no parity claim
+A,app/src/components/approvals/conversation-allowances.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/approvals/describe-rules.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/approvals/guidance-backtest.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/approvals/inline-approval.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/approvals/rules.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/approvals/team-settings.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/approvals/waiting.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/audit/ask-the-trail.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/audit/audit-cells.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/audit/audit-filters.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/audit/audit-table.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/bot-profile/access.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/bot-profile/activity.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/bot-profile/bot-subpage.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/bot-profile/profile.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/bot-profile/settings-rows.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/bot-profile/setup.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/bots/bot-roster.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/boundaries/describe-rule.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/boundaries/dry-run-changes.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/boundaries/rule-preview.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/boundaries/rule-reading.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/browser/browser-nav-item.tsx,excluded: computer use (inspect shared code separately)
+M,app/src/components/browser/browser-page.tsx,excluded: computer use (inspect shared code separately)
+M,app/src/components/browser/browser-screen.tsx,excluded: computer use (inspect shared code separately)
+A,app/src/components/browser/learning-next.tsx,excluded: computer use (inspect shared code separately)
+M,app/src/components/browser/recording.tsx,excluded: computer use (inspect shared code separately)
+M,app/src/components/browser/teach-steps.tsx,excluded: computer use (inspect shared code separately)
+M,app/src/components/browser/your-recordings.tsx,excluded: computer use (inspect shared code separately)
+D,app/src/components/capabilities/capabilities-shell.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/channel-chat.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/chat-messages.ts,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/chat-transcript.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/compose-state.ts,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/composer/attachments.ts,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/composer/composer.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/composer/dictation-controls.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/composer/model-picker.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/composer/triggers.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/composer/use-dictation.ts,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/conversation-intro.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/conversation-view.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/group-chat.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/recipient-field.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/channels/rename-conversation-dialog.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/transcript-messages.ts,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/transcript-rail.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/channels/working-now.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/computer/activity-log.tsx,excluded: computer use (inspect shared code separately)
+M,app/src/components/computer/computer-view.tsx,excluded: computer use (inspect shared code separately)
+A,app/src/components/desktop/desktop-return.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/edition/brand-name.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/edition/business-link.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/edition/business-orb.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/edition/team-features-dialog.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/gallery/charts.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/gallery/decisions.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/layout/loading-rows.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/layout/openbot-version.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/layout/page-parts.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/layout/page-shell.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/layout/self-host-banner.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/layout/sidebar-shell.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/layout/update-banner.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/manage/audit-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/manage/broker-directory-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/manage/computers-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/manage/credentials-page.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/manage/describe-grants.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/manage/new-credential-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/manage/plugin-bot-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/manage/plugin-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/manage/plugin-tool-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/manage/plugins-list-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/manage/skills-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/memory/memories.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/navigation/command-menu.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/needs-you/board.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/needs-you/needs-you.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/onboarding/ask-first-switch.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/onboarding/booking-calendar.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/onboarding/laptop-illustration.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/onboarding/onboarding-frame.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/onboarding/onboarding-wizard.tsx,todo: inspect native applicability; no parity claim
+D,app/src/components/passwords/passwords-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/passwords/sign-in-form.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/plugins/broker-directory.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/plugins/brokered-account-row.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/plugins/connect-in-new-tab.ts,todo: inspect native applicability; no parity claim
+A,app/src/components/responsibilities/goal-page.tsx,todo: inspect native applicability; no parity claim
+D,app/src/components/responsibilities/new-responsibility-dialog.tsx,todo: inspect native applicability; no parity claim
+D,app/src/components/responsibilities/responsibilities.tsx,todo: inspect native applicability; no parity claim
+D,app/src/components/responsibilities/responsibility-dialog.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/responsibilities/triggers.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/routines/delete-row.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/routines/goal-schedules.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/routines/new-routine-button.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/routines/new-routine-page.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/routines/routine-detail-missing.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/routines/routine-page.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/routines/routine-runs.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/routines/routines-app-hint.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/routines/routines-connection-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/routines/routines-list.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/settings/ai-connection.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/settings/browsers/browser-sections.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/settings/check-ins.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/settings/learning-review.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/settings/learning-sharing.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/settings/settings-sidebar.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/settings/this-computer-sections.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/settings/usage-data.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/skills/edit-skill.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/skills/new-skill.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/skills/proposed-skill.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/skills/skills-settings-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/starter-tour/suggestions.ts,todo: inspect native applicability; no parity claim
+A,app/src/components/suggestions/check-in-page.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/suggestions/proactive-panel.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/ui/dialog.tsx,todo: inspect native applicability; no parity claim
+M,app/src/components/ui/message-scroller.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/vault/saved-logins.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/vault/vault-page.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/what-if/action-chips.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/what-if/what-if-result.tsx,todo: inspect native applicability; no parity claim
+A,app/src/components/what-if/why-button.tsx,todo: inspect native applicability; no parity claim
+D,app/src/frame.css,todo: inspect native applicability; no parity claim
+M,app/src/lib/agents/bot-summaries.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/agents/legacy-routes.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/agents/subtitle.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/app-grants/mutations.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/app-grants/queries.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/app-grants/translate.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/approval-rules/mutations.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/approval-rules/queries.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/approval-rules/translate.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/approvals.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/audit/ask.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/audit/queries.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/boundaries/rules.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/capability-changes/mutations.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/capability-changes/queries.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/capability-changes/translate.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/channels/mutations.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/channels/pending-start.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/channels/queries.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/channels/run-reply.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/channels/start.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/channels/turns-finished-away.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/channels/use-channel-events.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/client.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/computers/activity.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/computers/mutations.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/computers/policy-translate.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/computers/queries.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/connections/rows.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/copilot/a2ui-breakdown.tsx,todo: inspect native applicability; no parity claim
+M,app/src/lib/copilot/a2ui.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/copilot/approval-tools.tsx,todo: inspect native applicability; no parity claim
+A,app/src/lib/copilot/broken-stream.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/copilot/computer-tools.tsx,todo: inspect native applicability; no parity claim
+M,app/src/lib/copilot/gallery-tools.tsx,todo: inspect native applicability; no parity claim
+M,app/src/lib/copilot/repair-history.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/copilot/sandboxed-tools.tsx,todo: inspect native applicability; no parity claim
+M,app/src/lib/copilot/stopped-turn.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/copilot/tool-steps.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/desktop/ai-connection.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/desktop/mutations.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/desktop/part-names.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/desktop/queries.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/desktop/shell.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/dictation/live.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/edition-guard.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/enterprise/mutations.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/enterprise/network-allowlist.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/enterprise/queries.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/hotkeys/hotkeys.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/learning/queries.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/manage-paths.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/navigation.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/openbot-for-business.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/plugins/directory-state.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/plugins/enablement-notes.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/plugins/grants.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/plugins/mutations.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/plugins/provider-vocabulary.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/plugins/queries.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/primitives.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/proactive.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/read-failure.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/responsibilities.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/reviewer-guidance/check.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/reviewer-guidance/mutations.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/reviewer-guidance/queries.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/routines/events.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/routines/form.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/routines/merged.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/routines/mutations.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/routines/plan.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/routines/queries.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/settings/computer-sections.ts,todo: inspect native applicability; no parity claim
+M,app/src/lib/sidebar.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/what-if/check.ts,todo: inspect native applicability; no parity claim
+A,app/src/lib/what-if/queries.ts,todo: inspect native applicability; no parity claim
+M,app/src/routeTree.gen.ts,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/bots.$agentId.access.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/bots.$agentId.approvals.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/_app/bots.$agentId.apps.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/_app/bots.$agentId.computer.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/bots.$agentId.memory.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/bots.$agentId.responsibilities.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/bots.$agentId.routines.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/bots.$agentId.setup.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/_app/bots.$agentId.skills.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/bots.index.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/browser.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/capabilities.index.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/capabilities.memory.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/capabilities.skills.tsx,todo: inspect native applicability; no parity claim
+D,app/src/routes/_authed/_app/capabilities.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/channel/new.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/connections.$key.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/connections.index.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/index.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/memory.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/routines.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/_app/routines_.check-ins.$checkInId.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/_app/routines_.goals.$goalId.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/_app/routines_.new.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/_app/routines_.schedules.$routineId.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/_app/skills.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/_app/skills_.$slug.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/_app/skills_.new.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/admin/approvals_.describe.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/admin/approvals_.guidance.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/audit.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/boundaries.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/boundaries_.$index.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/boundaries_.new.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/components/$name.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/components/index.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/enterprise.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/index.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/learning.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/permissions.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/admin/permissions_.describe.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/proactive.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/providers.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/admin/route.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/admin/what-if.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/desktop-return.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/onboarding.tsx,todo: inspect native applicability; no parity claim
+D,app/src/routes/_authed/settings/_personal/computer.tsx,todo: inspect native applicability; no parity claim
+D,app/src/routes/_authed/settings/_personal/credentials.tsx,todo: inspect native applicability; no parity claim
+D,app/src/routes/_authed/settings/_personal/credentials_.new.tsx,todo: inspect native applicability; no parity claim
+D,app/src/routes/_authed/settings/_personal/skills.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/settings/_personal/skills_.$slug.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/settings/_personal/skills_.new.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/settings/_personal/vault_.new.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/settings/browsers.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/settings/computer.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/settings/credentials.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/settings/credentials_.new.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/settings/index.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/settings/learning.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/settings/memory.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/settings/notifications.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/settings/passwords.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/settings/route.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/settings/skills.tsx,todo: inspect native applicability; no parity claim
+M,app/src/routes/_authed/settings/this-computer.tsx,todo: inspect native applicability; no parity claim
+A,app/src/routes/_authed/settings/vault.tsx,todo: inspect native applicability; no parity claim
+M,app/src/skins/opendots/frame.tsx,todo: inspect native applicability; no parity claim
+M,app/src/skins/opendots/place.ts,todo: inspect native applicability; no parity claim
+M,app/src/skins/opendots/sidebar.tsx,todo: inspect native applicability; no parity claim
+M,app/src/skins/openduet/menu-sheet.tsx,todo: inspect native applicability; no parity claim
+M,app/src/skins/openduet/tasks-screen.tsx,todo: inspect native applicability; no parity claim
+M,app/src/skins/openmuse/bots-sheet.tsx,todo: inspect native applicability; no parity claim
+M,app/src/skins/openmuse/frame.tsx,todo: inspect native applicability; no parity claim
+M,app/src/skins/openmuse/menu-sheet.tsx,todo: inspect native applicability; no parity claim
+M,app/src/skins/openmuse/notifications-sheet.tsx,todo: inspect native applicability; no parity claim
+M,app/src/skins/openmuse/screens/goals.tsx,todo: inspect native applicability; no parity claim
+M,app/src/skins/openmuse/ui.tsx,todo: inspect native applicability; no parity claim
+M,app/src/styles.css,todo: inspect native applicability; no parity claim
+M,app/src/theme.css,todo: inspect native applicability; no parity claim
+D,app/src/typeface.css,todo: inspect native applicability; no parity claim
+A,app/tests/a2ui-breakdown.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/a2ui-frame.fixture.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/a2ui-frame.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/a2ui.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/access-requests.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/activity-older-events.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/activity-page-name.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/activity-person-words.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/add-app-starts-sign-in.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/admin-network-describe.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/admin-sections.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/app-access-card-connect-before-tools.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/app-navigation.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/approval-card-description.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/approval-over-computer-sheet.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/approval-reviewer-guidance.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/approval-rule-example.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/approval-rules-describe.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/approval-team-settings.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/approvals-rules.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/arcade-breadth.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/arcade-coverage.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/arcade-directory-screen.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-approval-outcomes.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/audit-ask.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-connect-app-rows.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-dry-run-label.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-event-words.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-export-truncated.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-folder-actions.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-grant-and-routine-rows.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-grant-rows.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-openbot-setup-rows.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-plumbing-rows.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/audit-rule-name.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-table-fits.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/audit-table.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/bar-chart-long-labels.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/bot-access-apps.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/bot-access-skills.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/bot-access-your-apps.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/bot-activity-actions.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/bot-activity-routines-summary.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/bot-app-grants-screen.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/bot-apps-empty-personal.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/bot-id-never-shown.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/bot-memory.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/bot-page-length.test.tsx,todo: inspect native applicability; no parity claim
+D,app/tests/bot-responsibilities.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/bot-roster.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/bot-settings-rows.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/bot-setup.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/bot-summaries.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/bot-your-skills-personal.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/boundaries-describe.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/boundaries-pages.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/boundaries-templates.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/brand-name.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/broken-run-stream.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/brokered-account-row.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/browser-nav-item.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/browser-page.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/business-link.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/channel-join-replay.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/channel-menu-mutations.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/channel-pagination.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/channel-search.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/check-in-row.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/check-ins-admin.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/check-ins-settings.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/command-menu.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/component-reply-notice.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/compose-state.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/composer-attachments-ui.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/composer-dictation-notice-layout.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/composer-dictation-notice.fixture.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/composer-live-dictation.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/composio-picker-add-error.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/composio-picker.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/composio-route-plugins-error.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/computer-activity-conversation.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/computer-activity.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/computer-expanded-modal.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/connection-rows.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/connector-approval-in-chat.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/conversation-allowances.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/conversation-intro-halo.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/conversation-intro.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/desktop-part-names.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/desktop-return.test.tsx,todo: inspect native applicability; no parity claim
+D,app/tests/frame-typeface-skins.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/goal-delete-cache.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/goal-page-empty-criteria.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/goal-page-route.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/goal-page-starts.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/group-chat-query-states.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/home-fallback-routing.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/hotkey-layouts.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/key-only-apps-directory.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/learning-admin.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/learning-review.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/learning-sharing.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/legacy-agent-routes.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/live-screen-app-shortcuts.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/manage-paths.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/memory-settings.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/model-picker.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/narrow-sidebar-sheet.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/navigation-without-page.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/needs-you.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/new-bot-sheet.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/new-conversation-attachments.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/new-routine-form.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/onboarding-route.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/onboarding-window-buttons.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/parallel-answers-send.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/parallel-lookups.fixture.ts,todo: inspect native applicability; no parity claim
+A,app/tests/permissions-describe.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/personal-app-page.test.tsx,todo: inspect native applicability; no parity claim
+D,app/tests/personal-capabilities.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/personal-connections.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/personal-no-memory.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/personal-says-openbot.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/personal-settings.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/plugin-mutation-refresh.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/plugin-read-failure.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/primitives-order.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/recorder-browsers.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/responsibility-action-refresh.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/retired-addresses.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/return-mid-turn.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/routine-event-words.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/routine-form-schema.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/routine-plan-mutation.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/routine-plan.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/routines-conversation-title.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/routines-discovery.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/routines-list-follows-changes.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/routines-merged.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/routines-no-worker.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/routines-title.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/seed-audit-page.ts,todo: inspect native applicability; no parity claim
+M,app/tests/self-host-banner.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/settings-ai-model.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/settings-computer-page.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/settings-setup.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/settings-sidebar.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/settings-usage-data.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/setup-checklist-editions.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/setup-checklist.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/sidebar-preference.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/skills-read-failure.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/skills-settings-page.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/skins-opendots-frame.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/skins-openduet-frame.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/skins-openmuse.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/start-model.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/starter-tour.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/step-rules-conversation.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/stopped-turn.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/task-approval-buttons.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/team-features-dialog.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/this-computer-back-end.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/this-computer-check-for-updates.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/this-computer-log-folder.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/this-computer-plain-words.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/tool-line-reduced-motion.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/tool-name.test.ts,todo: inspect native applicability; no parity claim
+M,app/tests/transcript-messages.test.ts,todo: inspect native applicability; no parity claim
+A,app/tests/transcript-rail-clearance.fixture.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/transcript-rail-clearance.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/transcript-room.fixture.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/transcript-room.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/update-banner-layout.fixture.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/update-banner-layout.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/update-banner.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/vault.test.tsx,todo: inspect native applicability; no parity claim
+A,app/tests/what-if.fixture.json,todo: inspect native applicability; no parity claim
+A,app/tests/what-if.test.tsx,todo: inspect native applicability; no parity claim
+M,app/tests/your-recordings.test.tsx,todo: inspect native applicability; no parity claim
+M,bun.lock,todo: inspect native applicability; no parity claim
+M,charts/openbot/Chart.lock,todo: inspect native applicability; no parity claim
+M,charts/openbot/Chart.yaml,todo: inspect native applicability; no parity claim
+M,charts/openbot/README.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,charts/openbot/values.yaml,todo: inspect native applicability; no parity claim
+M,desktop/MACOS_MICROPHONE.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/PROVIDER_OAUTH.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/TELEMETRY.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/intelligence-cli.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+D,desktop/public/copilotkit-logo-dark.svg,reference: desktop/deployment/docs; native feature applicability assessed in module map
+D,desktop/public/copilotkit-logo.svg,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/scripts/desktop-version.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/scripts/installer-language.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/scripts/installer-publisher.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/scripts/installer-update.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/scripts/signed-build.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/scripts/test-windows-installer-update.ps1,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/Cargo.lock,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/Cargo.toml,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/Entitlements.plist,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/Info.plist,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/build.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/capabilities/default.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/examples/engine_update_check.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/examples/telemetry_probe.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/gen/schemas/acl-manifests.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/gen/schemas/capabilities.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/gen/schemas/desktop-schema.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/gen/schemas/macOS-schema.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/acquire.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/ai_connection.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/app_update.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/deployment.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/deployment_release.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/desktop_page.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/desktop_stall.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/desktop_telemetry.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/docker_desktop.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/docker_desktop_update.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/early_downloads.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/early_downloads/tests.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/early_images.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/early_images/tests.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/engine.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/engine_versions.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/env.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/harness.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/image_mirror.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/install.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/learning_model.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/lib.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/local_eval.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/local_eval_ipc_tests.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/local_eval_state.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/local_images.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/local_update.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/logging.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/main.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/native_alert.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/netavark_rules.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/outside_links.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/own_machine.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/podman_default.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/preparation.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/problem.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/provider_oauth.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/pull_metrics.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/recorder_install.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/registry.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/release_images.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/speech.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/stack.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/stall.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/stop_ipc_tests.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/telemetry.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/test_support.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/troubleshooting.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/uninstall.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/update_ready.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/update_ready_live_tests.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/upgrade.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/usage_data.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/src/windows.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/zoom-shortcut.js,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/src/zoom.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/tauri.conf.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/telemetry-disabled.compose.yml,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/telemetry.compose.yml,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/local-eval/d30-steps.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/local-eval/k3s-v1.31.5-get-nodes.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/local-eval/local-eval-terms-no-engine.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/local-eval/local-eval-terms-orbstack.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/local-eval/local-eval-terms-windows-f-short-of-disk.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/local-eval/onboard-local-terms-no-engine.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/local-eval/onboard-local-terms-orbstack.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/test-fixtures/local-eval/update-did-not-finish.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/box-i-inspect.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/box-i-ps.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/box-i-routes.txt,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/box-i-with-person-and-docker.nft,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/box-i-with-person-routes.txt,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/box-i.nft,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/machine-d-inspect.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/machine-d-wake-inspect.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/machine-d-wake.nft,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/machine-d.nft,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/podman-5.8.9-iptables-inspect.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/podman-5.8.9-iptables.nft,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/podman-6.1.3-nftables-inspect.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/podman-6.1.3-nftables.nft,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/netavark-rules/wsl-lab.sh,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/podman-connections/box-i-after.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/update-ready/desktop-images-v0.3.4.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/test-fixtures/update-ready/desktop-images-v1.0.0.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/tests/fixtures/engine.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/tests/native_alert.rs,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src-tauri/windows/hooks.nsh,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/windows/installer-english.nsh,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src-tauri/windows/installer.nsi,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/App.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/App.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/CheckForUpdates.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/CheckForUpdates.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/CopilotKitAccount.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/CopilotKitAccount.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+D,desktop/src/CopilotKitLogo.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/CopilotKitSignInWait.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/EarlyDownloads.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/EarlyDownloads.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/LocalIntelligence.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/LocalIntelligence.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/PodmanGoAhead.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/Problem.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/Problem.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/ProviderPicker.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/ProviderPicker.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/Sections.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/SetupProgress.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/SetupProgress.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/ShuttingDown.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/ShuttingDown.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/StartFresh.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/StartJourney.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/StatusWindow.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/StatusWindow.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/UpdateOffer.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/UpdateOffer.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/UsageDataChoice.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/Welcome.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/WindowsBlocker.test.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/WindowsBlocker.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+D,desktop/src/fitWindow.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/heartbeat.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/heartbeat.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/journey.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/journey.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/journeyTimings.json,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/journeyTimings.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/localEvalCli.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/localEvalCli.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/localReadiness.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/localReadiness.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/main.tsx,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/partNames.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/setupLayout.browser.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/styles.css,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,desktop/src/styles.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,desktop/src/zoomShortcut.test.ts,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docker-compose.yml,todo: inspect native applicability; no parity claim
+M,docs/README.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/approvals.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/architecture.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/automatic-learning.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/configuration.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/coworkers.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/deployment.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/desktop-install.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/desktop-updates.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/development.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+A,docs/how-openbot-works.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/installer-runbook.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/kubernetes-upgrades.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/personal-edition.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/plugins/arcade.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/plugins/composio.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/plugins/google-drive.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/plugins/notion.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/releasing.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/routines.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/testing/first-use-tour.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,docs/web-research.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,examples/fintech/agents.yaml,todo: inspect native applicability; no parity claim
+M,examples/fintech/catalog/README.md,reference: desktop/deployment/docs; native feature applicability assessed in module map
+M,examples/fintech/catalog/expense-review.yaml,todo: inspect native applicability; no parity claim
+M,examples/fintech/catalog/feedback-digest.yaml,todo: inspect native applicability; no parity claim
+M,examples/fintech/catalog/interview-notes.yaml,todo: inspect native applicability; no parity claim
+M,examples/fintech/catalog/meeting-follow-ups.yaml,todo: inspect native applicability; no parity claim
+M,examples/fintech/catalog/onboarding-buddy.yaml,todo: inspect native applicability; no parity claim
+M,examples/fintech/catalog/oncall-handover.yaml,todo: inspect native applicability; no parity claim
+M,examples/fintech/catalog/release-notes.yaml,todo: inspect native applicability; no parity claim
+M,examples/fintech/catalog/research-desk.yaml,todo: inspect native applicability; no parity claim
+M,examples/fintech/catalog/ticket-triage.yaml,todo: inspect native applicability; no parity claim
+M,examples/fintech/catalog/vendor-review.yaml,todo: inspect native applicability; no parity claim
+M,examples/fintech/skills.yaml,todo: inspect native applicability; no parity claim
+M,examples/personal/agents.yaml,todo: inspect native applicability; no parity claim
+M,examples/personal/skills.yaml,todo: inspect native applicability; no parity claim
+M,extension/scripts/store-package.test.ts,todo: inspect native applicability; no parity claim
+M,extension/src/background/offscreen-document.ts,todo: inspect native applicability; no parity claim
+M,extension/src/content/notice.ts,todo: inspect native applicability; no parity claim
+M,extension/src/offscreen/grant.ts,todo: inspect native applicability; no parity claim
+M,extension/src/offscreen/index.ts,todo: inspect native applicability; no parity claim
+M,extension/src/offscreen/streamer.ts,todo: inspect native applicability; no parity claim
+M,extension/src/pages/options/options.tsx,todo: inspect native applicability; no parity claim
+M,extension/src/pages/popup/notices.tsx,todo: inspect native applicability; no parity claim
+M,extension/src/pages/popup/record-form.tsx,todo: inspect native applicability; no parity claim
+M,extension/src/pages/popup/recording-view.tsx,todo: inspect native applicability; no parity claim
+M,extension/src/pages/ui/capture-rows.tsx,todo: inspect native applicability; no parity claim
+M,extension/tests/connect-page.test.tsx,todo: inspect native applicability; no parity claim
+M,extension/tests/grant.test.ts,todo: inspect native applicability; no parity claim
+M,extension/tests/launcher.test.ts,todo: inspect native applicability; no parity claim
+M,extension/tests/offscreen-index.test.ts,todo: inspect native applicability; no parity claim
+M,extension/tests/options.test.tsx,todo: inspect native applicability; no parity claim
+M,extension/tests/popup.test.tsx,todo: inspect native applicability; no parity claim
+M,extension/tests/recording.test.ts,todo: inspect native applicability; no parity claim
+M,extension/tests/recovery.test.ts,todo: inspect native applicability; no parity claim
+M,extension/tests/restart-end-to-end.test.ts,todo: inspect native applicability; no parity claim
+M,extension/tests/setup-page.test.tsx,todo: inspect native applicability; no parity claim
+M,extension/tests/streamer.test.ts,todo: inspect native applicability; no parity claim
+M,package.json,todo: inspect native applicability; no parity claim
+M,prompt.txt,todo: inspect native applicability; no parity claim
+M,release-policy.json,todo: inspect native applicability; no parity claim
+M,scripts/downloads-images.test.ts,todo: inspect native applicability; no parity claim
+M,scripts/downloads-images.ts,todo: inspect native applicability; no parity claim
+M,scripts/downloads-sync.sh,todo: inspect native applicability; no parity claim
+M,scripts/downloads-sync.test.ts,todo: inspect native applicability; no parity claim
+A,server/drizzle/0084_brokered_accounts.sql,todo: inspect native applicability; no parity claim
+A,server/drizzle/0085_approval_rule_account.sql,todo: inspect native applicability; no parity claim
+A,server/drizzle/0086_channel_title.sql,todo: inspect native applicability; no parity claim
+A,server/drizzle/0087_approval_conversation_grants.sql,todo: inspect native applicability; no parity claim
+A,server/drizzle/0088_approval_reviewer_guidance.sql,todo: inspect native applicability; no parity claim
+A,server/drizzle/0089_goal_ends_when_met.sql,todo: inspect native applicability; no parity claim
+A,server/drizzle/0090_routine_goal_linked_by_run.sql,todo: inspect native applicability; no parity claim
+A,server/drizzle/meta/0084_snapshot.json,todo: inspect native applicability; no parity claim
+A,server/drizzle/meta/0085_snapshot.json,todo: inspect native applicability; no parity claim
+A,server/drizzle/meta/0086_snapshot.json,todo: inspect native applicability; no parity claim
+A,server/drizzle/meta/0087_snapshot.json,todo: inspect native applicability; no parity claim
+A,server/drizzle/meta/0088_snapshot.json,todo: inspect native applicability; no parity claim
+A,server/drizzle/meta/0089_snapshot.json,todo: inspect native applicability; no parity claim
+A,server/drizzle/meta/0090_snapshot.json,todo: inspect native applicability; no parity claim
+M,server/drizzle/meta/_journal.json,todo: inspect native applicability; no parity claim
+M,server/package.json,todo: inspect native applicability; no parity claim
+A,server/src/admin/capability-changes.ts,todo: inspect native applicability; no parity claim
+A,server/src/admin/capability-translate.ts,todo: inspect native applicability; no parity claim
+M,server/src/admin/controls.ts,todo: inspect native applicability; no parity claim
+A,server/src/admin/network-replay.ts,todo: inspect native applicability; no parity claim
+A,server/src/admin/network-routes.ts,todo: inspect native applicability; no parity claim
+A,server/src/admin/network-translate.ts,todo: inspect native applicability; no parity claim
+M,server/src/admin/routes.ts,todo: inspect native applicability; no parity claim
+M,server/src/admin/settings-store.ts,todo: inspect native applicability; no parity claim
+M,server/src/agents/agent-resolver.ts,todo: inspect native applicability; no parity claim
+M,server/src/agents/escalation.ts,todo: inspect native applicability; no parity claim
+A,server/src/agents/run-mode.ts,todo: inspect native applicability; no parity claim
+M,server/src/agents/subagent.ts,todo: inspect native applicability; no parity claim
+M,server/src/agents/tool-search.ts,todo: inspect native applicability; no parity claim
+M,server/src/app.ts,todo: inspect native applicability; no parity claim
+M,server/src/approvals/policy.ts,todo: inspect native applicability; no parity claim
+A,server/src/approvals/reviewer-guidance.ts,todo: inspect native applicability; no parity claim
+M,server/src/approvals/routes.ts,todo: inspect native applicability; no parity claim
+A,server/src/approvals/rule-backtest.ts,todo: inspect native applicability; no parity claim
+A,server/src/approvals/rule-check.ts,todo: inspect native applicability; no parity claim
+A,server/src/approvals/rule-translate.ts,todo: inspect native applicability; no parity claim
+A,server/src/approvals/rule-vocabulary.ts,todo: inspect native applicability; no parity claim
+M,server/src/approvals/service.ts,todo: inspect native applicability; no parity claim
+M,server/src/approvals/store.ts,todo: inspect native applicability; no parity claim
+M,server/src/approvals/types.ts,todo: inspect native applicability; no parity claim
+A,server/src/audit-ask.ts,todo: inspect native applicability; no parity claim
+A,server/src/audit-filters.ts,todo: inspect native applicability; no parity claim
+M,server/src/audit.ts,todo: inspect native applicability; no parity claim
+M,server/src/channels/events.ts,todo: inspect native applicability; no parity claim
+M,server/src/channels/model-choice.ts,todo: inspect native applicability; no parity claim
+M,server/src/channels/routes.ts,todo: inspect native applicability; no parity claim
+M,server/src/channels/summary.ts,todo: inspect native applicability; no parity claim
+M,server/src/components/headless.ts,todo: inspect native applicability; no parity claim
+M,server/src/computer/deployment-routes.ts,excluded: computer use (inspect shared code separately)
+M,server/src/computer/gateway.ts,excluded: computer use (inspect shared code separately)
+M,server/src/computer/policy-dry-run.ts,excluded: computer use (inspect shared code separately)
+M,server/src/computer/policy-network.ts,excluded: computer use (inspect shared code separately)
+M,server/src/computer/policy-store.ts,excluded: computer use (inspect shared code separately)
+A,server/src/computer/policy-translate.ts,excluded: computer use (inspect shared code separately)
+M,server/src/computer/policy.ts,excluded: computer use (inspect shared code separately)
+M,server/src/computer/routes.ts,excluded: computer use (inspect shared code separately)
+M,server/src/config.ts,todo: inspect native applicability; no parity claim
+M,server/src/copilot.ts,todo: inspect native applicability; no parity claim
+M,server/src/db/schema/approvals.ts,todo: inspect native applicability; no parity claim
+M,server/src/db/schema/core.ts,todo: inspect native applicability; no parity claim
+M,server/src/db/schema/coworker.ts,todo: inspect native applicability; no parity claim
+M,server/src/db/schema/plugins.ts,todo: inspect native applicability; no parity claim
+M,server/src/db/schema/responsibilities.ts,todo: inspect native applicability; no parity claim
+M,server/src/desktop-telemetry.test.ts,todo: inspect native applicability; no parity claim
+M,server/src/desktop-telemetry.ts,todo: inspect native applicability; no parity claim
+M,server/src/edition.ts,todo: inspect native applicability; no parity claim
+M,server/src/index.ts,todo: inspect native applicability; no parity claim
+M,server/src/intelligence-client.ts,todo: inspect native applicability; no parity claim
+M,server/src/intelligence-gateway-proxy.ts,todo: inspect native applicability; no parity claim
+M,server/src/learning/auto-assign.ts,todo: inspect native applicability; no parity claim
+M,server/src/learning/ensure-container.ts,todo: inspect native applicability; no parity claim
+M,server/src/learning/inspector.ts,todo: inspect native applicability; no parity claim
+M,server/src/learning/review.ts,todo: inspect native applicability; no parity claim
+M,server/src/learning/routes.ts,todo: inspect native applicability; no parity claim
+M,server/src/learning/runtime.ts,todo: inspect native applicability; no parity claim
+M,server/src/learning/settings.ts,todo: inspect native applicability; no parity claim
+M,server/src/learning/sharing-routes.ts,todo: inspect native applicability; no parity claim
+M,server/src/memory/store.ts,todo: inspect native applicability; no parity claim
+M,server/src/memory/types.ts,todo: inspect native applicability; no parity claim
+M,server/src/model-catalogue.ts,todo: inspect native applicability; no parity claim
+M,server/src/passwords/service.ts,todo: inspect native applicability; no parity claim
+A,server/src/plugins/account-argument.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/app-access-tool.ts,todo: inspect native applicability; no parity claim
+A,server/src/plugins/app-names.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/arcade-adapter.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/broker.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/builtin-routines.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/catalogue.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/composio-client/accounts.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/composio-client/consent.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/composio-client/fields.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/composio-client/model.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/composio-vendor.ts,todo: inspect native applicability; no parity claim
+A,server/src/plugins/grant-translate.ts,todo: inspect native applicability; no parity claim
+A,server/src/plugins/key-guides.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/mcp.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/oauth.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/personal-defaults.ts,todo: inspect native applicability; no parity claim
+A,server/src/plugins/plugin-store/accounts.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/plugin-store/app-access.ts,todo: inspect native applicability; no parity claim
+A,server/src/plugins/plugin-store/call-policy.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/plugin-store/calls.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/plugin-store/connections.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/plugin-store/grants.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/plugin-store/model.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/route-groups/connections.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/route-groups/grants.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/route-groups/servers.ts,todo: inspect native applicability; no parity claim
+A,server/src/plugins/run-calls.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/shared-accounts.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/store.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/tools.ts,todo: inspect native applicability; no parity claim
+A,server/src/plugins/transient.ts,todo: inspect native applicability; no parity claim
+M,server/src/plugins/transport.ts,todo: inspect native applicability; no parity claim
+M,server/src/proactive/engine.ts,todo: inspect native applicability; no parity claim
+M,server/src/proactive/private-share.ts,todo: inspect native applicability; no parity claim
+M,server/src/proactive/routes.ts,todo: inspect native applicability; no parity claim
+M,server/src/proactive/store.ts,todo: inspect native applicability; no parity claim
+M,server/src/proactive/types.ts,todo: inspect native applicability; no parity claim
+M,server/src/provider-oauth-lock.ts,todo: inspect native applicability; no parity claim
+M,server/src/provider-oauth.ts,todo: inspect native applicability; no parity claim
+M,server/src/responsibilities/chat-tools.ts,todo: inspect native applicability; no parity claim
+M,server/src/responsibilities/engine.ts,todo: inspect native applicability; no parity claim
+M,server/src/responsibilities/routes.ts,todo: inspect native applicability; no parity claim
+M,server/src/responsibilities/store.ts,todo: inspect native applicability; no parity claim
+M,server/src/responsibilities/tools.ts,todo: inspect native applicability; no parity claim
+M,server/src/responsibilities/trigger-tools.ts,todo: inspect native applicability; no parity claim
+M,server/src/responsibilities/types.ts,todo: inspect native applicability; no parity claim
+M,server/src/responsibilities/wiring.ts,todo: inspect native applicability; no parity claim
+M,server/src/routines/routes.ts,todo: inspect native applicability; no parity claim
+M,server/src/routines/schedule.ts,done: non-computer delta ported and upstream fixture tested
+M,server/src/routines/store.ts,todo: inspect native applicability; no parity claim
+M,server/src/routing/model.ts,todo: inspect native applicability; no parity claim
+M,server/src/setup/checklist.ts,todo: inspect native applicability; no parity claim
+M,server/src/tenant-package.ts,todo: inspect native applicability; no parity claim
+A,server/src/what-if-check.ts,todo: inspect native applicability; no parity claim
+A,server/src/what-if.ts,todo: inspect native applicability; no parity claim
+M,server/tests/agent-profile-store.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/app-access-routes.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/app-grants-describe.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/app-grants-rules.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/approval-rule-backtest.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/approval-rule-translate.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/approval-rules-save.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/approvals-account.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/approvals-ask-once.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/approvals-consequential.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/approvals-edition-defaults.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/approvals-open-by-default.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/approvals-policy.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/approvals-policy.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/approvals-question-resume.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/arcade-multiple-accounts.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/audit-ask.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/audit-payload-filters.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/audit-rule-name.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/bot-answer-attribution.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/bot-browser-routes.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/bot-knows-its-model.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/boundaries-replay.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/brokered-multiple-accounts.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/builtin-routines.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/channel-activity.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/channel-routes.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/channel-search.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/channel-search.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/channel-summary.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/check-in-new-refuses-existing.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/composio-adapter.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/composio-transport.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/computer-policy-dry-run-limit.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/config.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/conversation-rename.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/copilot.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/app-grants-recorded.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/approval-rules-recorded.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/approval-rules-vocabulary.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/audit-ask-recorded.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/audit-ask-vocabulary.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/composio-gmail-catalogue.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/composio-key-apps.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/composio-slack-catalogue.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/network-allowlist-recorded.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/policy-translate-recorded.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/reviewer-guidance-recorded.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/what-if-recorded.json,todo: inspect native applicability; no parity claim
+A,server/tests/fixtures/who-can-recorded.json,todo: inspect native applicability; no parity claim
+A,server/tests/gmail-reads-by-default.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/goal-conversation.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/goal-delete.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/goal-ends-when-met.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/goal-routine-link.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/goal-run-keeps-what-ends-it.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/goal-run-recurring.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/goal-run-tools.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/goal-tool-needs-criteria.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/goal-words.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/group-conversations.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/headless-components.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/headless-tools.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/helpers/refusals.ts,todo: inspect native applicability; no parity claim
+M,server/tests/intelligence-entitlement-check.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/key-only-apps.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/learning-auto-assign.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/learning-ensure-container.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/learning-people-review.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/learning-recording-skills.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/learning-routes.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/learning-runtime.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/learning-settings.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/model-catalogue.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/model-picker-every-sign-in.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/model-providers.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/network-allowlist-replay.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/network-allowlist-translate.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/parallel-tool-results.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/passwords-sign-in.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/plugin-oauth.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/plugin-routes.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/plugin-store.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/policy-dry-run.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/policy-rule-check.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/policy-translate.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/product-telemetry-internal-runs.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/responsibilities-engine.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/responsibilities-store.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/responsibility-trigger-tools.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/reviewer-guidance.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/routine-create-from-page.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/routine-routes.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/routine-runner.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/routine-schedule.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/routine-title.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/run-mode.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/runs-that-finish.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/runtime-own-runs.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/setup-checklist.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/shipped-bot-instructions.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/subagent.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/support/gmail-grant-app.ts,todo: inspect native applicability; no parity claim
+A,server/tests/support/reviewer-guidance.ts,todo: inspect native applicability; no parity claim
+A,server/tests/support/what-if-deployment.ts,todo: inspect native applicability; no parity claim
+M,server/tests/tenant-package.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/tool-calls-come-back.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/tool-selection.integration.test.ts,todo: inspect native applicability; no parity claim
+M,server/tests/typecheck-baseline.txt,todo: inspect native applicability; no parity claim
+A,server/tests/what-if-boundary-words.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/what-if.integration.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/who-can-check.test.ts,todo: inspect native applicability; no parity claim
+A,server/tests/who-can.integration.test.ts,todo: inspect native applicability; no parity claim
+M,shared/approval-outcomes.test.ts,todo: inspect native applicability; no parity claim
+M,shared/approval-outcomes.ts,done: non-computer delta ported and upstream fixture tested
+A,shared/audit-filters.ts,todo: inspect native applicability; no parity claim
+M,shared/audit-words.ts,todo: inspect native applicability; no parity claim
+M,shared/bot-prompt.test.ts,todo: inspect native applicability; no parity claim
+M,shared/bot-prompt.ts,todo: inspect native applicability; no parity claim
+M,shared/desktop-updates.test.ts,todo: inspect native applicability; no parity claim
+M,shared/desktop-updates.ts,todo: inspect native applicability; no parity claim
+M,shared/harnesses.test.ts,todo: inspect native applicability; no parity claim
+M,shared/harnesses.ts,todo: inspect native applicability; no parity claim
+M,shared/learning.ts,todo: inspect native applicability; no parity claim
+M,shared/recorder-disclosure.ts,todo: inspect native applicability; no parity claim
+M,shared/responsibility-turn.test.ts,todo: inspect native applicability; no parity claim
+M,shared/responsibility-turn.ts,todo: inspect native applicability; no parity claim
+A,shared/routine-checklist.test.ts,todo: inspect native applicability; no parity claim
+A,shared/routine-checklist.ts,todo: inspect native applicability; no parity claim
+A,shared/run-notices.ts,todo: inspect native applicability; no parity claim
+M,shared/standing-rule.ts,partial: see module map
+M,shared/tool-name.ts,todo: inspect native applicability; no parity claim
+A,shared/tool-steps.ts,todo: inspect native applicability; no parity claim
+A,shared/what-if.ts,todo: inspect native applicability; no parity claim
+M,tests/compose.test.ts,todo: inspect native applicability; no parity claim
+A,tests/fixtures/retired-page-names/page.tsx,todo: inspect native applicability; no parity claim
+M,tests/no-intelligence-in-user-copy.test.ts,todo: inspect native applicability; no parity claim
+A,tests/no-retired-page-names.test.ts,todo: inspect native applicability; no parity claim
+A,tests/plain-setup-words.test.ts,todo: inspect native applicability; no parity claim
+M,toolkit/src/copilotkit/agents.ts,todo: inspect native applicability; no parity claim
+A,toolkit/src/copilotkit/firing-checklist.ts,todo: inspect native applicability; no parity claim
+M,toolkit/src/copilotkit/last-step.ts,todo: inspect native applicability; no parity claim
+A,toolkit/src/copilotkit/step-messages.ts,todo: inspect native applicability; no parity claim
+A,toolkit/src/copilotkit/unkept-promise.ts,todo: inspect native applicability; no parity claim
+M,toolkit/src/granted-tool.ts,todo: inspect native applicability; no parity claim
+M,toolkit/src/headless-tools.ts,todo: inspect native applicability; no parity claim
+A,toolkit/tests/step-messages.test.ts,todo: inspect native applicability; no parity claim
+A,toolkit/tests/unkept-promise.test.ts,todo: inspect native applicability; no parity claim

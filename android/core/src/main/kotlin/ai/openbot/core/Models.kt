@@ -71,7 +71,7 @@ import kotlinx.serialization.json.JsonElement
 @Serializable data class LocalConversation(val id: String, val botId: String, val name: String, val createdAt: String,
     val summary: String? = null, val opening: String? = null, val lastMessage: String? = null,
     val lastMessageAgentId: String? = null, val lastMessageAt: String? = null,
-    val pinned: Boolean = false, val lastReadAt: String? = null)
+    val pinned: Boolean = false, val lastReadAt: String? = null, val title: String? = null)
 @Serializable data class LocalMessage(val id: String, val conversationId: String, val role: String, val text: String, val createdAt: String, val state: MessageState = MessageState.COMPLETE,val systemLabel:String?=null,val displayText:String?=null,val attachmentIds:List<String> = emptyList())
 @Serializable enum class MessageState { COMPLETE, GENERATING, FAILED, INTERRUPTED, WAITING }
 

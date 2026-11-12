@@ -46,6 +46,23 @@ class LocalStoreTest {
         assertEquals(MessageState.COMPLETE, messages[1].state)
     }
 
+    @Test fun `chosen title survives new messages and clearing restores the generated summary`() {
+        val channel = store.newConversation(store.bots().single().id)
+        store.saveConversation(channel.copy(summary = "Generated summary"))
+        store.renameConversation(channel.id, "  Holiday planning  ")
+        store.saveMessage(LocalMessage("new", channel.id, "assistant", "New reply", "2026-11-12T10:00:00Z"))
+        store.close()
+        store = LocalStore(context)
+        val renamed = store.conversations().single()
+        assertEquals("Holiday planning", conversationTitle(renamed))
+        assertEquals(listOf(renamed), matchingConversations(listOf(renamed), "holiday"))
+        assertFailsWith<IllegalArgumentException> { store.renameConversation(channel.id, "x".repeat(61)) }
+        assertEquals("Holiday planning", store.conversations().single().title)
+        store.renameConversation(channel.id, "  ")
+        assertNull(store.conversations().single().title)
+        assertEquals("Generated summary", conversationTitle(store.conversations().single()))
+    }
+
     @Test fun `turn writes are atomic when a message identity conflicts`() {
         val conversation = store.newConversation(store.bots().single().id)
         store.saveMessage(LocalMessage("existing", conversation.id, "assistant", "Keep", "2026-11-09T08:00:00Z"))

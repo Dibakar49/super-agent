@@ -408,6 +408,24 @@ class LocalStore(context: Context) : SQLiteOpenHelper(context, "openbot.db", nul
         }finally{writableDatabase.endTransaction();databaseChanged()}
     }
 
+    /** A chosen title is separate from the generated summary; an empty title restores it. */
+    fun renameConversation(id: String, title: String) {
+        val chosen = title.trim().takeIf { it.isNotEmpty() }
+        if (chosen != null) {
+            val boundaries = android.icu.text.BreakIterator.getCharacterInstance(java.util.Locale.ROOT)
+            boundaries.setText(chosen)
+            var count = 0
+            while (boundaries.next() != android.icu.text.BreakIterator.DONE) count++
+            require(count <= 60) { "Use a conversation name of at most 60 characters." }
+        }
+        writableDatabase.beginTransaction()
+        try {
+            val current = conversations().firstOrNull { it.id == id } ?: error("Conversation no longer exists.")
+            saveConversation(current.copy(title = chosen))
+            writableDatabase.setTransactionSuccessful()
+        } finally { writableDatabase.endTransaction(); databaseChanged() }
+    }
+
     fun saveConversation(conversation: LocalConversation) {
         val values = ContentValues().apply { put("payload", json.encodeToString(conversation)) }
         check(writableDatabase.update("conversations", values, "id=?", arrayOf(conversation.id)) == 1) { "Conversation no longer exists." }

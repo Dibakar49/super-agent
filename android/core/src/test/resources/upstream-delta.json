@@ -1,0 +1,62 @@
+{
+  "revision": "68fe32774a83689a862d5821a6260e72e5f8fdb9",
+  "cron": [
+    {
+      "expression": "0 * * * *",
+      "description": "Every hour"
+    },
+    {
+      "expression": "5 * * * *",
+      "description": "Every hour at 05 past"
+    },
+    {
+      "expression": "59 * * * *",
+      "description": "Every hour at 59 past"
+    },
+    {
+      "expression": "05 * * * *",
+      "description": "Every hour at 05 past"
+    },
+    {
+      "expression": "0 * * 2 *",
+      "description": "0 * * 2 *"
+    },
+    {
+      "expression": "*/15 * * * *",
+      "description": "Every 15 minutes"
+    }
+  ],
+  "notRun": [
+    {
+      "why": "the result was unavailable.",
+      "answer": "Not run: the result was unavailable. Run it again if you still need it, or say in your answer that you could not get it.",
+      "person": "Not run: the result was unavailable."
+    },
+    {
+      "why": "the server (api.example.org) stopped.",
+      "answer": "Not run: the server (api.example.org) stopped. Run it again if you still need it, or say in your answer that you could not get it.",
+      "person": "Not run: the server (api.example.org) stopped."
+    }
+  ],
+  "named": [
+    {
+      "name": "WITHDRAWN_APPROVALS_OFF",
+      "answer": "Not run: this request was withdrawn because the person switched off asking before changes. Run it again if you still need it, or say in your answer that you could not get it.",
+      "person": "Withdrawn. You turned off asking before changes."
+    },
+    {
+      "name": "WITHDRAWN_RULE_ALLOWS",
+      "answer": "Not run: this request was withdrawn because a rule the person saved now allows it without asking. Run it again if you still need it, or say in your answer that you could not get it.",
+      "person": "Withdrawn. A rule you saved now allows it."
+    },
+    {
+      "name": "NOT_RUN_WHILE_WAITING",
+      "answer": "Not run: the turn stopped before this step to wait for the person on another step asked for at the same time. Run it again if you still need it, or say in your answer that you could not get it.",
+      "person": "Not done. The Bot stopped to wait for you on another step."
+    }
+  ],
+  "unknownTimezone": {
+    "code": "unknown_timezone",
+    "message": "That is not a timezone I know."
+  }
+}

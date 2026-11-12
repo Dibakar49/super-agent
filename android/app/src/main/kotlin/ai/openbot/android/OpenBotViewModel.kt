@@ -194,8 +194,7 @@ class OpenBotViewModel(application: Application) : AndroidViewModel(application)
     }
     fun pinConversation(channel: LocalConversation) = action { store.saveConversation(channel.copy(pinned = !channel.pinned)); refresh() }
     fun renameConversation(channel: LocalConversation, title: String, onSaved: () -> Unit) = action {
-        require(title.trim().isNotEmpty() && title.length <= 200) { "Use a conversation name of 1–200 characters." }
-        store.saveConversation(channel.copy(summary = title.trim())); refresh()
+        store.renameConversation(channel.id, title); refresh()
         withContext(Dispatchers.Main) { onSaved() }
     }
     fun deleteConversation(channel: LocalConversation,onDeleted:()->Unit={}) = action {

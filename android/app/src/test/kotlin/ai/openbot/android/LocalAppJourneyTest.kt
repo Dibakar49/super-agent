@@ -303,6 +303,28 @@ class LocalAppJourneyTest {
         LocalStore(compose.activity).use{assertTrue(it.memories().isEmpty())}
     }
 
+    @Test fun `sidebar renames a conversation and restores its generated name when cleared`() {
+        readyMessage()
+        LocalStore(compose.activity).use { store ->
+            val channel = store.newConversation(store.bots().single().id)
+            store.saveConversation(channel.copy(summary = "Original name"))
+        }
+        compose.onNodeWithContentDescription("Show sidebar").performClick()
+        compose.waitUntil(10_000) { compose.onAllNodesWithText("Original name", substring = false).fetchSemanticsNodes().isNotEmpty() }
+        fun rename(title: String, chosen: String) {
+            compose.onNodeWithText(title, substring = false).performTouchInput { longClick() }
+            compose.onNode(hasText("Rename conversation…") and hasAnyAncestor(isPopup())).performClick()
+            compose.onNodeWithTag("conversation-name").performTextReplacement(chosen)
+            compose.onNodeWithTag("confirm-rename-conversation").performClick()
+            compose.waitUntil(10_000) { compose.onAllNodesWithTag("conversation-name").fetchSemanticsNodes().isEmpty() }
+        }
+        rename("Original name", "Trip plans")
+        compose.onNodeWithText("Trip plans", substring = false).assertIsDisplayed()
+        rename("Trip plans", "")
+        compose.onNodeWithText("Original name", substring = false).assertIsDisplayed()
+        LocalStore(compose.activity).use { assertNull(it.conversations().single().title) }
+    }
+
     @Test fun `sidebar pins a conversation and confirms deletion before removing its messages`() {
         readyMessage()
         LocalStore(compose.activity).use{store->

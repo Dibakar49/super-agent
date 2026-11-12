@@ -3,7 +3,7 @@ package ai.openbot.core
 import java.time.*
 
 const val MINIMUM_INTERVAL_MS=15L*60*1000
-class ScheduleRefusedException(message:String):IllegalArgumentException(message)
+class ScheduleRefusedException(message:String,val code:String?=null):IllegalArgumentException(message)
 private const val UNREADABLE="That schedule could not be read."
 private const val UNKNOWN_ZONE="That is not a timezone I know."
 private const val TOO_FREQUENT="Routines may run at most every 15 minutes."
@@ -120,7 +120,7 @@ private fun numbers(field:String,min:Int,max:Int):Set<Int> {
 /** Same five-field contract, fixed 200-occurrence floor scan and runtime pair check as schedule.ts. */
 fun nextOccurrence(cron:String,timezone:String,after:Instant):Instant {
     if(cron.trim().split(Regex("\\s+")).size!=5)unreadable()
-    val zone=try {ZoneId.of(zoneNames[timezone.lowercase()]?:timezone)}catch(_:Exception){throw ScheduleRefusedException(UNKNOWN_ZONE)}
+    val zone=try {ZoneId.of(zoneNames[timezone.lowercase()]?:timezone)}catch(_:Exception){throw ScheduleRefusedException(UNKNOWN_ZONE,"unknown_timezone")}
     val plan=try{CronPlan(cron,zone)}catch(failure:ScheduleRefusedException){throw failure}catch(_:Exception){unreadable()}
     val cacheKey="$timezone\u0000$cron"
     synchronized(floorVerdicts) {
@@ -158,6 +158,7 @@ fun describeCron(cron:String):String {
         if(step!=null&&step>1&&60%step==0)return "Every $step minutes"
     }
     val minute=plain(minuteField,0,59);val hour=plain(hourField,0,23)
+    if(wide&&hourField=="*"&&minute!=null)return if(minute==0)"Every hour" else "Every hour at %02d past".format(java.util.Locale.ROOT,minute)
     if(wide&&hour!=null&&Regex("^\\d{1,2}(,\\d{1,2})+$").matches(minuteField)) {
         val list=minuteField.split(',').map{plain(it,0,59)}
         if(list.all{it!=null})return "Every day at "+words(list.filterNotNull().distinct().sorted().map{time(hour,it)})

@@ -41,7 +41,13 @@ transcription, cancellation/retry and separate encrypted credentials.
 - Global ViewModel busy state limits navigation/edits while generating.
 - No physical-device, live provider/MCP, real microphone/codec, imported-model
   performance, or idle/reboot timing validation. Test fixtures are not live calls.
-- GitHub CLI authentication reports failure; verify network versus authorization
-  before claiming push/PR access. Upstream comparison and research are in progress.
+- Git push succeeds. GitHub API is blocked by the environment network policy
+  (proxy CONNECT 403), so PR creation through `gh` is currently unavailable.
+- Upstream delta: 128 commits / 1,035 changed paths to `68fe3277`, recorded in
+  `docs/upstream/`. Latest stable release page: v1.0.2; main package: 1.0.1.
+- Added and tested native sidebar rename, hourly schedule descriptions / typed
+  timezone refusal, and updated unrun outcomes with legacy transcript compatibility.
+- REA static analysis and open-source assistant/license comparison are recorded in
+  `FEATURES.md`; selected-file static coverage does not establish full parity.
 
 See `android/MIGRATION.md` and `android/VALIDATION.md` for mapping and evidence.

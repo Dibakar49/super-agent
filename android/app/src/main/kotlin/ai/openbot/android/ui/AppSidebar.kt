@@ -30,6 +30,7 @@ import ai.openbot.core.*
     var search by rememberSaveable { mutableStateOf("") }
     var menu by remember { mutableStateOf<LocalConversation?>(null) }
     var deleting by remember {mutableStateOf<LocalConversation?>(null)}
+    var renaming by remember { mutableStateOf<LocalConversation?>(null) }
     val visible = pinnedConversationsFirst(matchingConversations(state.conversations,search))
     Column(Modifier.fillMaxHeight().width(320.dp).background(p.sidebar).padding(8.dp)) {
         Row(Modifier.fillMaxWidth().height(48.dp),verticalAlignment = Alignment.CenterVertically) {
@@ -64,6 +65,7 @@ import ai.openbot.core.*
                     }
                     DropdownMenu(menu?.id==channel.id,{menu=null}) {
                         DropdownMenuItem(text={Text(if(channel.pinned)"Unpin conversation" else "Pin conversation")},onClick={vm.pinConversation(channel);menu=null},enabled=!state.busy)
+                        DropdownMenuItem(text={Text("Rename conversation…")},onClick={menu=null;renaming=channel},enabled=!state.busy)
                         DropdownMenuItem(text={Text("Delete conversation…")},onClick={menu=null;deleting=channel},enabled=!state.busy)
                     }
                 }
@@ -78,6 +80,26 @@ import ai.openbot.core.*
         }
         Text(state.preferences.name.ifBlank {"you@openbot.local"},modifier=Modifier.padding(start=10.dp,top=10.dp))
         Text("v${ai.openbot.android.BuildConfig.VERSION_NAME}",style=MaterialTheme.typography.labelSmall,color=p.mutedForeground,modifier=Modifier.padding(start=10.dp,bottom=10.dp))
+    }
+    renaming?.let { channel ->
+        var draft by rememberSaveable(channel.id) { mutableStateOf(channel.title ?: conversationTitle(channel)) }
+        val openedWith = remember(channel.id) { draft }
+        SourceDialog("Rename conversation", { if (!state.busy) renaming = null }) {
+            Text("Leave it empty to go back to the name OpenBot chose.", color = p.mutedForeground)
+            SourceTextField(draft, { if (it.length <= 60) draft = it }, singleLine = true,
+                label = { Text("Name") }, enabled = !state.busy,
+                modifier = Modifier.fillMaxWidth().testTag("conversation-name"))
+            state.error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                OpenBotTextButton(onClick = { renaming = null }, enabled = !state.busy) { Text("Cancel") }
+                OpenBotButton(onClick = {
+                    if (draft.trim() == openedWith.trim()) renaming = null
+                    else vm.renameConversation(channel, draft) { renaming = null }
+                }, enabled = !state.busy, modifier = Modifier.testTag("confirm-rename-conversation")) {
+                    Text(if (state.busy) "Saving…" else "Save")
+                }
+            }
+        }
     }
     deleting?.let{channel->
         SourceDialog("Delete ${channel.name}?",{deleting=null}) {
