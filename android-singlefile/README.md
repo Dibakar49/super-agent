@@ -47,9 +47,14 @@ per-agent isolation, host-data/job preservation and attachment provider.
 ```sh
 python3 android-singlefile/verify.py /tmp/agentstudio-validation
 cd /tmp/agentstudio-validation
-./gradlew :app:testDebugUnitTest assembleDebug
+JAVA_TOOL_OPTIONS=-Didea.max.intellisense.filesize=8192 ./gradlew :app:testDebugUnitTest :app:lintDebug assembleDebug
 ```
 
 The exact-source recovery test checks all archived source/resource hashes and
 embedded runtime schemas. Tests use scripted providers and Android shadows;
 physical-device and live model/MCP behavior remain unverified.
+
+Because the requested single source embeds the complete original-source archive and assets,
+Android Studio/lint needs `idea.max.intellisense.filesize=8192`. This raises the parser
+size limit; it does not disable lint checks. Android Studio exposes it under Help →
+Edit Custom Properties. The CI command above supplies it to the Java processes.

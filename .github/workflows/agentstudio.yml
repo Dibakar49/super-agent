@@ -26,7 +26,24 @@ jobs:
         run: python3 android-singlefile/verify.py "$RUNNER_TEMP/agentstudio-validation"
       - name: Build and test embedded feature
         working-directory: ${{ runner.temp }}/agentstudio-validation
-        run: ./gradlew --no-daemon :app:testDebugUnitTest assembleDebug
+        env:
+          JAVA_TOOL_OPTIONS: -Didea.max.intellisense.filesize=8192
+        run: ./gradlew --no-daemon :app:testDebugUnitTest :app:lintDebug assembleDebug
+      - name: Summarize regression results
+        if: always()
+        env:
+          REPORT_ROOT: ${{ runner.temp }}/agentstudio-validation/app/build/test-results/testDebugUnitTest
+        run: |
+          python3 - <<'PYREPORT'
+          import os, pathlib, xml.etree.ElementTree as ET
+          roots=[ET.parse(p).getroot() for p in pathlib.Path(os.environ['REPORT_ROOT']).glob('TEST-*.xml')]
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as report:
+              report.write('Agent Studio regression tests: '+str(sum(int(r.get('tests','0')) for r in roots))+' tests, '+str(sum(int(r.get('failures','0'))+int(r.get('errors','0')) for r in roots))+' failures/errors.\n\n')
+              for root in roots:
+                  for case in root.findall('testcase'):
+                      for failure in list(case.findall('failure'))+list(case.findall('error')):
+                          report.write('### '+root.get('name','')+' — '+case.get('name','')+'\n\n```text\n'+(failure.text or '')[:6000]+'\n```\n\n')
+          PYREPORT
       - name: Upload test reports and actual native renders
         if: always()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
@@ -35,6 +52,7 @@ jobs:
           path: |
             ${{ runner.temp }}/agentstudio-validation/app/build/reports/tests/
             ${{ runner.temp }}/agentstudio-validation/app/build/test-home/screenshots/
+            ${{ runner.temp }}/agentstudio-validation/app/build/reports/lint-results-debug.*
           retention-days: 14
       - name: Upload the single Kotlin file
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
