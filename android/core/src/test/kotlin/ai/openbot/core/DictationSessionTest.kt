@@ -12,6 +12,33 @@ class DictationSessionTest {
         override suspend fun finish():DictationAudio{finishes++;return audio}
         override fun cancel(){cancelled=true;audio.file.delete()}
     }
+    @Test fun `on device speech supplies text without an audio file or provider call`() = runBlocking<Unit> {
+        var delivered = ""
+        var deliveredIntent: DictationIntent? = null
+        var released = false
+        val session = DictationSession(this, { _, _ -> object : AudioRecording {
+            override suspend fun finish(): DictationText { released = true; return DictationText("  Spoken locally  ") }
+            override fun cancel() { released = true }
+        } }, { error("On-device speech must not call a transcription provider") }, { text, intent -> delivered = text; deliveredIntent = intent })
+        try {
+            session.start()
+            assertEquals(DictationPhase.RECORDING, session.state.value.phase)
+            session.finish(DictationIntent.SEND)
+            assertEquals("Spoken locally", delivered)
+            assertEquals(DictationIntent.SEND, deliveredIntent)
+            assertEquals(DictationPhase.IDLE, session.state.value.phase)
+            assertTrue(released)
+        } finally { session.cancel() }
+    }
+
+    @Test fun `unavailable local speech explains how to configure provider dictation`() = runBlocking<Unit> {
+        val session = DictationSession(this, { _, _ -> throw DictationUnavailableException("Configure a transcription provider.") }, { error("No audio") }, { _, _ -> fail("No result") })
+        session.start()
+        assertEquals(DictationPhase.ERROR, session.state.value.phase)
+        assertEquals("Configure a transcription provider.", session.state.value.error)
+        session.cancel()
+    }
+
     @Test fun `media types and latest draft append match original TypeScript`() {
         val data=Json.parseToJsonElement(requireNotNull(javaClass.getResourceAsStream("/dictation-typescript-parity.json")).bufferedReader().use{it.readText()}).jsonObject
         for(row in data["formats"]!!.jsonArray) {

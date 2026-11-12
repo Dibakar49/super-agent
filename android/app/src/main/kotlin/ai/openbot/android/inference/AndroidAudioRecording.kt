@@ -53,7 +53,7 @@ class AndroidAudioRecording private constructor(context:Context,private val onEr
         started=false;output.delete();Unit
     }
     companion object {
-        suspend fun create(context:Context,onError:(Throwable)->Unit,onLimit:()->Unit):AudioRecording {
+        suspend fun create(context:Context,onError:(Throwable)->Unit,onLimit:()->Unit):AndroidAudioRecording {
             val recording=AndroidAudioRecording(context,onError,onLimit)
             try{return withContext(Dispatchers.IO){recording.start();recording}}
             catch(failure:Throwable){recording.cancel();throw failure}

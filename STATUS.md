@@ -21,7 +21,9 @@ scoped personal/observed memory, routines/WorkManager, goals and run history, MC
 connections/grants, original approval policy/rules, durable decisions/questions,
 file/image attachments, notifications/deep links, API providers and optional
 MediaPipe text inference. Voice dictation includes permission, bounded recording,
-transcription, cancellation/retry and separate encrypted credentials.
+transcription, cancellation/retry and separate encrypted credentials. The composer
+always offers dictation; unconfigured devices use Android 12+ on-device speech
+when available, with an actionable unsupported-device message otherwise.
 
 ## Missing or partial
 

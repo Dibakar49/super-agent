@@ -25,8 +25,11 @@ fun appendDictation(draft:String,transcript:String):String {
 enum class DictationPhase { IDLE,REQUESTING,RECORDING,TRANSCRIBING,ERROR }
 enum class DictationIntent { DRAFT,SEND }
 data class DictationState(val phase:DictationPhase=DictationPhase.IDLE,val seconds:Int=0,val error:String?=null,val canRetry:Boolean=false,val level:Float=0f)
-data class DictationAudio(val file:File,val mimeType:String="audio/mp4")
-interface AudioRecording { suspend fun finish():DictationAudio;fun cancel();fun level():Float=0f }
+sealed interface DictationInput
+data class DictationAudio(val file:File,val mimeType:String="audio/mp4"):DictationInput
+data class DictationText(val text:String):DictationInput
+class DictationUnavailableException(message:String):IllegalStateException(message)
+interface AudioRecording { suspend fun finish():DictationInput;fun cancel();fun level():Float=0f }
 
 /** Native equivalent of the original generation fence, retryable recording and finish intent. */
 class DictationSession(private val scope:CoroutineScope,
@@ -69,7 +72,7 @@ class DictationSession(private val scope:CoroutineScope,
                 }
             }
         }catch(failure:CancellationException){if(current==generation)cancel();throw failure}
-        catch(_:Exception){if(current==generation)mutable.value=DictationState(phase=DictationPhase.ERROR,error="Could not start recording. Check your microphone and try again.")}
+        catch(failure:Exception){if(current==generation)mutable.value=DictationState(phase=DictationPhase.ERROR,error=if(failure is DictationUnavailableException)failure.message else "Could not start recording. Check your microphone and try again.")}
     }
     suspend fun finish(target:DictationIntent=DictationIntent.DRAFT) {
         if(mutable.value.phase!=DictationPhase.RECORDING)return
@@ -81,10 +84,21 @@ class DictationSession(private val scope:CoroutineScope,
         mutable.value=mutable.value.copy(phase=DictationPhase.TRANSCRIBING)
         try {
             val result=active.finish()
-            if(current!=generation){result.file.delete();return}
-            recording=null;audio=result
-            require(result.file.length() in 1..MAX_DICTATION_BYTES.toLong()&&dictationExtension(result.mimeType)!=null){"Invalid recording."}
-            runTranscription(current)
+            if(current!=generation){(result as? DictationAudio)?.file?.delete();return}
+            recording=null
+            when(result) {
+                is DictationAudio->{
+                    audio=result
+                    require(result.file.length() in 1..MAX_DICTATION_BYTES.toLong()&&dictationExtension(result.mimeType)!=null){"Invalid recording."}
+                    runTranscription(current)
+                }
+                is DictationText->{
+                    val text=result.text.trim(::dictationWhitespace)
+                    require(text.isNotEmpty()&&text.length<=6000){"No usable speech was detected."}
+                    mutable.value=DictationState()
+                    onTranscript(text,intent)
+                }
+            }
         }catch(failure:CancellationException){if(current==generation)cancel();throw failure}
         catch(_:Exception){
             if(current!=generation)return

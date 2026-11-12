@@ -21,12 +21,12 @@ import ai.openbot.android.R
 
 /** The original composer's two rows, 16px corners and 12px inner padding. */
 @Composable internal fun SourceComposer(text: String, onChange: (String) -> Unit, onSend: () -> Unit,
-    enabled: Boolean, modifier: Modifier = Modifier, compact: Boolean = false, onStop:(()->Unit)?=null, stopping:Boolean=false,hasAttachments:Boolean=false,onAttach:(()->Unit)?=null,attachments:(@Composable ()->Unit)?=null,dictationEnabled:Boolean=false) {
+    enabled: Boolean, modifier: Modifier = Modifier, compact: Boolean = false, onStop:(()->Unit)?=null, stopping:Boolean=false,hasAttachments:Boolean=false,onAttach:(()->Unit)?=null,attachments:(@Composable ()->Unit)?=null) {
     val p = LocalOpenBotPalette.current
     val currentText by rememberUpdatedState(text)
     val currentChange by rememberUpdatedState(onChange)
     var dictatedSend by remember{mutableStateOf<String?>(null)}
-    val dictation=rememberDictation(dictationEnabled&&enabled){transcript,intent->
+    val dictation=rememberDictation(enabled){transcript,intent->
         val next=appendDictation(currentText,transcript)
         currentChange(next)
         if(intent==DictationIntent.SEND)dictatedSend=next
@@ -47,7 +47,7 @@ import ai.openbot.android.R
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End, verticalAlignment = Alignment.CenterVertically) {
                 onAttach?.let{attach->IconButton(onClick=attach,enabled=enabled&&!dictating,modifier=Modifier.size(28.dp)){TablerIcon(R.drawable.ic_plus,"Attach files",Modifier.size(18.dp))}}
                 Spacer(Modifier.weight(1f))
-                if(dictationEnabled&&!dictating)IconButton(onClick=dictation.start,enabled=enabled,modifier=Modifier.size(28.dp)){TablerIcon(R.drawable.ic_microphone,"Dictate a message",Modifier.size(16.dp))}
+                if(!dictating)IconButton(onClick=dictation.start,enabled=enabled,modifier=Modifier.size(28.dp)){TablerIcon(R.drawable.ic_microphone,"Dictate a message",Modifier.size(16.dp))}
                 if(dictating)Spacer(Modifier.size(28.dp))
                 else if(onStop!=null)IconButton(onClick=onStop,enabled=!stopping,modifier=Modifier.size(28.dp)) {
                     Box(Modifier.size(28.dp).background(p.foreground,CircleShape),contentAlignment=Alignment.Center) {

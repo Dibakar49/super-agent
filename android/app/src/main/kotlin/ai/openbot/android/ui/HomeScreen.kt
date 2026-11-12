@@ -28,7 +28,7 @@ import ai.openbot.core.firstConversationGreeting
                 Text(firstConversationGreeting(state.preferences.name,state.conversations.isEmpty()), style = MaterialTheme.typography.titleLarge, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
                 Spacer(Modifier.height(32.dp))
                 SourceComposer(state.homeDraft, { vm.setHomeDraft(it); picking = it.endsWith("@") },
-                    { bot?.let { vm.startConversation(state.homeDraft,it.id) } }, !state.busy && !state.attachmentsLoading && bot != null,dictationEnabled=state.dictationConfigured,hasAttachments=state.draftAttachments.isNotEmpty(),onAttach=attach,attachments={AttachmentStrip(state.draftAttachments,vm,removable=true,enabled=!state.busy)})
+                    { bot?.let { vm.startConversation(state.homeDraft,it.id) } }, !state.busy && !state.attachmentsLoading && bot != null,hasAttachments=state.draftAttachments.isNotEmpty(),onAttach=attach,attachments={AttachmentStrip(state.draftAttachments,vm,removable=true,enabled=!state.busy)})
                 Box {
                     DropdownMenu(picking, { picking = false }) {
                         state.bots.filterNot { it.paused }.forEach { option ->

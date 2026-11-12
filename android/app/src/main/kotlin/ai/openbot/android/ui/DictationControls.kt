@@ -35,8 +35,11 @@ internal data class DictationUi(val session:DictationSession,val state:Dictation
     val pending=remember{arrayOfNulls<CompletableDeferred<Boolean>>(1)}
     val permission=rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()){granted->pending[0]?.complete(granted)}
     val session=remember(context) {
-        val provider=TranscriptionProvider(TranscriptionSettingsStore(context))
+        val settings=TranscriptionSettingsStore(context)
+        val provider=TranscriptionProvider(settings)
         DictationSession(scope,record={onError,onLimit->
+            val useProvider=settings.configured()
+            if(!useProvider)OnDeviceSpeechRecording.requireAvailable(context)
             if(context.checkSelfPermission(Manifest.permission.RECORD_AUDIO)!=PackageManager.PERMISSION_GRANTED) {
                 val answer=CompletableDeferred<Boolean>();pending[0]=answer
                 try {
@@ -47,7 +50,8 @@ internal data class DictationUi(val session:DictationSession,val state:Dictation
                     }
                 }finally{if(pending[0]===answer)pending[0]=null}
             }
-            AndroidAudioRecording.create(context,onError,onLimit)
+            if(useProvider)AndroidAudioRecording.create(context,onError,onLimit)
+            else OnDeviceSpeechRecording.create(context,onError,onLimit)
         },transcribe=provider::transcribe,onTranscript={text,intent->delivered(text,intent)})
     }
     val state by session.state.collectAsState()

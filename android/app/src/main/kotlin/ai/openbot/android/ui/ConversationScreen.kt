@@ -66,7 +66,7 @@ import ai.openbot.core.*
                 else SelectionContainer{MarkdownBody(message.text)}
             }
         }
-        SourceComposer(text,{text=it},{if(question!=null)vm.answerQuestion(question.id,text){text=""} else vm.send(text){text=""}},!state.busy&&!state.attachmentsLoading&&bot?.paused==false&&(question!=null||state.messages.none{it.state in listOf(MessageState.WAITING,MessageState.GENERATING)}),compact=true,onStop=stop,stopping=state.stopping,dictationEnabled=state.dictationConfigured,hasAttachments=question==null&&state.draftAttachments.isNotEmpty(),onAttach=if(question==null)attach else null,attachments={if(question==null)AttachmentStrip(state.draftAttachments,vm,removable=true,enabled=!state.busy)})
+        SourceComposer(text,{text=it},{if(question!=null)vm.answerQuestion(question.id,text){text=""} else vm.send(text){text=""}},!state.busy&&!state.attachmentsLoading&&bot?.paused==false&&(question!=null||state.messages.none{it.state in listOf(MessageState.WAITING,MessageState.GENERATING)}),compact=true,onStop=stop,stopping=state.stopping,hasAttachments=question==null&&state.draftAttachments.isNotEmpty(),onAttach=if(question==null)attach else null,attachments={if(question==null)AttachmentStrip(state.draftAttachments,vm,removable=true,enabled=!state.busy)})
         Spacer(Modifier.height(4.dp))
     }
 }
