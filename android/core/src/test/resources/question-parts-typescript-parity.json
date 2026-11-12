@@ -1,0 +1,72 @@
+[
+  {
+    "parts": [
+      {
+        "header": "City",
+        "question": "Which city?"
+      }
+    ],
+    "selected": [
+      ""
+    ],
+    "typed": [
+      " Kolkata "
+    ],
+    "expected": "City: Kolkata"
+  },
+  {
+    "parts": [
+      {
+        "header": "City",
+        "question": "Which city?",
+        "options": [
+          "Kolkata",
+          "Delhi"
+        ]
+      }
+    ],
+    "selected": [
+      "Kolkata"
+    ],
+    "typed": [
+      "Central"
+    ],
+    "expected": "City: Kolkata, Central"
+  },
+  {
+    "parts": [
+      {
+        "header": "City",
+        "question": "Where?"
+      },
+      {
+        "header": "Day",
+        "question": "When?"
+      }
+    ],
+    "selected": [
+      "Delhi",
+      ""
+    ],
+    "typed": [
+      "",
+      "Saturday"
+    ],
+    "expected": "City: Delhi\nDay: Saturday"
+  },
+  {
+    "parts": [
+      {
+        "header": "नाम",
+        "question": "नाम?"
+      }
+    ],
+    "selected": [
+      ""
+    ],
+    "typed": [
+      " नमस्ते 😀 "
+    ],
+    "expected": "नाम: नमस्ते 😀"
+  }
+]

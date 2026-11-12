@@ -1,0 +1,107 @@
+[
+  {
+    "name": "create_routine",
+    "description": "Set up a standing instruction that you carry out on a schedule for the person you are talking to.\n\nWrite the `instruction` as the work of ONE firing, in the imperative, and do not restate the schedule\ninside it: `Append the current UTC time to the page \"Log\"`, not `Every 15 minutes, append the current\nUTC time to the page \"Log\"`. The schedule belongs in `cron`, and the instruction is handed to a turn\nthat has already fired on it — an instruction that describes a schedule reads as a request to set one\nup, and gets answered instead of carried out.\n\nThe schedule is a five-field cron expression, in the order `minute hour day-of-month month day-of-week`.\n`0 9 * * 1-5` is weekdays at nine in the morning. `30 18 * * *` is every day at half past six in the\nevening. `0 9 1 * *` is the first of the month at nine. A routine may run at most every 15 minutes;\nanything more frequent is refused.\n\nPass the person's IANA timezone (`America/New_York`, `Europe/Madrid`) whenever they speak in local\ntime, and `UTC` when they mean UTC. Left out, it is the person's own time zone when their browser\nsaid it for this conversation and UTC otherwise, so a schedule set without one may fire at a UTC hour\nrather than at theirs.\n\nThe routine posts its reply into a conversation. Leave `channelId` out and it posts into this\nconversation, the one you are being asked in. Pass a `channelId` only when the person asks for a\ndifferent conversation. Where there is no conversation here and you share more than one with this\nperson, you are given them by title and id: ask the person which one, offering each by its title,\nand pass the id they choose.\n\nWhen the person gives the routine a name (\"call it Morning briefing\", \"a daily routine called Inbox\nsweep\"), pass that name as `title`, in their words. The Routines page and your own page in OpenBot\nshow the routine by it. Pass a title only when the person named the routine, and never make one up.\nWithout one, a routine that runs one of your goals carries that goal's title, and any other is\nnamed by its instruction.\n\nTo run one of your goals on a schedule, pass the goal's id, from `create_goal` or `list_goals`, as\n`goalId`, and write the `instruction` as running it (`Run the goal \"Track OpenBot releases\"`). The\nroutine is then the goal's: the goal repeats, so none of its runs completes it, and the Bot's page lists\nthe two together. Leave `title` out unless the person named the routine.\n\nIt takes no owner and no Bot. The routine belongs to the person you are talking to and runs as you;\nboth are taken from the run itself, and there is no field for either.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "instruction": {
+          "type": "string",
+          "description": "The work of one firing, imperative, with no schedule restated in it: `Append the current UTC time to the page \"Log\"`."
+        },
+        "title": {
+          "type": "string",
+          "description": "The name the person gave the routine, in their words, such as `Morning briefing`. At most 100 characters. Omit it unless they named it; never make one up. Omitted, a routine that runs one of your goals carries the goal's title."
+        },
+        "goalId": {
+          "type": "string",
+          "description": "The id of the goal this routine runs, from `create_goal` or `list_goals`. Pass it whenever the routine is there to run one of your goals."
+        },
+        "cron": {
+          "type": "string",
+          "description": "Five fields: `minute hour day-of-month month day-of-week`. At most every 15 minutes."
+        },
+        "timezone": {
+          "type": "string",
+          "description": "The person's IANA timezone, such as `Europe/Madrid`, or `UTC`. Omitted: the person's own time zone when known, UTC otherwise."
+        },
+        "channelId": {
+          "type": "string",
+          "description": "The id of the conversation the reply is posted into. Omit it to post into this conversation."
+        }
+      },
+      "required": [
+        "instruction",
+        "cron"
+      ]
+    }
+  },
+  {
+    "name": "list_routines",
+    "description": "List the standing instructions this person has: each one's title when it has one, its schedule in\nwords, its timezone, the channel it posts into, when it next runs, how the last run went, and its id.\n\nTake the id from here before changing or deleting one. The id is for your routine tools only: never\nshow it to the person, who knows a routine by its title or its instruction. It lists only this\nperson's own routines.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "update_routine",
+    "description": "Change one of this person's routines: its title, its instruction, its schedule, its timezone, the\nchannel it posts into, or whether it is switched on.\n\nGive the id from `list_routines` and only the fields that change; anything left out stays as it is. A\nnew `cron` follows exactly the same five-field rules as `create_routine`, and a routine switched back\non is scheduled from now rather than from wherever it left off.\n\nA new `instruction` follows the same rule as `create_routine`'s: the work of one firing, imperative, and\ndo not restate the schedule inside it — `Append the current UTC time to the page \"Log\"`, not `Every 15\nminutes, append the current UTC time to the page \"Log\"`.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The routine's id, from `list_routines`."
+        },
+        "title": {
+          "type": "string",
+          "description": "A new name for the routine, in the person's words, such as `Morning briefing`. At most 100 characters."
+        },
+        "instruction": {
+          "type": "string",
+          "description": "A new instruction, replacing the old one entirely. The work of one firing, imperative, with no schedule restated in it."
+        },
+        "cron": {
+          "type": "string",
+          "description": "A new schedule. Five fields: `minute hour day-of-month month day-of-week`. At most every 15 minutes."
+        },
+        "timezone": {
+          "type": "string",
+          "description": "A new IANA timezone, such as `America/New_York`."
+        },
+        "goalId": {
+          "type": "string",
+          "description": "The id of the goal this routine runs from now on, from `list_goals`."
+        },
+        "channelId": {
+          "type": "string",
+          "description": "The id of a different conversation to post into. Must be one you and this person share."
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "False switches it off without deleting it; true switches it back on."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "delete_routine",
+    "description": "Delete one of this person's routines, by the id from `list_routines`. It stops for good and there is\nnothing to undo. When they might want it back, switch it off with `update_routine` instead.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The routine's id, from `list_routines`."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  }
+]

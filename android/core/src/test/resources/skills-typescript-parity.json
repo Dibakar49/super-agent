@@ -1,0 +1,42 @@
+[
+  {
+    "text": "/standup do this",
+    "command": "standup",
+    "guidance": "The person picked the skill \"Standup notes\" (/standup) for their latest message. Follow its instructions for this reply:\n\nSummarise the work."
+  },
+  {
+    "text": "  /standup\\nDo this",
+    "command": null,
+    "guidance": null
+  },
+  {
+    "text": "please /standup",
+    "command": null,
+    "guidance": null
+  },
+  {
+    "text": "/standup, do this",
+    "command": null,
+    "guidance": null
+  },
+  {
+    "text": "/standup-other",
+    "command": "standup-other",
+    "guidance": null
+  },
+  {
+    "text": "/STANDUP",
+    "command": null,
+    "guidance": null
+  },
+  {
+    "text": "/a--b",
+    "command": null,
+    "guidance": null
+  },
+  {
+    "text": "/standup",
+    "command": "standup",
+    "guidance": "The person picked the skill \"Standup notes\" (/standup) for their latest message. Follow its instructions for this reply:\n\nSummarise the work."
+  }
+]

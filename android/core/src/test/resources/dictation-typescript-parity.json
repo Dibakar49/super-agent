@@ -1,0 +1,201 @@
+{
+  "formats": [
+    {
+      "type": "audio/webm",
+      "normalized": "audio/webm",
+      "extension": "webm"
+    },
+    {
+      "type": "audio/webm; codecs=opus",
+      "normalized": "audio/webm",
+      "extension": "webm"
+    },
+    {
+      "type": "VIDEO/MP4; codecs=aac",
+      "normalized": "audio/mp4",
+      "extension": "mp4"
+    },
+    {
+      "type": " audio/x-wav ",
+      "normalized": "audio/wav",
+      "extension": "wav"
+    },
+    {
+      "type": "audio/mpeg",
+      "normalized": "audio/mpeg",
+      "extension": null
+    },
+    {
+      "type": "text/plain",
+      "normalized": "text/plain",
+      "extension": null
+    },
+    {
+      "type": "audio/wav",
+      "normalized": "audio/wav",
+      "extension": "wav"
+    },
+    {
+      "type": "constructor",
+      "normalized": "constructor",
+      "extension": null
+    },
+    {
+      "type": "__proto__",
+      "normalized": "__proto__",
+      "extension": null
+    },
+    {
+      "type": "",
+      "normalized": "",
+      "extension": null
+    },
+    {
+      "type": "video/webm",
+      "normalized": "audio/webm",
+      "extension": "webm"
+    }
+  ],
+  "drafts": [
+    {
+      "draft": "",
+      "transcript": "",
+      "expected": ""
+    },
+    {
+      "draft": "",
+      "transcript": " words ",
+      "expected": "words"
+    },
+    {
+      "draft": "",
+      "transcript": " 😀 ",
+      "expected": "😀"
+    },
+    {
+      "draft": "",
+      "transcript": "﻿spoken﻿",
+      "expected": "spoken"
+    },
+    {
+      "draft": "Hello",
+      "transcript": "",
+      "expected": "Hello"
+    },
+    {
+      "draft": "Hello",
+      "transcript": " words ",
+      "expected": "Hello words"
+    },
+    {
+      "draft": "Hello",
+      "transcript": " 😀 ",
+      "expected": "Hello 😀"
+    },
+    {
+      "draft": "Hello",
+      "transcript": "﻿spoken﻿",
+      "expected": "Hello spoken"
+    },
+    {
+      "draft": "Hello ",
+      "transcript": "",
+      "expected": "Hello "
+    },
+    {
+      "draft": "Hello ",
+      "transcript": " words ",
+      "expected": "Hello words"
+    },
+    {
+      "draft": "Hello ",
+      "transcript": " 😀 ",
+      "expected": "Hello 😀"
+    },
+    {
+      "draft": "Hello ",
+      "transcript": "﻿spoken﻿",
+      "expected": "Hello spoken"
+    },
+    {
+      "draft": "Hello\n",
+      "transcript": "",
+      "expected": "Hello\n"
+    },
+    {
+      "draft": "Hello\n",
+      "transcript": " words ",
+      "expected": "Hello\nwords"
+    },
+    {
+      "draft": "Hello\n",
+      "transcript": " 😀 ",
+      "expected": "Hello\n😀"
+    },
+    {
+      "draft": "Hello\n",
+      "transcript": "﻿spoken﻿",
+      "expected": "Hello\nspoken"
+    },
+    {
+      "draft": "Hello ",
+      "transcript": "",
+      "expected": "Hello "
+    },
+    {
+      "draft": "Hello ",
+      "transcript": " words ",
+      "expected": "Hello words"
+    },
+    {
+      "draft": "Hello ",
+      "transcript": " 😀 ",
+      "expected": "Hello 😀"
+    },
+    {
+      "draft": "Hello ",
+      "transcript": "﻿spoken﻿",
+      "expected": "Hello spoken"
+    },
+    {
+      "draft": "Hello﻿",
+      "transcript": "",
+      "expected": "Hello﻿"
+    },
+    {
+      "draft": "Hello﻿",
+      "transcript": " words ",
+      "expected": "Hello﻿words"
+    },
+    {
+      "draft": "Hello﻿",
+      "transcript": " 😀 ",
+      "expected": "Hello﻿😀"
+    },
+    {
+      "draft": "Hello﻿",
+      "transcript": "﻿spoken﻿",
+      "expected": "Hello﻿spoken"
+    },
+    {
+      "draft": "Hello\u001c",
+      "transcript": "",
+      "expected": "Hello\u001c"
+    },
+    {
+      "draft": "Hello\u001c",
+      "transcript": " words ",
+      "expected": "Hello\u001c words"
+    },
+    {
+      "draft": "Hello\u001c",
+      "transcript": " 😀 ",
+      "expected": "Hello\u001c 😀"
+    },
+    {
+      "draft": "Hello\u001c",
+      "transcript": "﻿spoken﻿",
+      "expected": "Hello\u001c spoken"
+    }
+  ]
+}

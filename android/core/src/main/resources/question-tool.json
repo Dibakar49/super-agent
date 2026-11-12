@@ -1,0 +1,60 @@
+{
+  "name": "ask_person",
+  "description": "Put a question to a person when the work needs judgement you do not have: a decision only they can make, a fact only they know, permission you do not hold. Prefer this to guessing, and prefer it to asking another Bot when no other Bot could settle it either. Say what you need and why, then stop and wait for their answer. Put each decision in `parts`, one entry each: one decision is a single entry, and several are separate entries rather than numbered inside one sentence. `options` is optional: give it when you can name the likely answers, and leave it out when the person types the answer, such as a city, a name or a date.",
+  "inputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "question": {
+        "type": "string",
+        "description": "The question you need a person to answer, in one sentence"
+      },
+      "why": {
+        "description": "Why this needs a person rather than you: what you cannot settle on your own",
+        "type": "string"
+      },
+      "parts": {
+        "description": "The decisions you need, one entry per decision, with `options` when you can name the likely answers. A single decision is one entry. With several, `question` sums them up in a sentence",
+        "minItems": 1,
+        "maxItems": 6,
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "header": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40,
+              "description": "A short label for this decision, two or three words"
+            },
+            "question": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500,
+              "description": "This one decision, as a question"
+            },
+            "options": {
+              "description": "Optional. The likely answers, when you can name them. Leave this out for an answer the person types, such as a city, a name or a date",
+              "maxItems": 6,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              }
+            }
+          },
+          "required": [
+            "header",
+            "question"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "question"
+    ],
+    "additionalProperties": false
+  }
+}

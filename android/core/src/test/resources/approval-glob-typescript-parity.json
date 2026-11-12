@@ -1,0 +1,47 @@
+[
+  {
+    "pattern": "*",
+    "value": "a\nb",
+    "matches": true
+  },
+  {
+    "pattern": "foo",
+    "value": "foo\n",
+    "matches": false
+  },
+  {
+    "pattern": "a?",
+    "value": "a?",
+    "matches": true
+  },
+  {
+    "pattern": "a?",
+    "value": "ab",
+    "matches": false
+  },
+  {
+    "pattern": "a[b]",
+    "value": "a[b]",
+    "matches": true
+  },
+  {
+    "pattern": "a*b",
+    "value": "a\nb",
+    "matches": true
+  },
+  {
+    "pattern": "*",
+    "value": "",
+    "matches": true
+  },
+  {
+    "pattern": "a\\b",
+    "value": "a\\b",
+    "matches": true
+  },
+  {
+    "pattern": "a**b",
+    "value": "ab",
+    "matches": true
+  }
+]

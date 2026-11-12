@@ -1,0 +1,40 @@
+{
+  "threads": [
+    {
+      "parent": "55569917-dab5-8e00-871d-f32189296876",
+      "call": "call_Lo8pMYCXoxGTh7qG1TKwnUMB",
+      "expected": "55569917-dab5-85b7-81b6-84d597211f6e"
+    },
+    {
+      "parent": "not-a-uuid",
+      "call": "call_other",
+      "expected": "2a969428-b2f7-80ad-a99c-9f76f2bcc629"
+    }
+  ],
+  "outcomes": [
+    {
+      "input": "The person declined this action when you asked for their approval, so it was not done. This was their decision, not a policy or a boundary. Do not try this action, or anything equivalent, again in this conversation unless the person asks you to in words; tell them you did not do it because they declined.",
+      "expected": "You declined it."
+    },
+    {
+      "input": "The person did this themselves. Do not repeat it; continue from what they have done.",
+      "expected": "You did it yourself."
+    },
+    {
+      "input": "This action was started but its outcome is unknown. It was not repeated. Check whether it happened before asking the person again.",
+      "expected": "It started, but OpenBot can't tell whether it finished. It wasn't run again."
+    },
+    {
+      "input": "Not done: this action could not be carried out (Server failed (at example.com. Retry later). Details). Check whether it happened before asking the person again.",
+      "expected": "Not done: this action could not be carried out (Server failed (at example.com. Retry later). Details)."
+    },
+    {
+      "input": "Not done: The allowing rule was removed. Ask the person again if it is still needed.",
+      "expected": "Not done: The allowing rule was removed."
+    },
+    {
+      "input": "Ordinary answer.",
+      "expected": "Ordinary answer."
+    }
+  ]
+}

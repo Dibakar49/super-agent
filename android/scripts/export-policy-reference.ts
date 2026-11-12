@@ -1,0 +1,13 @@
+import {readFileSync,writeFileSync,unlinkSync} from 'node:fs';
+const root=process.env.OPENBOT_FIXTURE_ROOT!;
+const scratch=process.env.OPENBOT_FIXTURE_TMP!;
+let source=readFileSync(root+'/server/src/approvals/policy.ts','utf8');
+source=source.replace('from "zod"', 'from '+JSON.stringify(root+'/server/node_modules/zod')); 
+const acts=source.indexOf('function actsBy('), actsReturn=source.indexOf('return {',acts);
+source=source.slice(0,actsReturn)+source.slice(actsReturn).replace('return {','return { _regex: pattern.source, _flags:pattern.flags, _kind:"actsBy",');
+const others=source.indexOf('function toOthers('), othersReturn=source.indexOf('return {',others);
+source=source.slice(0,othersReturn)+source.slice(othersReturn).replace('return {','return { _regex:(rule as any)._regex, _flags:(rule as any)._flags, _kind:"toOthers", _innerKind:(rule as any)._kind,');
+source+='\nexport const nativePolicyData={firstVerb:FIRST_VERB.source,notSending:NOT_SENDING.source,partOfSomething:PART_OF_SOMETHING_ELSE.source,ownTools:OWN_TOOLS.source,requirements:SAFETY_REQUIREMENTS.map(x=>({id:x.id,reason:x.reason,pattern:x.pattern.source,flags:x.pattern.flags,tool:x.tool?{pattern:x.tool.source,flags:x.tool.flags}:null})),consequential:CONSEQUENTIAL.map(x=>({id:x.id,reason:x.reason,pattern:(x.tool as any)._regex??(x.tool as RegExp).source,flags:(x.tool as any)._flags??(x.tool as RegExp).flags,kind:(x.tool as any)._kind??"regexp",innerKind:(x.tool as any)._innerKind??null}))};\n';
+const path=scratch+'/native-policy-reference.ts';writeFileSync(path,source);
+const {nativePolicyData}=await import(path);
+writeFileSync(root+'/android/core/src/main/resources/approval-policy-patterns.json',JSON.stringify(nativePolicyData,null,2)+'\n');

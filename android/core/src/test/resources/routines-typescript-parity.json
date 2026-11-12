@@ -1,0 +1,709 @@
+[
+  {
+    "cron": "30 9 * * *",
+    "timezone": "UTC",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-01T09:30:00.000Z",
+    "description": "Every day at 09:30"
+  },
+  {
+    "cron": "30 9 * * *",
+    "timezone": "America/New_York",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-07T14:30:00.000Z",
+    "description": "Every day at 09:30"
+  },
+  {
+    "cron": "30 9 * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-10-31T04:00:00.000Z",
+    "description": "Every day at 09:30"
+  },
+  {
+    "cron": "30 9 * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-01T08:30:00.000Z",
+    "description": "Every day at 09:30"
+  },
+  {
+    "cron": "0 9 * * 1-5",
+    "timezone": "UTC",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-09T09:00:00.000Z",
+    "description": "Weekdays at 09:00"
+  },
+  {
+    "cron": "0 9 * * 1-5",
+    "timezone": "America/New_York",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-11-02T14:00:00.000Z",
+    "description": "Weekdays at 09:00"
+  },
+  {
+    "cron": "0 9 * * 1-5",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-01T03:30:00.000Z",
+    "description": "Weekdays at 09:00"
+  },
+  {
+    "cron": "0 9 * * 1-5",
+    "timezone": "Europe/Madrid",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-09T08:00:00.000Z",
+    "description": "Weekdays at 09:00"
+  },
+  {
+    "cron": "0 9 * * 0",
+    "timezone": "UTC",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-11-01T09:00:00.000Z",
+    "description": "Sundays at 09:00"
+  },
+  {
+    "cron": "0 9 * * 0",
+    "timezone": "America/New_York",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-04T14:00:00.000Z",
+    "description": "Sundays at 09:00"
+  },
+  {
+    "cron": "0 9 * * 0",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-08T03:30:00.000Z",
+    "description": "Sundays at 09:00"
+  },
+  {
+    "cron": "0 9 * * 0",
+    "timezone": "Europe/Madrid",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-11-01T08:00:00.000Z",
+    "description": "Sundays at 09:00"
+  },
+  {
+    "cron": "0 9 * * 7",
+    "timezone": "UTC",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-04T09:00:00.000Z",
+    "description": "Sundays at 09:00"
+  },
+  {
+    "cron": "0 9 * * 7",
+    "timezone": "America/New_York",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-08T13:00:00.000Z",
+    "description": "Sundays at 09:00"
+  },
+  {
+    "cron": "0 9 * * 7",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-11-01T03:30:00.000Z",
+    "description": "Sundays at 09:00"
+  },
+  {
+    "cron": "0 9 * * 7",
+    "timezone": "Europe/Madrid",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-04T08:00:00.000Z",
+    "description": "Sundays at 09:00"
+  },
+  {
+    "cron": "0,30 9 * * *",
+    "timezone": "UTC",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-07T09:00:00.000Z",
+    "description": "Every day at 09:00 and 09:30"
+  },
+  {
+    "cron": "0,30 9 * * *",
+    "timezone": "America/New_York",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-10-31T13:00:00.000Z",
+    "description": "Every day at 09:00 and 09:30"
+  },
+  {
+    "cron": "0,30 9 * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-01T03:30:00.000Z",
+    "description": "Every day at 09:00 and 09:30"
+  },
+  {
+    "cron": "0,30 9 * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-07T08:00:00.000Z",
+    "description": "Every day at 09:00 and 09:30"
+  },
+  {
+    "cron": "0,30,0 9 * * *",
+    "timezone": "UTC",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-10-31T09:00:00.000Z",
+    "description": "Every day at 09:00 and 09:30"
+  },
+  {
+    "cron": "0,30,0 9 * * *",
+    "timezone": "America/New_York",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-01T14:00:00.000Z",
+    "description": "Every day at 09:00 and 09:30"
+  },
+  {
+    "cron": "0,30,0 9 * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-07T03:30:00.000Z",
+    "description": "Every day at 09:00 and 09:30"
+  },
+  {
+    "cron": "0,30,0 9 * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-10-31T08:00:00.000Z",
+    "description": "Every day at 09:00 and 09:30"
+  },
+  {
+    "cron": "*/20 * * * *",
+    "timezone": "UTC",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-01T00:20:00.000Z",
+    "description": "Every 20 minutes"
+  },
+  {
+    "cron": "*/20 * * * *",
+    "timezone": "America/New_York",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-07T00:20:00.000Z",
+    "description": "Every 20 minutes"
+  },
+  {
+    "cron": "*/20 * * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-10-31T00:10:00.000Z",
+    "description": "Every 20 minutes"
+  },
+  {
+    "cron": "*/20 * * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-01T00:20:00.000Z",
+    "description": "Every 20 minutes"
+  },
+  {
+    "cron": "*/15 * * * *",
+    "timezone": "UTC",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-07T00:15:00.000Z",
+    "description": "Every 15 minutes"
+  },
+  {
+    "cron": "*/15 * * * *",
+    "timezone": "America/New_York",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-10-31T00:15:00.000Z",
+    "description": "Every 15 minutes"
+  },
+  {
+    "cron": "*/15 * * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-01T00:15:00.000Z",
+    "description": "Every 15 minutes"
+  },
+  {
+    "cron": "*/15 * * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-07T00:15:00.000Z",
+    "description": "Every 15 minutes"
+  },
+  {
+    "cron": "*/40 * * * *",
+    "timezone": "UTC",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-10-31T00:40:00.000Z",
+    "description": "*/40 * * * *"
+  },
+  {
+    "cron": "*/40 * * * *",
+    "timezone": "America/New_York",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-01T00:40:00.000Z",
+    "description": "*/40 * * * *"
+  },
+  {
+    "cron": "*/40 * * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-07T00:10:00.000Z",
+    "description": "*/40 * * * *"
+  },
+  {
+    "cron": "*/40 * * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-10-31T00:40:00.000Z",
+    "description": "*/40 * * * *"
+  },
+  {
+    "cron": "0 9 29 2 *",
+    "timezone": "UTC",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2028-02-29T09:00:00.000Z",
+    "description": "0 9 29 2 *"
+  },
+  {
+    "cron": "0 9 29 2 *",
+    "timezone": "America/New_York",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2028-02-29T14:00:00.000Z",
+    "description": "0 9 29 2 *"
+  },
+  {
+    "cron": "0 9 29 2 *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2028-02-29T03:30:00.000Z",
+    "description": "0 9 29 2 *"
+  },
+  {
+    "cron": "0 9 29 2 *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2028-02-29T08:00:00.000Z",
+    "description": "0 9 29 2 *"
+  },
+  {
+    "cron": "* * * * *",
+    "timezone": "UTC",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "* * * * *"
+  },
+  {
+    "cron": "* * * * *",
+    "timezone": "America/New_York",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "* * * * *"
+  },
+  {
+    "cron": "* * * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "* * * * *"
+  },
+  {
+    "cron": "* * * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "* * * * *"
+  },
+  {
+    "cron": "*/5 * * * *",
+    "timezone": "UTC",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "Every 5 minutes"
+  },
+  {
+    "cron": "*/5 * * * *",
+    "timezone": "America/New_York",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "Every 5 minutes"
+  },
+  {
+    "cron": "*/5 * * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "Every 5 minutes"
+  },
+  {
+    "cron": "*/5 * * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "Every 5 minutes"
+  },
+  {
+    "cron": "45,55 8 * * *",
+    "timezone": "UTC",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "Every day at 08:45 and 08:55"
+  },
+  {
+    "cron": "45,55 8 * * *",
+    "timezone": "America/New_York",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "Every day at 08:45 and 08:55"
+  },
+  {
+    "cron": "45,55 8 * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "Every day at 08:45 and 08:55"
+  },
+  {
+    "cron": "45,55 8 * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "Every day at 08:45 and 08:55"
+  },
+  {
+    "cron": "0,10 9 25 12 *",
+    "timezone": "UTC",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "0,10 9 25 12 *"
+  },
+  {
+    "cron": "0,10 9 25 12 *",
+    "timezone": "America/New_York",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "0,10 9 25 12 *"
+  },
+  {
+    "cron": "0,10 9 25 12 *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "0,10 9 25 12 *"
+  },
+  {
+    "cron": "0,10 9 25 12 *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "0,10 9 25 12 *"
+  },
+  {
+    "cron": "0,50 0,23 * * *",
+    "timezone": "UTC",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "0,50 0,23 * * *"
+  },
+  {
+    "cron": "0,50 0,23 * * *",
+    "timezone": "America/New_York",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "0,50 0,23 * * *"
+  },
+  {
+    "cron": "0,50 0,23 * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "0,50 0,23 * * *"
+  },
+  {
+    "cron": "0,50 0,23 * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "Routines may run at most every 15 minutes.",
+    "description": "0,50 0,23 * * *"
+  },
+  {
+    "cron": "0 9 * JAN MON",
+    "timezone": "UTC",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-05T09:00:00.000Z",
+    "description": "0 9 * JAN MON"
+  },
+  {
+    "cron": "0 9 * JAN MON",
+    "timezone": "America/New_York",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2027-01-04T14:00:00.000Z",
+    "description": "0 9 * JAN MON"
+  },
+  {
+    "cron": "0 9 * JAN MON",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2027-01-04T03:30:00.000Z",
+    "description": "0 9 * JAN MON"
+  },
+  {
+    "cron": "0 9 * JAN MON",
+    "timezone": "Europe/Madrid",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-05T08:00:00.000Z",
+    "description": "0 9 * JAN MON"
+  },
+  {
+    "cron": "0 9 L * *",
+    "timezone": "UTC",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-31T09:00:00.000Z",
+    "description": "0 9 L * *"
+  },
+  {
+    "cron": "0 9 L * *",
+    "timezone": "America/New_York",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-10-31T13:00:00.000Z",
+    "description": "0 9 L * *"
+  },
+  {
+    "cron": "0 9 L * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-31T03:30:00.000Z",
+    "description": "0 9 L * *"
+  },
+  {
+    "cron": "0 9 L * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-31T07:00:00.000Z",
+    "description": "0 9 L * *"
+  },
+  {
+    "cron": "0 9 * * 5L",
+    "timezone": "UTC",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-11-27T09:00:00.000Z",
+    "description": "0 9 * * 5L"
+  },
+  {
+    "cron": "0 9 * * 5L",
+    "timezone": "America/New_York",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-30T14:00:00.000Z",
+    "description": "0 9 * * 5L"
+  },
+  {
+    "cron": "0 9 * * 5L",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-27T03:30:00.000Z",
+    "description": "0 9 * * 5L"
+  },
+  {
+    "cron": "0 9 * * 5L",
+    "timezone": "Europe/Madrid",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-11-27T08:00:00.000Z",
+    "description": "0 9 * * 5L"
+  },
+  {
+    "cron": "0 9 * * 1#2",
+    "timezone": "UTC",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-12T09:00:00.000Z",
+    "description": "0 9 * * 1#2"
+  },
+  {
+    "cron": "0 9 * * 1#2",
+    "timezone": "America/New_York",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-09T13:00:00.000Z",
+    "description": "0 9 * * 1#2"
+  },
+  {
+    "cron": "0 9 * * 1#2",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-11-09T03:30:00.000Z",
+    "description": "0 9 * * 1#2"
+  },
+  {
+    "cron": "0 9 * * 1#2",
+    "timezone": "Europe/Madrid",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-12T08:00:00.000Z",
+    "description": "0 9 * * 1#2"
+  },
+  {
+    "cron": "0 9 1 * 1",
+    "timezone": "UTC",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-09T09:00:00.000Z",
+    "description": "0 9 1 * 1"
+  },
+  {
+    "cron": "0 9 1 * 1",
+    "timezone": "America/New_York",
+    "after": "2026-10-31T00:00:00Z",
+    "next": "2026-11-01T14:00:00.000Z",
+    "description": "0 9 1 * 1"
+  },
+  {
+    "cron": "0 9 1 * 1",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-01-01T00:00:00Z",
+    "next": "2026-01-01T03:30:00.000Z",
+    "description": "0 9 1 * 1"
+  },
+  {
+    "cron": "0 9 1 * 1",
+    "timezone": "Europe/Madrid",
+    "after": "2026-03-07T00:00:00Z",
+    "next": "2026-03-09T08:00:00.000Z",
+    "description": "0 9 1 * 1"
+  },
+  {
+    "cron": "0 9 * *",
+    "timezone": "UTC",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 9 * *"
+  },
+  {
+    "cron": "0 9 * *",
+    "timezone": "America/New_York",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 9 * *"
+  },
+  {
+    "cron": "0 9 * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 9 * *"
+  },
+  {
+    "cron": "0 9 * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 9 * *"
+  },
+  {
+    "cron": "0 0 9 * * *",
+    "timezone": "UTC",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 0 9 * * *"
+  },
+  {
+    "cron": "0 0 9 * * *",
+    "timezone": "America/New_York",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 0 9 * * *"
+  },
+  {
+    "cron": "0 0 9 * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 0 9 * * *"
+  },
+  {
+    "cron": "0 0 9 * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 0 9 * * *"
+  },
+  {
+    "cron": "not a cron expression",
+    "timezone": "UTC",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "not a cron expression"
+  },
+  {
+    "cron": "not a cron expression",
+    "timezone": "America/New_York",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "not a cron expression"
+  },
+  {
+    "cron": "not a cron expression",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "not a cron expression"
+  },
+  {
+    "cron": "not a cron expression",
+    "timezone": "Europe/Madrid",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "not a cron expression"
+  },
+  {
+    "cron": "0 25 * * *",
+    "timezone": "UTC",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 25 * * *"
+  },
+  {
+    "cron": "0 25 * * *",
+    "timezone": "America/New_York",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 25 * * *"
+  },
+  {
+    "cron": "0 25 * * *",
+    "timezone": "Asia/Calcutta",
+    "after": "2026-03-07T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 25 * * *"
+  },
+  {
+    "cron": "0 25 * * *",
+    "timezone": "Europe/Madrid",
+    "after": "2026-10-31T00:00:00Z",
+    "error": "That schedule could not be read.",
+    "description": "0 25 * * *"
+  },
+  {
+    "cron": "30 2 * * *",
+    "timezone": "America/New_York",
+    "after": "2026-03-08T05:00:00Z",
+    "next": "2026-03-08T07:30:00.000Z",
+    "description": "Every day at 02:30"
+  },
+  {
+    "cron": "30 1 * * *",
+    "timezone": "America/New_York",
+    "after": "2026-11-01T05:45:00Z",
+    "next": "2026-11-02T06:30:00.000Z",
+    "description": "Every day at 01:30"
+  },
+  {
+    "cron": "30 1 * * *",
+    "timezone": "America/New_York",
+    "after": "2026-11-01T06:15:00Z",
+    "next": "2026-11-01T06:30:00.000Z",
+    "description": "Every day at 01:30"
+  },
+  {
+    "cron": "*/15 * * * *",
+    "timezone": "America/New_York",
+    "after": "2026-11-01T05:45:00Z",
+    "next": "2026-11-01T06:00:00.000Z",
+    "description": "Every 15 minutes"
+  },
+  {
+    "cron": "0 9 * * *",
+    "timezone": "Wrong/Zone",
+    "after": "2026-01-01T00:00:00Z",
+    "error": "That is not a timezone I know.",
+    "description": "Every day at 09:00"
+  }
+]

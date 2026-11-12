@@ -1,0 +1,11 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+const root=process.env.OPENBOT_FIXTURE_ROOT!;
+const scratch=process.env.OPENBOT_FIXTURE_TMP!;
+const types=readFileSync(root+'/server/src/responsibilities/types.ts','utf8');
+const chat=readFileSync(root+'/server/src/responsibilities/chat-tools.ts','utf8');
+const sources=types.slice(types.indexOf('export const responsibilitySources'),types.indexOf('] as const;')+11);
+const start=chat.indexOf('const goalFields =');const end=chat.indexOf('\nexport const GOAL_WRITE_TOOLS',start);
+const path=scratch+'/original-goal-tools.ts';
+writeFileSync(path,sources+'\n'+chat.slice(start,end));
+const {GOAL_TOOLS}=await import(path);
+writeFileSync(root+'/android/core/src/main/resources/goal-tools.json',JSON.stringify(GOAL_TOOLS,null,2)+'\n');

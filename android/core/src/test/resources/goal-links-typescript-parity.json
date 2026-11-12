@@ -1,0 +1,158 @@
+[
+  {
+    "routine": {
+      "goalId": "goal-id",
+      "goalByTitle": false,
+      "instruction": "Work"
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": true
+  },
+  {
+    "routine": {
+      "goalId": "other",
+      "goalByTitle": true,
+      "instruction": "Run goal-id"
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": false
+  },
+  {
+    "routine": {
+      "goalId": null,
+      "goalByTitle": false,
+      "instruction": "Run goal-id"
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": false
+  },
+  {
+    "routine": {
+      "goalId": null,
+      "goalByTitle": true,
+      "instruction": "Run goal-id"
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": true
+  },
+  {
+    "routine": {
+      "goalId": null,
+      "goalByTitle": true,
+      "instruction": "Run the goal \"Track OpenBot releases\""
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": true
+  },
+  {
+    "routine": {
+      "goalId": null,
+      "goalByTitle": true,
+      "instruction": "Run the goal “Track OpenBot releases”"
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": true
+  },
+  {
+    "routine": {
+      "goalId": null,
+      "goalByTitle": true,
+      "instruction": "Run the goal 'Track OpenBot releases'"
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": true
+  },
+  {
+    "routine": {
+      "goalId": null,
+      "goalByTitle": true,
+      "instruction": "Run the goal ‘Track OpenBot releases’"
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": true
+  },
+  {
+    "routine": {
+      "goalId": null,
+      "goalByTitle": true,
+      "instruction": "Run the goal «Track OpenBot releases»"
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": true
+  },
+  {
+    "routine": {
+      "goalId": null,
+      "goalByTitle": true,
+      "instruction": "Run the goal `Track OpenBot releases`"
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": true
+  },
+  {
+    "routine": {
+      "goalId": null,
+      "goalByTitle": true,
+      "instruction": "Run the goal Track OpenBot releases"
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": false
+  },
+  {
+    "routine": {
+      "goalId": null,
+      "goalByTitle": true,
+      "instruction": "Run the goal \"Track OpenBot\""
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": false
+  },
+  {
+    "routine": {
+      "goalId": null,
+      "goalByTitle": true,
+      "instruction": "Run the goal \"track openbot releases\""
+    },
+    "goal": {
+      "id": "goal-id",
+      "title": "Track OpenBot releases"
+    },
+    "matches": false
+  }
+]

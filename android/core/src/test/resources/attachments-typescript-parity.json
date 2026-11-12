@@ -1,0 +1,3282 @@
+[
+  {
+    "bytes": [],
+    "claim": "",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [],
+    "claim": "text/csv",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [],
+    "claim": "application/json",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [],
+    "claim": "text/markdown",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [],
+    "claim": "image/png",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [],
+    "claim": "image/jpeg",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [],
+    "claim": "image/svg+xml",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [],
+    "claim": "image/heic",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [],
+    "claim": "text/html",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [],
+    "claim": "application/pdf",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [],
+    "claim": "application/octet-stream",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [],
+    "claim": "binary/octet-stream",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [],
+    "claim": "application/unknown",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [],
+    "claim": "application/force-download",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [],
+    "claim": "not-a-type",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "text/csv",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "application/json",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "text/markdown",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "image/png",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "image/jpeg",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "image/heic",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "text/html",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "application/pdf",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "application/octet-stream",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "application/unknown",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "application/force-download",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      137,
+      80,
+      78,
+      71
+    ],
+    "claim": "not-a-type",
+    "mime": "image/png",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "text/csv",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "application/json",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "text/markdown",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "image/png",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "image/jpeg",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "image/heic",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "text/html",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "application/pdf",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "application/octet-stream",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "application/unknown",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "application/force-download",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      255,
+      216,
+      255
+    ],
+    "claim": "not-a-type",
+    "mime": "image/jpeg",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "text/csv",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "application/json",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "text/markdown",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "image/png",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "image/jpeg",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "image/heic",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "text/html",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "application/pdf",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "application/octet-stream",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "application/unknown",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "application/force-download",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      71,
+      73,
+      70,
+      56
+    ],
+    "claim": "not-a-type",
+    "mime": "image/gif",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "text/csv",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "application/json",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "text/markdown",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "image/png",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "image/jpeg",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "image/heic",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "text/html",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "application/pdf",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "application/octet-stream",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "application/unknown",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "application/force-download",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      82,
+      73,
+      70,
+      70,
+      0,
+      0,
+      0,
+      0,
+      87,
+      69,
+      66,
+      80
+    ],
+    "claim": "not-a-type",
+    "mime": "image/webp",
+    "kind": "image",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "text/csv",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "application/json",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "text/markdown",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "image/png",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "image/jpeg",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/svg+xml",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "image/heic",
+    "mime": "image/heic",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "text/html",
+    "mime": "text/html",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "application/pdf",
+    "mime": "application/pdf",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "application/octet-stream",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "application/unknown",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "application/force-download",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      255,
+      0,
+      128
+    ],
+    "claim": "not-a-type",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "text/csv",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "application/json",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "text/markdown",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "image/png",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "image/jpeg",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/svg+xml",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "image/heic",
+    "mime": "image/heic",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "text/html",
+    "mime": "text/html",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "application/pdf",
+    "mime": "application/pdf",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "application/octet-stream",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "application/unknown",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "application/force-download",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      195,
+      40
+    ],
+    "claim": "not-a-type",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "text/csv",
+    "mime": "text/csv",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "application/json",
+    "mime": "application/json",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "text/markdown",
+    "mime": "text/markdown",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "image/png",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "image/jpeg",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/svg+xml",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "image/heic",
+    "mime": "image/heic",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "text/html",
+    "mime": "text/html",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "application/pdf",
+    "mime": "application/pdf",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "application/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "application/unknown",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "application/force-download",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      104,
+      101,
+      108,
+      108,
+      111
+    ],
+    "claim": "not-a-type",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "text/csv",
+    "mime": "text/csv",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "application/json",
+    "mime": "application/json",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "text/markdown",
+    "mime": "text/markdown",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "image/png",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "image/jpeg",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/svg+xml",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "image/heic",
+    "mime": "image/heic",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "text/html",
+    "mime": "text/html",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "application/pdf",
+    "mime": "application/pdf",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "application/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "application/unknown",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "application/force-download",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      60,
+      115,
+      118,
+      103,
+      62,
+      116,
+      101,
+      115,
+      116,
+      60,
+      47,
+      115,
+      118,
+      103,
+      62
+    ],
+    "claim": "not-a-type",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "text/csv",
+    "mime": "text/csv",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "application/json",
+    "mime": "application/json",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "text/markdown",
+    "mime": "text/markdown",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "image/png",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "image/jpeg",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/svg+xml",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "image/heic",
+    "mime": "image/heic",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "text/html",
+    "mime": "text/html",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "application/pdf",
+    "mime": "application/pdf",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "application/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "application/unknown",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "application/force-download",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      123,
+      34,
+      97,
+      34,
+      58,
+      49,
+      125
+    ],
+    "claim": "not-a-type",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "text/csv",
+    "mime": "text/csv",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "application/json",
+    "mime": "application/json",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "text/markdown",
+    "mime": "text/markdown",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "image/png",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "image/jpeg",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/svg+xml",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "image/heic",
+    "mime": "image/heic",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "text/html",
+    "mime": "text/html",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "application/pdf",
+    "mime": "application/pdf",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "application/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "application/unknown",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "application/force-download",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      224,
+      164,
+      168,
+      224,
+      164,
+      174,
+      224,
+      164,
+      184,
+      224,
+      165,
+      141,
+      224,
+      164,
+      164,
+      224,
+      165,
+      135,
+      32,
+      240,
+      159,
+      152,
+      128
+    ],
+    "claim": "not-a-type",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "text/csv",
+    "mime": "text/csv",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "application/json",
+    "mime": "application/json",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "text/markdown",
+    "mime": "text/markdown",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "image/png",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "image/jpeg",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/svg+xml",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "image/heic",
+    "mime": "image/heic",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "text/html",
+    "mime": "text/html",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "application/pdf",
+    "mime": "application/pdf",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "application/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "application/unknown",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "application/force-download",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      0,
+      65,
+      66,
+      67
+    ],
+    "claim": "not-a-type",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": ""
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "TEXT/PLAIN; charset=UTF-8",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/plain"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "text/csv",
+    "mime": "text/csv",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/csv"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "application/json",
+    "mime": "application/json",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "application/json"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "text/markdown",
+    "mime": "text/markdown",
+    "kind": "text",
+    "namesNoFormat": false,
+    "mediaType": "text/markdown"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "image/png",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/png"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "image/jpeg",
+    "mime": "application/octet-stream",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "image/jpeg"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "image/svg+xml",
+    "mime": "image/svg+xml",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/svg+xml"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "image/heic",
+    "mime": "image/heic",
+    "kind": "unsupported-image",
+    "namesNoFormat": false,
+    "mediaType": "image/heic"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "text/html",
+    "mime": "text/html",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "text/html"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "application/pdf",
+    "mime": "application/pdf",
+    "kind": "unsupported",
+    "namesNoFormat": false,
+    "mediaType": "application/pdf"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "application/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/octet-stream"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "binary/octet-stream",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "binary/octet-stream"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "application/unknown",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/unknown"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "application/force-download",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "application/force-download"
+  },
+  {
+    "bytes": [
+      239,
+      187,
+      191,
+      116,
+      101,
+      120,
+      116
+    ],
+    "claim": "not-a-type",
+    "mime": "text/plain",
+    "kind": "text",
+    "namesNoFormat": true,
+    "mediaType": "not-a-type"
+  }
+]

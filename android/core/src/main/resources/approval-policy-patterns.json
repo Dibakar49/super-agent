@@ -1,0 +1,66 @@
+{
+  "firstVerb": "\\b(update|updates|edit|patch|modify|set|mark|unmark|approve|restore|resolve|unresolve|hide|unhide|toggle|like|likes|unlike|react|bookmark|unbookmark|pin|unpin|star|unstar|flag|report|moderate|redact|translate|make|cancel|pause|unschedule|undo|unrepost|unretweet|get|list|fetch|retrieve|search|find|read|count|lookup|export|download|remove|removes|delete|archive|archives|unarchive|watch|mute|unmute|subscribe|unsubscribe|create|creation|add|adds|post|posts|send|sends|write|submit|publish|schedule|reschedule|reply|forward|leave|share|invite|respond|notify|broadcast)\\b",
+  "notSending": "^(update|updates|edit|patch|modify|set|mark|unmark|approve|restore|resolve|unresolve|hide|unhide|toggle|like|likes|unlike|react|bookmark|unbookmark|pin|unpin|star|unstar|flag|report|moderate|redact|translate|make|cancel|pause|unschedule|undo|unrepost|unretweet|get|list|fetch|retrieve|search|find|read|count|lookup|export|download|remove|removes|delete|archive|archives|unarchive|watch|mute|unmute|subscribe|unsubscribe)$",
+  "partOfSomething": "^ (as|reactions?|redactions?|attachments?|extensions?|restrictions?|restrict|rules?|settings?)\\b",
+  "ownTools": "^memory\\/|^bot\\/[^/]*(settings|preferences)",
+  "requirements": [
+    {
+      "id": "credentials",
+      "reason": "Changing a password, passcode, two-factor setting, recovery code or other credential is always done by the person.",
+      "pattern": "pass(word|code|phrase)|passwd|\\b2fa\\b|two[-_ ]?factor|\\bmfa\\b|one[-_ ]?time[-_ ]?code|\\botp\\b|recovery[-_ ]?(code|key|email|phone)|security[-_ ]?question|api[-_ ]?key|access[-_ ]?token|credential|sign[-_ ]?in[-_ ]?method",
+      "flags": "i",
+      "tool": null
+    },
+    {
+      "id": "security_settings",
+      "reason": "Changing security, sharing or access settings on an account is always done by the person.",
+      "pattern": "security[-_ ]?settings?|\\/settings\\/security|account[-_ ]?security|sharing[-_ ]?settings?|share[-_ ]?with[-_ ]?(anyone|public)|make[-_ ]?public|admin[-_ ]?role|grant[-_ ]?admin|permission[-_ ]?settings?|delete[-_ ]?(my[-_ ]?)?account|close[-_ ]?account",
+      "flags": "i",
+      "tool": null
+    },
+    {
+      "id": "payments",
+      "reason": "Paying, purchasing or moving money is always done by the person.",
+      "pattern": "payment|refund|\\bpay(ing)?\\b|pay[-_ ]?now|checkout|purchase|place[-_ ]?order|buy[-_ ]?now|(?<!\\b(business|news|press)[-_ ]?)\\bwire\\b|bank[-_ ]?transfer|transfer[-_ ]?(money|funds)|send[-_ ]?money|credit[-_ ]?card|card[-_ ]?number|\\bcvv\\b|\\biban\\b|routing[-_ ]?number|billing",
+      "flags": "i",
+      "tool": {
+        "pattern": "\\b(payouts?|transfers?(?! (an? |the )?(ownership|of ownership|files?|domains?|calls?|chats?|conversations?|repositor(y|ies)|repos?)\\b)|withdraw(als?)?|charges?|buy|purchases?|remit|pay (an? |the )?(invoices?|orders?|bills?|balances?)|(create|place|submit) (an? )?order|send money|(submit|run|process|approve|execute|confirm|pay) (an? |the )?(\\w+ ){0,3}?(payrolls?|pay runs?|payruns?)(?! (migration|imports?|amendments?|entries|settings?|reports?)\\b)|(upgrade|downgrade) (an? |the |your |my )?(\\w+ ){0,2}?(plans?|subscriptions?|tiers?|seats?|licen[cs]es?)|(change|switch) (an? |the |your |my )?(\\w+ ){0,2}?(plans?|subscriptions?|tiers?)|(create|start|purchase) (an? )?app subscriptions?)\\b",
+        "flags": ""
+      }
+    }
+  ],
+  "consequential": [
+    {
+      "id": "deleting",
+      "reason": "Deleting something always asks you first.",
+      "pattern": "\\b(delete|deletes|trash|destroy|erase|purge|wipe|discard)\\b",
+      "flags": "",
+      "kind": "regexp",
+      "innerKind": null
+    },
+    {
+      "id": "sending",
+      "reason": "Sending something to other people always asks you first.",
+      "pattern": "\\b(send|sends|reply|replies|forward|respond|notify|broadcast|invite|invites|comment|comments|(create|post|add) (an? )?(chat |channel )?messages?(?! templates?\\b)|schedules? (an? |the |single )?((?!with |for |to |of )\\w+ )?(messages?|emails?|mails?|campaigns?|dms?|sms|texts?|newsletters?|sends?)|create scheduled (\\w+ )?(messages?|emails?|mails?|dms?|sms|texts?))\\b",
+      "flags": "",
+      "kind": "toOthers",
+      "innerKind": "actsBy"
+    },
+    {
+      "id": "sharing",
+      "reason": "Sharing something with other people always asks you first.",
+      "pattern": "\\b(share|shares|sharing|shared link|permission|permissions|collaborators?|acl|grant (access|role))\\b",
+      "flags": "",
+      "kind": "regexp",
+      "innerKind": null
+    },
+    {
+      "id": "publishing",
+      "reason": "Posting or publishing something always asks you first.",
+      "pattern": "\\b(publish|publishes|go live|(create|publish) (an? )?release|retweets?|reposts?|tweets?|post (an? |the |new )?(\\w+ ){0,3}?(comments?|repl(y|ies)|messages?|mentions?|tweets?|threads?|status(es)?|stor(y|ies)|photos?|videos?|articles?|reels?)|(create|creation of|publish|submit|schedule|reschedule|share|write|send) (an? |the |new )?(\\w+ ){0,3}?(?<!\\bvia )posts?(?! (drafts?|templates?)\\b))\\b",
+      "flags": "",
+      "kind": "actsBy",
+      "innerKind": null
+    }
+  ]
+}

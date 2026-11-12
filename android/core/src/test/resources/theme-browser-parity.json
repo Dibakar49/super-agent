@@ -1,0 +1,244 @@
+[
+  {
+    "key": "background",
+    "value": "oklch(0.993 0.002 286.4)",
+    "rgba": [
+      252,
+      253,
+      254,
+      255
+    ],
+    "dark": false
+  },
+  {
+    "key": "foreground",
+    "value": "oklch(0.108 0.015 220.9)",
+    "rgba": [
+      1,
+      5,
+      7,
+      255
+    ],
+    "dark": false
+  },
+  {
+    "key": "card",
+    "value": "oklch(1 0 0)",
+    "rgba": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "dark": false
+  },
+  {
+    "key": "muted",
+    "value": "oklch(0.956 0.005 286.3)",
+    "rgba": [
+      240,
+      240,
+      244,
+      255
+    ],
+    "dark": false
+  },
+  {
+    "key": "muted-foreground",
+    "value": "oklch(0.506 0.013 285.9)",
+    "rgba": [
+      100,
+      100,
+      108,
+      255
+    ],
+    "dark": false
+  },
+  {
+    "key": "border",
+    "value": "oklch(0.894 0.014 286.1)",
+    "rgba": [
+      219,
+      219,
+      229,
+      255
+    ],
+    "dark": false
+  },
+  {
+    "key": "sidebar",
+    "value": "oklch(0.948 0.011 286.2)",
+    "rgba": [
+      237,
+      237,
+      245,
+      255
+    ],
+    "dark": false
+  },
+  {
+    "key": "sidebar-accent",
+    "value": "oklch(0.832 0.085 281.4 / 30%)",
+    "rgba": [
+      189,
+      195,
+      255,
+      77
+    ],
+    "dark": false
+  },
+  {
+    "key": "ring",
+    "value": "oklch(0.644 0.167 276.1)",
+    "rgba": [
+      116,
+      128,
+      241,
+      255
+    ],
+    "dark": false
+  },
+  {
+    "key": "destructive",
+    "value": "oklch(0.504 0.178 22.9)",
+    "rgba": [
+      180,
+      37,
+      48,
+      255
+    ],
+    "dark": false
+  },
+  {
+    "key": "success",
+    "value": "oklch(0.514 0.1 167.2)",
+    "rgba": [
+      18,
+      121,
+      91,
+      255
+    ],
+    "dark": false
+  },
+  {
+    "key": "background",
+    "value": "oklch(0.182 0.023 296.6)",
+    "rgba": [
+      19,
+      16,
+      27,
+      255
+    ],
+    "dark": true
+  },
+  {
+    "key": "foreground",
+    "value": "oklch(0.956 0.005 286.3)",
+    "rgba": [
+      240,
+      240,
+      244,
+      255
+    ],
+    "dark": true
+  },
+  {
+    "key": "card",
+    "value": "oklch(0.212 0.028 297.1)",
+    "rgba": [
+      26,
+      22,
+      36,
+      255
+    ],
+    "dark": true
+  },
+  {
+    "key": "muted",
+    "value": "oklch(0.253 0.032 297.6)",
+    "rgba": [
+      36,
+      31,
+      48,
+      255
+    ],
+    "dark": true
+  },
+  {
+    "key": "muted-foreground",
+    "value": "oklch(0.69 0.017 285.9)",
+    "rgba": [
+      154,
+      154,
+      166,
+      255
+    ],
+    "dark": true
+  },
+  {
+    "key": "border",
+    "value": "oklch(0.28 0.035 298.6)",
+    "rgba": [
+      43,
+      37,
+      56,
+      255
+    ],
+    "dark": true
+  },
+  {
+    "key": "sidebar",
+    "value": "oklch(0.156 0.017 295.8)",
+    "rgba": [
+      13,
+      11,
+      19,
+      255
+    ],
+    "dark": true
+  },
+  {
+    "key": "sidebar-accent",
+    "value": "oklch(0.832 0.085 281.4 / 12%)",
+    "rgba": [
+      189,
+      197,
+      255,
+      31
+    ],
+    "dark": true
+  },
+  {
+    "key": "ring",
+    "value": "oklch(0.713 0.151 277.7)",
+    "rgba": [
+      141,
+      151,
+      255,
+      255
+    ],
+    "dark": true
+  },
+  {
+    "key": "destructive",
+    "value": "oklch(0.792 0.121 16.4)",
+    "rgba": [
+      255,
+      154,
+      160,
+      255
+    ],
+    "dark": true
+  },
+  {
+    "key": "success",
+    "value": "oklch(0.832 0.13 170.1)",
+    "rgba": [
+      95,
+      227,
+      187,
+      255
+    ],
+    "dark": true
+  }
+]

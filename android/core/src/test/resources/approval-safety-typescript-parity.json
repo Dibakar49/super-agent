@@ -1,0 +1,1474 @@
+[
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/write_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "write_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/create_file",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "create_file",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/get_file",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "get_file",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/delete_file",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "delete_file",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "deleting",
+      "reason": "Deleting something always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/remove_file",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "remove_file",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "deleting",
+      "reason": "Deleting something always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/archive_contact",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "archive_contact",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "deleting",
+      "reason": "Deleting something always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/list_archived_emails",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "list_archived_emails",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/unarchive_contact",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "unarchive_contact",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/get_archive_settings",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "get_archive_settings",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/remove_collaborator",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "remove_collaborator",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "sharing",
+      "reason": "Sharing something with other people always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/send_email",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "send_email",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "sending",
+      "reason": "Sending something to other people always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/send_message_to_self",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "send_message_to_self",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/reply_to_comment",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "reply_to_comment",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "sending",
+      "reason": "Sending something to other people always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/create_draft",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "create_draft",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/create_message_draft",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "create_message_draft",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/send_draft",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "send_draft",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "sending",
+      "reason": "Sending something to other people always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/update_comment",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_comment",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/mark_comment_as_spam",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "mark_comment_as_spam",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/like_tweet",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "like_tweet",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/add_post_to_bookmarks",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "add_post_to_bookmarks",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/create_post",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "create_post",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "publishing",
+      "reason": "Posting or publishing something always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/create_post_draft",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "create_post_draft",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/post_comment",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "post_comment",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "sending",
+      "reason": "Sending something to other people always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/POST_V1_PLANS_OVERVIEW",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "POST_V1_PLANS_OVERVIEW",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/GET_MESSAGE",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "GET_MESSAGE",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/SHARE_FILE",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "SHARE_FILE",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "sharing",
+      "reason": "Sharing something with other people always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/create_scheduled_message",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "create_scheduled_message",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "sending",
+      "reason": "Sending something to other people always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/cancel_scheduled_send",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "cancel_scheduled_send",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/add_message_attachment",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "add_message_attachment",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/publish_release",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "publish_release",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "publishing",
+      "reason": "Posting or publishing something always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/create_release",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "create_release",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "publishing",
+      "reason": "Posting or publishing something always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/create_release_template",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "create_release_template",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "publishing",
+      "reason": "Posting or publishing something always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/transfer_money",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "transfer_money",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "payments",
+      "reason": "Paying, purchasing or moving money is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/transfer_repository",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "transfer_repository",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/transfer_ownership",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "transfer_ownership",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/create_order",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "create_order",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "payments",
+      "reason": "Paying, purchasing or moving money is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/purchase_item",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "purchase_item",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "payments",
+      "reason": "Paying, purchasing or moving money is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/update_pay_schedule",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_pay_schedule",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/run_payroll",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "run_payroll",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "payments",
+      "reason": "Paying, purchasing or moving money is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/submit_on_demand_payroll",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "submit_on_demand_payroll",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "payments",
+      "reason": "Paying, purchasing or moving money is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/update_payroll_settings",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_payroll_settings",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/create_app_subscription",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "create_app_subscription",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "payments",
+      "reason": "Paying, purchasing or moving money is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/create_subscription",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "create_subscription",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/delete_account",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "delete_account",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "security_settings",
+      "reason": "Changing security, sharing or access settings on an account is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/update_password",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_password",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "credentials",
+      "reason": "Changing a password, passcode, two-factor setting, recovery code or other credential is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/update_api_key",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_api_key",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "credentials",
+      "reason": "Changing a password, passcode, two-factor setting, recovery code or other credential is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/grant_admin_role",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "grant_admin_role",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "security_settings",
+      "reason": "Changing security, sharing or access settings on an account is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/share_with_anyone",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "share_with_anyone",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "security_settings",
+      "reason": "Changing security, sharing or access settings on an account is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "service/close_account",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "close_account",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "security_settings",
+      "reason": "Changing security, sharing or access settings on an account is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "attendees": [
+          "a@example.com"
+        ]
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "sending",
+      "reason": "Sending something to other people always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "attendeeEmails": [
+          "a@example.com"
+        ]
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "sending",
+      "reason": "Sending something to other people always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "settings__meeting__invitees": [
+          {
+            "email": "a@example.com"
+          }
+        ]
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "sending",
+      "reason": "Sending something to other people always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "guestsCanModify": true
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "send_notifications_to_attendees": false
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "to": "folder"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "to": "self@example.com"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "sending",
+      "reason": "Sending something to other people always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "billing_address": null
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "billing_address": ""
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "billing_address": {}
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "billing_address": []
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "billing_address": 0
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "payments",
+      "reason": "Paying, purchasing or moving money is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "Business Wire and news-wire sources"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "wire money"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "payments",
+      "reason": "Paying, purchasing or moving money is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "password change"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "credentials",
+      "reason": "Changing a password, passcode, two-factor setting, recovery code or other credential is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "a": {
+          "b": {
+            "c": {
+              "d": {
+                "e": {
+                  "f": {
+                    "billing_address": "filled"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": {
+      "id": "payments",
+      "reason": "Paying, purchasing or moving money is always done by the person.",
+      "behaviour": "hand_off"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "read",
+      "scope": "notes",
+      "args": {
+        "password": "secret"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "notes/update_note",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A useful note"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      },
+      "destructive": true
+    },
+    "expected": {
+      "id": "deleting",
+      "reason": "The app marks this as deleting or overwriting something, so it always asks you first.",
+      "behaviour": "ask"
+    }
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "memory/remember_personal_fact",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A fact"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  },
+  {
+    "candidate": {
+      "actorId": "person",
+      "botId": "bot",
+      "toolRef": "vendor/update_repository_settings",
+      "effect": "write",
+      "scope": "notes",
+      "args": {
+        "text": "A fact"
+      },
+      "target": {
+        "serverId": "notes",
+        "toolName": "update_note",
+        "url": "https://example.com/mcp",
+        "effect": "write"
+      }
+    },
+    "expected": null
+  }
+]

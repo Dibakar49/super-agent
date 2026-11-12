@@ -1,0 +1,208 @@
+[
+  {
+    "name": "create_goal",
+    "description": "Set up a goal for the person you are talking to: lasting work toward an outcome they name, which\nyou carry on with over time and report on in a conversation. Use it whenever they ask for a goal.\n\nA goal has no schedule of its own. It runs when somebody asks (Run now on its card on the Bot's\nGoals page, or `run_goal`) and when an event wakes it: a trigger you add with `create_trigger`, or\none of its `subscriptions`. Work done at set times is a routine (`create_routine`); a goal and a\nroutine can work together. Say which it is when you tell the person what you set up.\n\nGive a short `title`, the `instruction` for one run, and `successCriteria` that say when it is\nmet. Leave `subscriptions` empty unless the person names an event.\n\nSet `recurring` when the person wants it done again and again: every morning, each time something\nhappens. A goal that repeats, because it is `recurring`, a routine runs it or an event wakes it, is\nnever completed by one of its runs. Each run reports its result, and only the person ends it.\n\nIts runs post into this conversation. Leave `channelId` out, or empty, for this conversation, and\npass one only when the person asks for a different conversation you share. It takes no owner and\nno Bot: the goal is the person's, and you carry it out.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "A short name for the goal."
+        },
+        "instruction": {
+          "type": "string",
+          "description": "What to do each time the goal runs, in the imperative."
+        },
+        "successCriteria": {
+          "type": "string",
+          "description": "When the goal is met, in terms that can be checked."
+        },
+        "subscriptions": {
+          "type": "array",
+          "description": "Events that wake the goal, such as GitHub's `issues.opened`. Usually empty.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "manual",
+                  "slack",
+                  "github",
+                  "schedule",
+                  "connector",
+                  "webhook",
+                  "linear",
+                  "sentry",
+                  "pagerduty",
+                  "email"
+                ]
+              },
+              "eventType": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "source",
+              "eventType"
+            ]
+          }
+        },
+        "recurring": {
+          "type": "boolean",
+          "description": "True when the person wants it done again and again, such as every morning or each time something happens. Its runs never complete it."
+        },
+        "channelId": {
+          "type": "string",
+          "description": "The id of another conversation its runs post into. Empty, or left out, is this conversation."
+        }
+      },
+      "required": [
+        "title",
+        "instruction",
+        "successCriteria"
+      ]
+    }
+  },
+  {
+    "name": "list_goals",
+    "description": "List the person's goals that you carry out: each one's id, title, status, whether it is recurring,\nprogress, last result and conversation. Take the id from here before changing, running, pausing,\nresuming or completing one, or adding a trigger to it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "update_goal",
+    "description": "Change one of the person's goals that you carry out: its title, instruction, success criteria, event subscriptions or whether it is recurring. Give the id from `list_goals` and, in `patch`, only what changes; an empty field is left as it is.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The goal's id, from list_goals."
+        },
+        "patch": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "A short name for the goal."
+            },
+            "instruction": {
+              "type": "string",
+              "description": "What to do each time the goal runs, in the imperative."
+            },
+            "successCriteria": {
+              "type": "string",
+              "description": "When the goal is met, in terms that can be checked."
+            },
+            "subscriptions": {
+              "type": "array",
+              "description": "Events that wake the goal, such as GitHub's `issues.opened`. Usually empty.",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "source": {
+                    "type": "string",
+                    "enum": [
+                      "manual",
+                      "slack",
+                      "github",
+                      "schedule",
+                      "connector",
+                      "webhook",
+                      "linear",
+                      "sentry",
+                      "pagerduty",
+                      "email"
+                    ]
+                  },
+                  "eventType": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "source",
+                  "eventType"
+                ]
+              }
+            },
+            "recurring": {
+              "type": "boolean",
+              "description": "True when the person wants it done again and again, such as every morning or each time something happens. Its runs never complete it."
+            }
+          }
+        }
+      },
+      "required": [
+        "id",
+        "patch"
+      ]
+    }
+  },
+  {
+    "name": "run_goal",
+    "description": "Start one of the person's active goals now. It runs on its own, without the person's browser, and posts what it did into the goal's conversation. A completed or paused goal doesn't run, and you are told so.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The goal's id, from list_goals."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "pause_goal",
+    "description": "Pause one of the person's goals. It does not run, when asked or on an event, until it is resumed.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The goal's id, from list_goals."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "resume_goal",
+    "description": "Resume one of the person's paused goals.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The goal's id, from list_goals."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "complete_goal",
+    "description": "End one of the person's goals for good, when the person says it is done, or when a one-off goal's success criteria are met. A goal that repeats (recurring, run by a routine or woken by an event) ends only when the person asks: one good run doesn't finish it. A completed goal can't be resumed.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The goal's id, from list_goals."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  }
+]

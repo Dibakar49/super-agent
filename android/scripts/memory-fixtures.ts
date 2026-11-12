@@ -1,0 +1,11 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+const root=process.env.OPENBOT_FIXTURE_ROOT!;
+const scratch=process.env.OPENBOT_FIXTURE_TMP!;
+const source=readFileSync(root+'/server/src/memory/ingestion.ts','utf8');
+const start=source.indexOf('export function quoteMemoryContext(');
+const end=source.indexOf('\n/** One app',start);
+const moduleFile=scratch+'/original-quote-memory.ts';
+writeFileSync(moduleFile,source.slice(start,end));
+const {quoteMemoryContext}=await import(moduleFile);
+const samples=[[],[{id:'a',content:'I like early meetings.\nUse "calendar".',provenance:'You',sourceId:null}],Array.from({length:8},(_,i)=>({id:`m${i}`,content:('abc 😀\n').repeat(1000),provenance:'Source '+i,sourceId:null}))];
+writeFileSync(root+'/android/core/src/test/resources/memory-typescript-parity.json',JSON.stringify(samples.map(memories=>({memories,context:quoteMemoryContext(memories)})),null,2)+'\n');
