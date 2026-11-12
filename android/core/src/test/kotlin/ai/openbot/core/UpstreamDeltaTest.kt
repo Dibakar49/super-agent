@@ -1,7 +1,7 @@
 package ai.openbot.core
 
-import java.time.Instant
 import kotlinx.serialization.json.*
+import java.time.Instant
 import kotlin.test.*
 
 class UpstreamDeltaTest {
@@ -12,9 +12,10 @@ class UpstreamDeltaTest {
             val value = row.jsonObject
             assertEquals(value["description"]!!.jsonPrimitive.content, describeCron(value["expression"]!!.jsonPrimitive.content))
         }
-        val failure = assertFailsWith<ScheduleRefusedException> {
-            nextOccurrence("0 * * * *", "Wrong/Timezone", Instant.parse("2026-11-12T00:00:00Z"))
-        }
+        val failure =
+            assertFailsWith<ScheduleRefusedException> {
+                nextOccurrence("0 * * * *", "Wrong/Timezone", Instant.parse("2026-11-12T00:00:00Z"))
+            }
         assertEquals(fixture["unknownTimezone"]!!.jsonObject["code"]!!.jsonPrimitive.content, failure.code)
         assertEquals(fixture["unknownTimezone"]!!.jsonObject["message"]!!.jsonPrimitive.content, failure.message)
     }

@@ -35,7 +35,8 @@ when available, with an actionable unsupported-device message otherwise.
 - Architecture currently uses a large AndroidViewModel, SQLiteOpenHelper and
   OkHttp for model calls (other transports still use direct HTTPS);
   Hilt/Room/DataStore migration is not implemented.
-- No ktlint/detekt gate yet. Computer use remains deliberately excluded.
+- Pinned ktlint 1.7.1 format/check tasks and Android CI are added. Computer use
+  remains deliberately excluded.
 
 ## Known risks / unverified behavior
 

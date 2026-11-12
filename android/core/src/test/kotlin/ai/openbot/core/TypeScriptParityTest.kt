@@ -10,8 +10,10 @@ class TypeScriptParityTest {
     @Test fun `subagent identifiers are byte-identical to original TypeScript`() {
         fixture["threads"]!!.jsonArray.forEach { row ->
             val item = row.jsonObject
-            assertEquals(item["expected"]!!.jsonPrimitive.content,
-                subagentThreadId(item["parent"]!!.jsonPrimitive.content, item["call"]!!.jsonPrimitive.content))
+            assertEquals(
+                item["expected"]!!.jsonPrimitive.content,
+                subagentThreadId(item["parent"]!!.jsonPrimitive.content, item["call"]!!.jsonPrimitive.content),
+            )
         }
     }
 
@@ -29,7 +31,12 @@ class TypeScriptParityTest {
         val wrapped = Json.encodeToString(JsonPrimitive("""{"answer":"Healthy.","threadId":"t","steps":2}"""))
         assertEquals("Healthy.", readSubagentResult(wrapped)!!["answer"]!!.jsonPrimitive.content)
         assertNotNull(readSubagentResult("""{"handedBack":{"tool":"mail/send","reason":"Approval needed","args":{}},"next":"Ask the person","threadId":"t","steps":1}"""))
-        listOf("Refused", "[]", "null", """{"answer":"ok","threadId":"t","steps":"2"}""",
-            """{"handedBack":{"reason":"missing tool"},"next":"Ask","threadId":"t","steps":1}""").forEach { assertNull(readSubagentResult(it)) }
+        listOf(
+            "Refused",
+            "[]",
+            "null",
+            """{"answer":"ok","threadId":"t","steps":"2"}""",
+            """{"handedBack":{"reason":"missing tool"},"next":"Ask","threadId":"t","steps":1}""",
+        ).forEach { assertNull(readSubagentResult(it)) }
     }
 }

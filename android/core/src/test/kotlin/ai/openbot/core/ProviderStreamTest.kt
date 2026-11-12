@@ -22,7 +22,12 @@ class ProviderStreamTest {
         assertTrue(stream.accept("""{"type":"response.completed","response":{"status":"completed","output":[{"type":"reasoning","encrypted_content":"opaque"},{"type":"function_call","call_id":"c","name":"list_routines","arguments":"{}"}]}}"""))
         val round = AgentProtocol(ProviderSettings(), "Hello", emptyList()).read(stream.finish())
         assertEquals("list_routines", round.calls.single().name)
-        assertEquals("opaque", round.continuation.first()["encrypted_content"]!!.jsonPrimitive.content)
+        assertEquals(
+            "opaque",
+            round.continuation
+                .first()["encrypted_content"]!!
+                .jsonPrimitive.content,
+        )
     }
 
     @Test fun `Chat Completions assembles fragmented parallel calls only after finish and DONE`() {
@@ -35,7 +40,13 @@ class ProviderStreamTest {
         val round = AgentProtocol(ProviderSettings(apiStyle = ApiStyle.CHAT_COMPLETIONS), "Hello", emptyList()).read(stream.finish())
         assertEquals(listOf("a", "b"), round.calls.map { it.id })
         assertEquals("recall_personal_memory", round.calls.first().name)
-        assertEquals("trip", round.calls.first().arguments["search"]!!.jsonPrimitive.content)
+        assertEquals(
+            "trip",
+            round.calls
+                .first()
+                .arguments["search"]!!
+                .jsonPrimitive.content,
+        )
     }
 
     @Test fun `truncated malformed failed and filtered streams cannot supply executable calls`() {

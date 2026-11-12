@@ -13,20 +13,24 @@ val NOT_RUN_WHILE_WAITING = notRun("the turn stopped before this step to wait fo
 fun notRun(why: String) = "Not run: $why Run it again if you still need it, or say in your answer that you could not get it."
 
 fun notDoneOnRecheck(why: String) = "Not done: $why Ask the person again if it is still needed."
+
 fun notCarriedOut(reason: String) = "Not done: this action could not be carried out (${reason.take(300)}). Check whether it happened before asking the person again."
-private val forPerson = mapOf(
-    // Preserve readable outcomes already persisted by version 0.3.4.
-    "Not done: this request was withdrawn because the person switched off asking before changes. Try the action again if it is still needed." to "Withdrawn. You turned off asking before changes.",
-    "Not done: this request was withdrawn because a rule the person saved now allows it without asking. Try the action again if it is still needed." to "Withdrawn. A rule you saved now allows it.",
-    "Not done: the turn stopped before this step to wait for the person on another step asked for at the same time. Run it again if it is still needed." to "Not done. The Bot stopped to wait for you on another step.",
-    DECLINED_BY_PERSON to "You declined it.",
-    ALREADY_WAITING to "It's already waiting for your answer.",
-    WITHDRAWN_APPROVALS_OFF to "Withdrawn. You turned off asking before changes.",
-    WITHDRAWN_RULE_ALLOWS to "Withdrawn. A rule you saved now allows it.",
-    HANDLED_BY_PERSON to "You did it yourself.",
-    NOT_RUN_WHILE_WAITING to "Not done. The Bot stopped to wait for you on another step.",
-    OUTCOME_UNKNOWN to "It started, but OpenBot can't tell whether it finished. It wasn't run again."
-)
+
+private val forPerson =
+    mapOf(
+        // Preserve readable outcomes already persisted by version 0.3.4.
+        "Not done: this request was withdrawn because the person switched off asking before changes. Try the action again if it is still needed." to "Withdrawn. You turned off asking before changes.",
+        "Not done: this request was withdrawn because a rule the person saved now allows it without asking. Try the action again if it is still needed." to "Withdrawn. A rule you saved now allows it.",
+        "Not done: the turn stopped before this step to wait for the person on another step asked for at the same time. Run it again if it is still needed." to "Not done. The Bot stopped to wait for you on another step.",
+        DECLINED_BY_PERSON to "You declined it.",
+        ALREADY_WAITING to "It's already waiting for your answer.",
+        WITHDRAWN_APPROVALS_OFF to "Withdrawn. You turned off asking before changes.",
+        WITHDRAWN_RULE_ALLOWS to "Withdrawn. A rule you saved now allows it.",
+        HANDLED_BY_PERSON to "You did it yourself.",
+        NOT_RUN_WHILE_WAITING to "Not done. The Bot stopped to wait for you on another step.",
+        OUTCOME_UNKNOWN to "It started, but OpenBot can't tell whether it finished. It wasn't run again.",
+    )
+
 fun outcomeForPerson(text: String): String {
     forPerson[text.trim()]?.let { return it }
     if (!text.startsWith("Not done:") && !text.startsWith("Not run:")) return text
@@ -40,5 +44,7 @@ fun outcomeForPerson(text: String): String {
     }
     return text
 }
+
 fun doneByPerson(text: String) = text.trim() == HANDLED_BY_PERSON
+
 fun declinedByPerson(text: String) = text.trim() == DECLINED_BY_PERSON

@@ -1,17 +1,19 @@
 package ai.openbot.core
 
-import java.security.MessageDigest
 import kotlinx.serialization.json.*
+import java.security.MessageDigest
 
 const val SUBAGENT_TOOL = "run_subagent"
 const val SUBAGENTS_PER_ANSWER = 5
 
 /** Decodes the original tool-result shape, including a JSON string encoded twice. */
 fun readSubagentResult(text: String): JsonObject? {
-    val parsed = runCatching {
-        val first = Json.parseToJsonElement(text)
-        if (first is JsonPrimitive && first.isString) Json.parseToJsonElement(first.content) else first
-    }.getOrNull() as? JsonObject ?: return null
+    val parsed =
+        runCatching {
+            val first = Json.parseToJsonElement(text)
+            if (first is JsonPrimitive && first.isString) Json.parseToJsonElement(first.content) else first
+        }.getOrNull() as? JsonObject ?: return null
+
     fun JsonElement?.isText() = this is JsonPrimitive && isString
     if (!parsed["threadId"].isText() || (parsed["steps"] as? JsonPrimitive)?.takeIf { !it.isString }?.doubleOrNull == null) return null
     if (parsed["answer"].isText() || parsed["error"].isText()) return parsed
@@ -20,9 +22,15 @@ fun readSubagentResult(text: String): JsonObject? {
 }
 
 /** SHA-256-derived UUIDv8, byte-compatible with shared/subagent.ts. */
-fun subagentThreadId(parentThreadId: String, toolCallId: String): String {
-    val bytes = MessageDigest.getInstance("SHA-256")
-        .digest("$SUBAGENT_TOOL\n$parentThreadId\n$toolCallId".toByteArray(Charsets.UTF_8)).copyOf(16)
+fun subagentThreadId(
+    parentThreadId: String,
+    toolCallId: String,
+): String {
+    val bytes =
+        MessageDigest
+            .getInstance("SHA-256")
+            .digest("$SUBAGENT_TOOL\n$parentThreadId\n$toolCallId".toByteArray(Charsets.UTF_8))
+            .copyOf(16)
     if (Regex("^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", RegexOption.IGNORE_CASE).matches(parentThreadId)) {
         val hex = parentThreadId.replace("-", "")
         for (index in 0 until 6) bytes[index] = hex.substring(index * 2, index * 2 + 2).toInt(16).toByte()

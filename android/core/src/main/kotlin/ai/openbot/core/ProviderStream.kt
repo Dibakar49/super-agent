@@ -27,8 +27,15 @@ class ServerSentEvents {
 }
 
 /** Assemble complete tool calls before AgentProtocol may inspect or execute any of them. */
-class ProviderStream(private val style: ApiStyle) {
-    private data class FunctionParts(val id: StringBuilder = StringBuilder(), val name: StringBuilder = StringBuilder(), val arguments: StringBuilder = StringBuilder())
+class ProviderStream(
+    private val style: ApiStyle,
+) {
+    private data class FunctionParts(
+        val id: StringBuilder = StringBuilder(),
+        val name: StringBuilder = StringBuilder(),
+        val arguments: StringBuilder = StringBuilder(),
+    )
+
     private val tools = sortedMapOf<Int, FunctionParts>()
     private val text = StringBuilder()
     private var reason: String? = null
@@ -42,27 +49,39 @@ class ProviderStream(private val style: ApiStyle) {
         if (data == "[DONE]") {
             check(style == ApiStyle.CHAT_COMPLETIONS && reason != null) { "The model stream ended before its answer was complete; no tools were executed." }
             check(tools.isEmpty() || reason == "tool_calls") { "The model stream ended with incomplete tool calls." }
-            response = buildJsonObject {
-                putJsonArray("choices") { addJsonObject {
-                    put("finish_reason", reason)
-                    putJsonObject("message") {
-                        put("role", "assistant")
-                        put("content", text.toString())
-                        if (tools.isNotEmpty()) putJsonArray("tool_calls") {
-                            tools.values.forEach { parts -> addJsonObject {
-                                put("id", parts.id.toString()); put("type", "function")
-                                putJsonObject("function") { put("name", parts.name.toString()); put("arguments", parts.arguments.toString()) }
-                            } }
+            response =
+                buildJsonObject {
+                    putJsonArray("choices") {
+                        addJsonObject {
+                            put("finish_reason", reason)
+                            putJsonObject("message") {
+                                put("role", "assistant")
+                                put("content", text.toString())
+                                if (tools.isNotEmpty()) {
+                                    putJsonArray("tool_calls") {
+                                        tools.values.forEach { parts ->
+                                            addJsonObject {
+                                                put("id", parts.id.toString())
+                                                put("type", "function")
+                                                putJsonObject("function") {
+                                                    put("name", parts.name.toString())
+                                                    put("arguments", parts.arguments.toString())
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
-                } }
-            }
+                }
             done = true
             return true
         }
-        val event = runCatching { Json.parseToJsonElement(data).jsonObject }.getOrElse {
-            error("The model sent a malformed streamed event; no tools were executed.")
-        }
+        val event =
+            runCatching { Json.parseToJsonElement(data).jsonObject }.getOrElse {
+                error("The model sent a malformed streamed event; no tools were executed.")
+            }
         check(!event.containsKey("error")) { "The model provider reported a streaming error." }
         if (style == ApiStyle.RESPONSES) {
             when (event["type"]?.jsonPrimitive?.contentOrNull) {
@@ -92,8 +111,20 @@ class ProviderStream(private val style: ApiStyle) {
                 val target = tools.getOrPut(index) { FunctionParts() }
                 target.id.append(part["id"]?.jsonPrimitive?.contentOrNull.orEmpty())
                 val function = part["function"] as? JsonObject
-                target.name.append(function?.get("name")?.jsonPrimitive?.contentOrNull.orEmpty())
-                target.arguments.append(function?.get("arguments")?.jsonPrimitive?.contentOrNull.orEmpty())
+                target.name.append(
+                    function
+                        ?.get("name")
+                        ?.jsonPrimitive
+                        ?.contentOrNull
+                        .orEmpty(),
+                )
+                target.arguments.append(
+                    function
+                        ?.get("arguments")
+                        ?.jsonPrimitive
+                        ?.contentOrNull
+                        .orEmpty(),
+                )
                 check(target.arguments.length <= 256_000 && target.name.length <= 256 && target.id.length <= 256) { "The streamed tool call was too large." }
             }
             choice["finish_reason"]?.jsonPrimitive?.contentOrNull?.let {

@@ -32,7 +32,7 @@ not do so. Do not commit machine paths or signing keys.
 
 ```sh
 cd android
-./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug
+./gradlew :core:test :app:testDebugUnitTest lint ktlintCheck assembleDebug
 ```
 
 The wrapper uses Gradle 8.13 and pins its official distribution SHA-256. Build
