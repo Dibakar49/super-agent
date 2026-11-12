@@ -25,6 +25,7 @@ for kind in ['core','app']:
   for old,new in sorted(fq.items(),key=lambda x:-len(x[0])):s=re.sub(r'\b'+r'\s*\.\s*'.join(re.escape(part) for part in old.split('.'))+r'\b',new,s)
   pos=s.index('\n',s.index('package '))+1;s=s[:pos]+'\n'+'\n'.join(imports)+'\n'+s[pos:]
   for old,new in [('"openbot.db"','"agentstudio.db"'),('"model-settings"','"agentstudio-model-settings"'),('"transcription-settings"','"agentstudio-transcription-settings"'),('"connection-secrets"','"agentstudio-connection-secrets"'),('"attachments"','"agentstudio/attachments"'),('"dictation"','"agentstudio/dictation"'),('"models/local.task"','"agentstudio/models/local.task"')]:s=s.replace(old,new)
+  s=s.replace('"attachments/','"agentstudio/attachments/').replace('"dictation/','"agentstudio/dictation/')
   s=s.replace('"openbot-','"agentstudio-').replace('"openbot"','"agentstudio"')
   s=s.replace('AgentGate.mutex','ai.openbot.agentstudio.AgentStudioProfiles.gate(context)')
   for prefix in ['approval:','question:','reply:']:s=s.replace('"'+prefix,'"agentstudio:legacy:'+prefix)
