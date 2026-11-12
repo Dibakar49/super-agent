@@ -55,7 +55,7 @@ Reading a file inventory does not establish that its behavior has been ported.
 | Original | Kotlin implementation | State |
 | --- | --- | --- |
 | `mobile/src/api.ts` | `core/.../Models.kt` | Data contracts translated; remote API transport intentionally not used |
-| `mobile/src/links.ts` | `core/.../NotificationLinks.kt` | Strict parser and native notification intent routing; Needs you route pending |
+| `mobile/src/links.ts` | `core/.../NotificationDestination.kt` | Strict parser and native notification intent routing; Needs you route pending |
 | `mobile/src/check-ins.tsx` | `core/.../CheckIns.kt` | Task ordering and source-link validation translated; screen/actions pending |
 | `mobile/src/routines.ts` | `core/.../Models.kt` | Status labels, local schedule, persistent history and WorkManager execution implemented; device timing unverified |
 | `shared/routine-firing.ts` | `core/.../RoutineFiring.kt` | Framing/round-trip behavior translated |

@@ -7,12 +7,52 @@ not full feature parity or a physical phone installation.
 python3 /workspace/android-tools/build.py :core:test :app:testDebugUnitTest :app:assembleDebug
 ```
 
-Latest complete run: **124 tests passed** (44 core, 80 Android), including 30
-Activity journey cases across API 34 and 35. Debug APK assembly and Android
-lint passed with zero errors. Lint retains advisory style/dependency/platform
-warnings; it is not warning-free.
+Latest cloud APK gate (2026-11-12): `assembleDebug lint ktlintCheck` passed
+for **version 0.2.0, target API 36** after a clean rebuild. Lint has zero errors
+and **52 advisory warnings** (37 KTX style suggestions, 9 newer-dependency notices,
+4 Modifier conventions, ARM64-only ChromeOS support and monochrome launcher icon).
+It is not warning-free. ktlint 1.7.1 reports no violations.
+
+The last complete cloud **test** run before cleaning passed **150 tests** (53 core,
+97 Android). Subsequent targeted runs passed the tablet/landscape journeys and
+local reset/rollback/confirmation tests. After the API-36 clean rebuild, the core
+53 tests and five real local HTTPS streaming tests pass, but 16 Android test-class
+initializations fail while downloading the Robolectric runtime: Maven Central
+redirects its JAR to `gcp.mirrors.maven.org`, which returns proxy CONNECT 403 in
+this environment. Those are not counted as passing or skipped application tests.
+The environment draft adds that hostname; the full final cloud suite must be retried
+when network settings apply. An earlier API-level lint error was fixed with an
+explicit Android-12 guard and the latest APK/lint gate passes.
+
+Hosted CI: the corrected [full native gate passed](https://github.com/Dibakar49/super-agent/actions/runs/43161881644)
+for source commit `da77427e`. The run's overall status is **Success**; the unit/Compose,
+lint, ktlint and APK step passed, and both APK/report artifact uploads passed.
+This independently validates the final Kotlin sources at target API 36 even though
+this cloud instance's clean Robolectric download remains blocked. The committed APK
+was built/signed in the cloud workspace; CI builds its own debug-signed APK.
+
+The first [CI run](https://github.com/Dibakar49/super-agent/actions/runs/43161497257)
+failed in SDK setup before tests. The corrected workflow uses the documented
+preinstalled SDK on Ubuntu 24.04 and pinned Node 24 actions. Neither that earlier
+failure nor a successful upload alone is counted as application test evidence.
 
 ## Verified behavior
+
+- Responses/Chat Completions SSE framing, fragmented parallel tool-call assembly,
+  Unicode socket chunk boundaries, JSON fallback, credential-safe redirects and
+  prompt socket cancellation. Truncated or malformed streams cannot execute tools.
+  Runtime/recovery tests preserve partial text; Compose shows it before completion.
+- Strict Android 12+ on-device speech fallback, offline intent, recognizer disposal,
+  late-result fencing and unsupported-service guidance. Actual language packs/audio
+  hardware remain untested.
+- Chosen conversation titles survive new messages and reopening; clearing restores
+  the generated summary. Latest hourly cron/outcome contracts use a pinned upstream
+  TypeScript oracle while old persisted outcome strings stay readable.
+- Automatic actions persist goal/routine scope, with initialization-pause regression
+  tests proving no MCP call occurs after a scope is paused.
+- Confirmed local-data reset cancels work, waits for the agent gate, atomically resets
+  records and removes saved keys/files while retaining imported models. Injected
+  reset failure preserves records, files and credentials.
 
 - Original TypeScript fixtures cover routines (101 cron/timezone/DST cases),
   skill commands, scoped memory context, goal/routine links, multipart question
@@ -50,7 +90,8 @@ warnings; it is not warning-free.
   private staged files, removal and preservation across navigation/send refusal.
 
 Build output is `app/build/outputs/apk/debug/app-debug.apk`, ARM64, API 26+,
-compile SDK 36, target 35. All new project files live under `android/`; original
+compile SDK 36, target 36. The project lives under `android/`; audit documents,
+screenshots, CI and the committed APK also live at repository level. Original
 tracked TypeScript/Python/Rust files remain unchanged. Toolchains and caches stay
 outside version control.
 
@@ -60,6 +101,7 @@ After installing original frozen Bun dependencies, run from the repository root:
 
 ```sh
 bun android/scripts/generate-parity-fixtures.ts
+bun android/scripts/upstream-delta-fixtures.ts
 ```
 
 The script reads original source, regenerates the named comparison fixtures and
@@ -75,8 +117,10 @@ questions, attachments, dictation settings/permission denial and confirmed conve
 
 Reference captures use the actual original Vite app with API fixtures, not a
 production backend. Cloud browser capture scripts/images remain under
-`/workspace/android-tools`. Native layouts use the original font, Tabler paths,
-logo and theme tokens. Every route, complete pixel equality, hardware rendering
+`/workspace/android-tools`. Native layouts use upstream Inter Variable (5.3.0), Tabler paths,
+logo and the updated pinned theme tokens. Tablet and landscape captures are also
+tracked in `docs/screenshots/`; phone journey captures were made before the 0.2.0
+version-label bump. Every route, complete pixel equality, hardware rendering
 and a full accessibility audit remain unverified.
 
 ## Runtime boundaries and remaining conversion
@@ -91,8 +135,8 @@ API mode. OAuth/catalogue accounts, goal event adapters, Needs you/tasks/check-i
 clipboard/drag attachment import, live two-way voice calls, learning, additional agent frameworks, team/sharing/admin and
 remaining original UI routes are still incomplete. Computer use is excluded.
 
-The tested debug APK is 29,373,220 bytes. `apksigner verify` and
+The compiled and statically verified debug APK is 27,951,847 bytes. `apksigner verify` and
 `zipalign -c -P 16 4` passed; every native ELF load segment has at least 16 KB
 alignment. SHA-256:
-`06b058756286269d809f0a40980221445e1a08133a1149a5484fd096e451fd8d`.
+`3f1a525fd0510bcd9e9fb7f0c570ead932a3af26b5e3832f7f9563b2e4ad75da`.
 This is a debug APK, not a store release. Recheck after any further build changes.

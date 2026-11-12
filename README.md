@@ -1,3 +1,60 @@
+# OpenBot native Android port
+
+Kotlin · Jetpack Compose · Material 3 · phone-local backend. Computer use is excluded.
+This repository contains the original TypeScript reference and the native [`android/`](android/) app.
+**The port is functional but does not yet have complete upstream feature or visual parity.**
+
+Native features include streaming API chat, Markdown/code copy, Bots, conversation
+rename/search/pin, memory, skills, goals, scheduled routines, granted MCP tools,
+durable approvals/questions, image/text attachments, notifications, confirmed local-data reset and voice dictation.
+Dictation uses a configured transcription provider or available Android 12+ on-device
+speech. Optional MediaPipe text inference requires a compatible imported model.
+
+[Status and gaps](STATUS.md) · [Upstream migration](MIGRATION.md) · [Feature research](FEATURES.md) · [Validation](android/VALIDATION.md)
+
+## Build and run Android
+
+Requires JDK 21, Android SDK 36 / Build Tools 35.0.0. Supports ARM64 Android 8+ (API 26+).
+
+```sh
+cd android
+./gradlew :core:test :app:testDebugUnitTest lint ktlintCheck assembleDebug
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+```
+
+A committed development APK is at [`artifacts/openbot-android-debug.apk`](artifacts/openbot-android-debug.apk),
+with its SHA-256 beside it. This is debug signed; it is not a Play Store release.
+The [Android workflow](.github/workflows/android.yml) also uploads APK and verification reports.
+[Verified full CI run](https://github.com/Dibakar49/super-agent/actions/runs/43161881644).
+
+In the app, open **Settings → Model settings**, choose **Provider API**, enter the
+provider's HTTPS base URL, model name and API style (Responses or Chat Completions),
+then save your API key. Keys are encrypted with Android Keystore and are not shipped
+in the APK, saved in conversations, or sent to a remote OpenBot backend. LLM API
+requests go directly to your configured provider; they are not offline inference.
+Use separate **Dictation settings** for provider transcription. See the
+[native setup guide](android/README.md) for local inference and MCP grants.
+
+## Android screenshots
+
+These are native Compose renders from automated API 35 journeys, not photographs
+of a physical phone. Live models and microphone hardware still need device testing.
+
+<p>
+<img src="docs/screenshots/home.png" width="240" alt="Native Android home">
+<img src="docs/screenshots/streaming.png" width="240" alt="Partial streamed answer before completion">
+<img src="docs/screenshots/attachments.png" width="240" alt="Native attachment chips and composer">
+</p>
+
+[Tablet](docs/screenshots/tablet.png) · [Landscape](docs/screenshots/landscape.png)
+
+## Original upstream documentation
+
+The original reference and its license are retained below. Its desktop/server
+installation instructions describe upstream OpenBot, not the native Android runtime.
+
+---
+
 <div align="center">
 
 <img src="app/src/assets/openbot-logo.png" alt="" width="72">

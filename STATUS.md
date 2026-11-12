@@ -67,3 +67,23 @@ Real local HTTPS socket tests cover Unicode chunk boundaries, redirects, JSON-on
 providers and cancellation. Runtime/recovery tests preserve partial answers, and
 Compose journeys verify visible partial text on API 34 and 35. This does not
 implement provider-side resumable streams or prove live-provider compatibility.
+
+## Current final-gate evidence
+
+- Native version 0.2.0, compile/target API 36, min API 26, ARM64. Clean APK assembly,
+  lint (zero errors / 52 advisory warnings) and ktlint pass. APK signature, ZIP
+  alignment and both native ELF libraries pass the 16 KB checks.
+- Latest complete pre-clean cloud test run: 150 passed. New tablet/landscape and
+  local-reset cases also passed in targeted runs. After cleaning, 53 core and five
+  HTTPS tests pass; remaining Android tests cannot initialize because the official
+  Maven JAR redirects to blocked `gcp.mirrors.maven.org`. Full final cloud retry is
+  pending network review; see `android/VALIDATION.md` for exact evidence.
+- Git push succeeds. Actual `gh pr create` fails at `api.github.com/graphql` with
+  Forbidden. A reviewable PR body and creation command are in `/workspace/output`.
+- Environment draft preserves existing domains and adds `api.github.com` and
+  `gcp.mirrors.maven.org`, plus reusable Android startup/build instructions. Saving
+  the draft does not apply the network change; user review/publication is required.
+- Hosted Android CI SDK setup was corrected. Full test/lint/ktlint/debug assembly
+  and APK/report uploads **passed** at `da77427e`:
+  https://github.com/Dibakar49/super-agent/actions/runs/43161881644. This verifies
+  final native sources independently of the blocked local Robolectric download.

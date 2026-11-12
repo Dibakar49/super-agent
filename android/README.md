@@ -24,7 +24,7 @@ no remote OpenBot server dependency and no WebView.
 ## Open and build
 
 Open this directory in Android Studio with a JDK 21 toolchain and Android SDK 36.
-Install Android SDK Build Tools 35.0.0. The app targets Android 35, supports Android
+Install Android SDK Build Tools 35.0.0. The app targets Android 36, supports Android
 8.0/API 26 and newer, and packages ARM64 native inference libraries. Actual model
 compatibility and RAM requirements depend on the selected model and phone.
 
@@ -118,7 +118,11 @@ local inbox/conversation, hide content on the lock screen and clear resolved or
 deleted items. Dismissing a waiting notification does not repeatedly alert you.
 This is local Android delivery; it does not register an Expo push token.
 
-**Model settings → Dictation settings** enables voice input with an OpenAI-compatible
+The microphone is offered on every composer. Without a transcription provider,
+Android 12+ uses the available on-device recognizer; unsupported phones/languages
+show setup guidance without falling back to cloud speech.
+
+**Model settings → Dictation settings** configures provider voice input with an OpenAI-compatible
 transcription URL, model and optional key. Voice credentials are encrypted separately
 from chat-model credentials. The microphone button asks for permission when used,
 records private mono AAC/MP4 audio for at most two minutes/10 MiB, and offers
@@ -128,6 +132,21 @@ aborts an in-flight upload and deletes audio; generation fences discard late res
 Successful transcription appends to the current draft and removes its recording.
 Native microphone capture and live transcription still need physical-device/service
 validation. This implements dictation; live two-way voice calls remain pending.
+
+## Streaming, responsive UI and reset
+
+Provider mode streams Responses and Chat Completions answers through OkHttp. Partial
+text is saved and rendered while generating; cancellation retains it. Incomplete
+model streams never dispatch tool calls. Compatible JSON-only providers retain the
+nonstreaming response path. This does not implement provider-side resumable streams.
+
+Tablets/wide landscape keep navigation visible; short windows scroll navigation,
+and wide content is bounded for readability. Conversation names can be changed from
+the sidebar; leaving a chosen name empty restores the generated name.
+
+**Settings → Clear local data…** confirms removal of local records, attachments,
+settings and saved provider/connection keys. Workers are cancelled and active agent
+work settles before deletion. Imported models stay installed.
 
 ## Structure
 
