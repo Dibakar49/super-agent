@@ -32,6 +32,29 @@ class LocalAppJourneyTest {
         compose.waitUntil(10_000) { runCatching { compose.onNodeWithContentDescription("Message").assertIsEnabled() }.isSuccess }
     }
 
+    @Test
+    @Config(sdk = [35], qualifiers = "w891dp-h411dp")
+    fun `landscape navigation scrolls to settings without clipping the destinations`() {
+        compose.waitUntil(10_000) { compose.onAllNodesWithText("Start a conversation", substring = false).fetchSemanticsNodes().isNotEmpty() }
+        compose.onNode(hasText("Settings") and hasClickAction()).performScrollTo().performClick()
+        compose.waitUntil(10_000) { compose.onAllNodesWithText("General", substring = false).fetchSemanticsNodes().isNotEmpty() }
+        compose.onNodeWithText("General", substring = false).assertIsDisplayed()
+        capture("native-landscape")
+    }
+
+    @Test
+    @Config(sdk = [35], qualifiers = "w1024dp-h768dp")
+    fun `tablet keeps sidebar visible while navigating native screens`() {
+        compose.waitUntil(10_000) { compose.onAllNodesWithText("Start a conversation", substring = false).fetchSemanticsNodes().isNotEmpty() }
+        compose.onNodeWithContentDescription("Show sidebar").assertDoesNotExist()
+        compose.onNode(hasText("Capabilities") and hasClickAction()).performClick()
+        compose.onNodeWithText("Memory", substring = false).performClick()
+        compose.waitUntil(10_000) { compose.onAllNodesWithText("+ Remember a fact", substring = false).fetchSemanticsNodes().isNotEmpty() }
+        compose.onNode(hasText("Capabilities") and hasClickAction()).assertIsDisplayed()
+        compose.onNodeWithText("+ Remember a fact", substring = false).assertIsDisplayed()
+        capture("native-tablet")
+    }
+
     @Test fun `source home drawer bot memory and draft flow`() {
         readyMessage()
         compose.onNodeWithText("Start a conversation").assertIsDisplayed()

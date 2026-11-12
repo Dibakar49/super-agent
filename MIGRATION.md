@@ -22,7 +22,7 @@ The [earlier inventory](android/MIGRATION.md) covers all 3,453 original source p
 | `server/src/agents/subagent.ts` | `core/.../Subagent.kt` | partial: identifiers/results only; real child execution todo |
 | Dictation / speech hooks in `app/src` | `core/.../Dictation.kt`, `app/.../inference/{AndroidAudioRecording,TranscriptionProvider}.kt`, `app/.../ui/DictationControls.kt` | done: provider dictation and latest on-device fallback; real hardware/language-pack validation still needed |
 | Attachments and first-message attachment flow | `core/.../Attachments.kt`, `app/.../data/AttachmentStore.kt`, `app/.../inference/{TurnAttachments,AttachmentRequestBody}.kt` | partial: picker, text/images done; clipboard/desktop drop excluded or todo native equivalent |
-| `app/src/components/*`, theme CSS | `app/.../ui/*`, `app/.../MainActivity.kt` | partial: native baseline screens; latest Inter/theme/navigation/cards not fully ported |
+| `app/src/components/*`, theme CSS | `app/.../ui/*`, `app/.../MainActivity.kt` | partial: Inter and light background updated; responsive native navigation done; latest unified navigation/cards still need review |
 | Providers, Claude/Grok sign-in and discovery | `core/.../ModelProvider.kt`, `app/.../data/ModelSettingsStore.kt` | partial: API-compatible models / MediaPipe; OAuth/provider catalogue todo |
 | Memory / skills | `core/.../{MemoryTools,SkillTools}.kt`, `app/.../ui/{Memory,Skills}Screen.kt` | partial: local memory/skills; Learning backend workflows todo |
 | Team, audit, admin, boundaries/backtesting | none | todo: local architecture equivalent required |

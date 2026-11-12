@@ -37,7 +37,7 @@ private fun css(
 // Values copied from app/src/theme.css, not substituted with Material's blue palette.
 private val light =
     OpenBotPalette(
-        css(.993, .002, 286.4),
+        css(.983, .003, 286.4),
         css(.108, .015, 220.9),
         Color.White,
         css(.956, .005, 286.3),
@@ -69,7 +69,7 @@ val LocalOpenBotPalette = staticCompositionLocalOf { light }
 private val originalFont =
     FontFamily(
         listOf(400, 500, 600, 700).map { weight ->
-            Font(R.font.atkinson_hyperlegible_next, FontWeight(weight), variationSettings = FontVariation.Settings(FontVariation.weight(weight)))
+            Font(R.font.inter_variable, FontWeight(weight), variationSettings = FontVariation.Settings(FontVariation.weight(weight)))
         },
     )
 

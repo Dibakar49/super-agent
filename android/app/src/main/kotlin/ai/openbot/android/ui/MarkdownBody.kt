@@ -73,7 +73,7 @@ private fun Node.children(): List<Node> =
             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
                 node.children().forEachIndexed { index, item ->
                     Row {
-                        Text("${node.startNumber + index}.", Modifier.width(28.dp))
+                        Text("${(node.markerStartNumber ?: 1) + index}.", Modifier.width(28.dp))
                         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) { item.children().forEach { MarkdownBlock(it) } }
                     }
                 }

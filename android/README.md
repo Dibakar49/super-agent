@@ -6,9 +6,10 @@ Full OpenBot feature and visual parity is still in progress.
 
 The native UI now follows the original web Home, sidebar, Bot roster/profile,
 Capabilities/Skills/Memory, transcript and General settings. It uses the original
-Atkinson Hyperlegible Next font, Tabler icon paths, logo and light/dark CSS color
+Inter Variable font (the pinned upstream theme), Tabler icon paths, logo and light/dark CSS color
 tokens. Phone layouts have been rendered alongside browser captures of the real
-web app; this does not establish complete visual parity.
+web app; this does not establish complete visual parity. Tablets and wide
+landscape use a persistent sidebar; shorter windows can scroll navigation.
 
 The local backend includes app-private SQLite, Bot and conversation management,
 private `/skill` execution guidance, personal/observed memory with Bot scope and

@@ -56,10 +56,10 @@ private val prettyJson = kotlinx.serialization.json.Json { prettyPrint = true }
             SelectionContainer {
                 Text(
                     prettyJson.encodeToString(
-                            kotlinx.serialization.json.JsonObject
-                                .serializer(),
-                            action.call.arguments,
-                        ),
+                        kotlinx.serialization.json.JsonObject
+                            .serializer(),
+                        action.call.arguments,
+                    ),
                     style = MaterialTheme.typography.bodyMedium,
                 )
             }

@@ -87,12 +87,12 @@ import androidx.compose.ui.unit.dp
 @Composable private fun WorkingIndicator(stopping: Boolean) {
     val transition = rememberInfiniteTransition(label = "working")
     val opacity by transition.animateFloat(
-        initialValue = .45f,
+        initialValue = .7f,
         targetValue = 1f,
         animationSpec = infiniteRepeatable(tween(1200, easing = LinearEasing), RepeatMode.Reverse),
         label = "working opacity",
     )
-    Text(if (stopping)"Stopping…" else "Working…", color = LocalOpenBotPalette.current.mutedForeground, modifier = Modifier.alpha(opacity))
+    Text(if (stopping)"Stopping…" else "Working…", color = LocalOpenBotPalette.current.foreground, modifier = Modifier.alpha(opacity))
 }
 
 @Composable private fun ToolActivity(

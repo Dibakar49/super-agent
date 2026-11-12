@@ -152,17 +152,15 @@ class MainActivity : ComponentActivity() {
     }
     Surface(Modifier.fillMaxSize(), color = p.background) {
         Column(Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.systemBars.union(WindowInsets.displayCutout))) {
-            ModalNavigationDrawer(drawerState = drawer, gesturesEnabled = !LocalSourceDialogOpen.current, drawerContent = {
-                ModalDrawerSheet(Modifier.width(288.dp), drawerShape = RectangleShape, drawerContainerColor = p.sidebar, drawerTonalElevation = 0.dp) {
-                    AppSidebar(state, vm, route, ::navigate, { id ->
-                        vm.openConversation(id)
-                        scope.launch { drawer.close() }
-                    }, ::home)
-                }
+            AdaptiveNavigation(drawerState = drawer, gesturesEnabled = !LocalSourceDialogOpen.current, sidebar = {
+                AppSidebar(state, vm, route, ::navigate, { id ->
+                    vm.openConversation(id)
+                    scope.launch { drawer.close() }
+                }, ::home)
             }) {
                 Column(Modifier.fillMaxSize().imePadding()) {
                     Row(Modifier.fillMaxWidth().height(if (route == "Home" && channel == null && !composing)48.dp else 56.dp).padding(horizontal = 12.dp), verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
-                        IconButton(onClick = { scope.launch { drawer.open() } }, modifier = Modifier.size(36.dp)) { TablerIcon(R.drawable.ic_layout_sidebar, "Show sidebar") }
+                        if (!LocalExpandedNavigation.current) IconButton(onClick = { scope.launch { drawer.open() } }, modifier = Modifier.size(36.dp)) { TablerIcon(R.drawable.ic_layout_sidebar, "Show sidebar") }
                         if (channel != null || composing || stack.size > 1) {
                             OpenBotTextButton(onClick = { backDispatcher?.onBackPressed() }) {
                                 TablerIcon(R.drawable.ic_chevron_left)
@@ -170,7 +168,7 @@ class MainActivity : ComponentActivity() {
                                 Text("Back")
                             }
                         }
-                        if (channel != null || composing)Text(channel?.name ?: bot?.name.orEmpty(), style = MaterialTheme.typography.titleSmall, maxLines = 1)
+                        if (channel != null || composing)Text(channel?.let(::conversationTitle) ?: bot?.name.orEmpty(), style = MaterialTheme.typography.titleSmall, maxLines = 1)
                     }
                     if (state.busy)LinearProgressIndicator(Modifier.fillMaxWidth().height(2.dp), color = p.ring, trackColor = p.muted)
                     state.error?.let { message ->
