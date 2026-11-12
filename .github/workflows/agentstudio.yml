@@ -28,20 +28,30 @@ jobs:
         working-directory: ${{ runner.temp }}/agentstudio-validation
         env:
           JAVA_TOOL_OPTIONS: -Didea.max.intellisense.filesize=8192
-        run: ./gradlew --no-daemon :app:testDebugUnitTest :app:lintDebug assembleDebug
+        run: |
+          set -o pipefail
+          ./gradlew --no-daemon :app:testDebugUnitTest :app:lintDebug assembleDebug 2>&1 | tee agentstudio-build.log
       - name: Summarize regression results
         if: always()
         env:
           REPORT_ROOT: ${{ runner.temp }}/agentstudio-validation/app/build/test-results/testDebugUnitTest
+          BUILD_LOG: ${{ runner.temp }}/agentstudio-validation/agentstudio-build.log
         run: |
           python3 - <<'PYREPORT'
           import os, pathlib, xml.etree.ElementTree as ET
           roots=[ET.parse(p).getroot() for p in pathlib.Path(os.environ['REPORT_ROOT']).glob('TEST-*.xml')]
+          def annotation(level,title,body):
+              escaped=body.replace('%','%25').replace('\r','%0D').replace('\n','%0A')
+              print('::'+level+' title='+title+'::'+escaped)
+          annotation('notice','Test totals',str(sum(int(r.get('tests','0')) for r in roots))+' tests, '+str(sum(int(r.get('failures','0'))+int(r.get('errors','0')) for r in roots))+' failures/errors')
+          if not roots and pathlib.Path(os.environ['BUILD_LOG']).exists():
+              annotation('error','Build diagnostics','\n'.join(pathlib.Path(os.environ['BUILD_LOG']).read_text().splitlines()[-100:]))
           with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as report:
               report.write('Agent Studio regression tests: '+str(sum(int(r.get('tests','0')) for r in roots))+' tests, '+str(sum(int(r.get('failures','0'))+int(r.get('errors','0')) for r in roots))+' failures/errors.\n\n')
               for root in roots:
                   for case in root.findall('testcase'):
                       for failure in list(case.findall('failure'))+list(case.findall('error')):
+                          annotation('error',root.get('name','')+' '+case.get('name',''),(failure.text or '')[:8000])
                           report.write('### '+root.get('name','')+' — '+case.get('name','')+'\n\n```text\n'+(failure.text or '')[:6000]+'\n```\n\n')
           PYREPORT
       - name: Upload test reports and actual native renders
