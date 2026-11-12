@@ -1,0 +1,43 @@
+name: Agent Studio single file
+on:
+  push:
+    paths: ["android-singlefile/**", ".github/workflows/agentstudio.yml"]
+  pull_request:
+    branches: [main]
+    paths: ["android-singlefile/**", ".github/workflows/agentstudio.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: agentstudio-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: gradle/actions/setup-gradle@4c125117fe7c5aed11272ec4213f602f012f89f2
+      - name: Prepare an existing-app host with one feature source and no feature resources
+        run: python3 android-singlefile/verify.py "$RUNNER_TEMP/agentstudio-validation"
+      - name: Build and test embedded feature
+        working-directory: ${{ runner.temp }}/agentstudio-validation
+        run: ./gradlew --no-daemon :app:testDebugUnitTest assembleDebug
+      - name: Upload test reports and actual native renders
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: agentstudio-verification
+          path: |
+            ${{ runner.temp }}/agentstudio-validation/app/build/reports/tests/
+            ${{ runner.temp }}/agentstudio-validation/app/build/test-home/screenshots/
+          retention-days: 14
+      - name: Upload the single Kotlin file
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: agentstudio-single-kotlin-file
+          path: android-singlefile/agentstudio.kt
