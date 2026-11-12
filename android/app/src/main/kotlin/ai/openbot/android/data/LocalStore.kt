@@ -131,6 +131,8 @@ class LocalStore(context: Context) : SQLiteOpenHelper(context, "openbot.db", nul
         writableDatabase.beginTransaction()
         try {
             val action=pendingActions().firstOrNull{it.id==id&&it.status==LocalActionStatus.APPROVED}?:return false
+            if(bots().none{it.id==action.botId&&!it.paused})return false
+            if(checkpoints().any{it.turnId==action.turnId&&it.phase==ContinuationPhase.INTERRUPTED})return false
             val candidate=pendingCandidate(action)
             val rules=ApprovalRuleStore(this)
             val mandatory=safetyRequirement(candidate)
@@ -139,9 +141,15 @@ class LocalStore(context: Context) : SQLiteOpenHelper(context, "openbot.db", nul
             if(action.standingRule&&!rules.standingRuleExists(candidate))return false
             if(action.automatic&&action.policy?.behaviour!=PolicyBehaviour.ALLOW)return false
             if(action.automatic&&!canExecuteAutomatically(candidate,rules.rules(),rules.preferences(),action.policy?.review))return false
-            checkpoints().find{it.turnId==action.turnId}?.goalRunId?.let{runId->
+            val checkpoint=checkpoints().find{it.turnId==action.turnId}
+            // Automatic actions also carry their scope: there may be no waiting checkpoint.
+            (action.goalRunId?:checkpoint?.goalRunId)?.let{runId->
                 val goals=GoalStore(this);val run=goals.run(runId)?:return false
-                if(goals.get(run.goalId).status!=GoalStatus.ACTIVE)return false
+                if(goals.get(run.goalId).status!=GoalStatus.ACTIVE||run.status !in listOf(GoalRunStatus.RUNNING,GoalRunStatus.WAITING))return false
+            }
+            (action.routineRunId?:checkpoint?.routineRunId)?.let{runId->
+                val run=routineRun(runId)?:return false
+                if(run.status !in listOf(RoutineStatus.RUNNING,RoutineStatus.WAITING)||routines().none{it.id==run.routineId&&it.enabled})return false
             }
             savePendingAction(action.copy(status=LocalActionStatus.EXECUTING))
             writableDatabase.setTransactionSuccessful();return true

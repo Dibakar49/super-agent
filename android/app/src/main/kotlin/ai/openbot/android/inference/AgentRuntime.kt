@@ -139,6 +139,10 @@ class AgentRuntime(private val context:Context,private val store:LocalStore,priv
             db.beginTransaction()
             try {
                 currentGoalRunId?.let{id->val run=goals.run(id)?:error("This goal run no longer exists.");require(goals.get(run.goalId).status==GoalStatus.ACTIVE){"The goal is no longer active. The action was not done."}}
+                currentRoutineRunId?.let { id ->
+                    val run=store.routineRun(id)?:error("This routine run no longer exists.")
+                    require(store.routines().any{it.id==run.routineId&&it.enabled}){"This routine is paused. The action was not done."}
+                }
                 require(store.bots().any{it.id==botId&&!it.paused}){"This Bot is paused or no longer exists. The action was not done."}
                 require(store.checkpoints().none{it.turnId==turnId&&it.phase==ContinuationPhase.INTERRUPTED}){"This turn was stopped."}
                 result=execute(call,botId,channelId)

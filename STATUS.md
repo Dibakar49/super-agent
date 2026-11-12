@@ -36,8 +36,9 @@ transcription, cancellation/retry and separate encrypted credentials.
 
 ## Known risks / unverified behavior
 
-- Goal/routine pause during an automatically admitted MCP call needs a persisted
-  execution-scope recheck; current automatic calls have no goal/routine reference.
+- Fixed goal/routine pause during automatic MCP initialization: persisted run
+  scope is checked transactionally immediately before execution; regression tests
+  verify that pausing either scope prevents the external call.
 - Global ViewModel busy state limits navigation/edits while generating.
 - No physical-device, live provider/MCP, real microphone/codec, imported-model
   performance, or idle/reboot timing validation. Test fixtures are not live calls.

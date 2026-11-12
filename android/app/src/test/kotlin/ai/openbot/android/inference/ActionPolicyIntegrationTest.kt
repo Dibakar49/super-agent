@@ -60,6 +60,49 @@ class ActionPolicyIntegrationTest {
             }finally{model.close()}
         }
     }
+    @Test fun `pausing a goal during initialization prevents an automatic connector action`() = runBlocking<Unit> {
+        LocalStore(context).use { store ->
+            val (channel, tool) = setup(store)
+            val goals = GoalStore(store)
+            val now = Instant.now().toString()
+            goals.save(LocalGoal("goal", channel.botId, channel.id, "Brief", "Write a brief", "Has sources", createdAt = now, updatedAt = now))
+            val run = assertNotNull(goals.claim(goals.enqueue("goal").id))
+            val model = LocalModel(context)
+            var requests = 0
+            var calls = 0
+            try {
+                val runtime = AgentRuntime(context, store, model, config,
+                    ProviderTransport { _, _, _ -> if (requests++ == 0) callReply(tool.name) else textReply("The action was not done") },
+                    { _, _ -> session(onInitialize = { goals.transition("goal", GoalStatus.PAUSED) }) { calls++ } }, enqueueGoals = {})
+                runtime.turn(channel.id, "Write my brief", goalRunId = run.id)
+                assertEquals(0, calls)
+                assertEquals(run.id, store.pendingActions().single().goalRunId)
+                assertEquals(LocalActionStatus.CANCELLED, store.pendingActions().single().status)
+            } finally { model.close() }
+        }
+    }
+
+    @Test fun `pausing a routine during initialization prevents an automatic connector action`() = runBlocking<Unit> {
+        LocalStore(context).use { store ->
+            val (channel, tool) = setup(store)
+            val now = Instant.now().toString()
+            val routine = store.saveRoutine(LocalRoutine("routine", channel.botId, channel.id, "Update note", cron = "0 * * * *", nextRunAt = now, createdAt = now))
+            val run = assertNotNull(store.startRoutineRun(routine.id, manual = true))
+            val model = LocalModel(context)
+            var requests = 0
+            var calls = 0
+            try {
+                val runtime = AgentRuntime(context, store, model, config,
+                    ProviderTransport { _, _, _ -> if (requests++ == 0) callReply(tool.name) else textReply("The action was not done") },
+                    { _, _ -> session(onInitialize = { store.saveRoutine(routine.copy(enabled = false)) }) { calls++ } })
+                runtime.turn(channel.id, "Update my note", routineRunId = run.id)
+                assertEquals(0, calls)
+                assertEquals(run.id, store.pendingActions().single().routineRunId)
+                assertEquals(LocalActionStatus.CANCELLED, store.pendingActions().single().status)
+            } finally { model.close() }
+        }
+    }
+
     @Test fun `mandatory hand off rejects approval and never invokes a connector when marked handled`()=runBlocking<Unit> {
         LocalStore(context).use{store->val(channel,tool)=setup(store,"transfer_money");val model=LocalModel(context);var main=0;var calls=0
             try {

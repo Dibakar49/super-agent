@@ -87,7 +87,8 @@ internal class ProviderTurnEngine(
                             val request=PendingLocalAction(UUID.randomUUID().toString(),pending.id,pending.conversationId,botId,
                                 connection.id,connection.url,connection.credentialRef,tool,call,Instant.now().toString(),
                                 status=if(outcome.behaviour==PolicyBehaviour.ALLOW)LocalActionStatus.APPROVED else LocalActionStatus.PENDING,
-                                automatic=outcome.behaviour==PolicyBehaviour.ALLOW,policy=outcome,connectionName=connection.name)
+                                automatic=outcome.behaviour==PolicyBehaviour.ALLOW,policy=outcome,connectionName=connection.name,
+                                goalRunId=goalRunId,routineRunId=routineRunId)
                             if(outcome.behaviour==PolicyBehaviour.ALLOW) {
                                 store.savePendingAction(request)
                                 outputs.add(executeAction(request,connection,tool,call,pending));onChanged();continue

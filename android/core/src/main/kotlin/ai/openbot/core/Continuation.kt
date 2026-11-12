@@ -7,7 +7,8 @@ import kotlinx.serialization.json.JsonArray
 @Serializable enum class LocalActionStatus { PENDING, APPROVED, DENIED, HANDLED, EXECUTING, EXECUTED, FAILED, UNCERTAIN, CANCELLED }
 @Serializable data class PendingLocalAction(val id:String,val turnId:String,val channelId:String,val botId:String,
     val connectionId:String,val connectionUrl:String,val credentialRef:String?,val tool:McpTool,val call:ToolCall,
-    val createdAt:String,val status:LocalActionStatus=LocalActionStatus.PENDING,val standingRule:Boolean=false,val automatic:Boolean=false,val policy:LocalPolicyOutcome?=null,val connectionName:String?=null)
+    val createdAt:String,val status:LocalActionStatus=LocalActionStatus.PENDING,val standingRule:Boolean=false,val automatic:Boolean=false,val policy:LocalPolicyOutcome?=null,val connectionName:String?=null,
+    val goalRunId:String?=null,val routineRunId:String?=null)
 
 /** All continuation data is local; provider keys and connection credentials are never serialized. */
 @Serializable data class AgentCheckpoint(val turnId:String,val channelId:String,val botId:String,
