@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
+import androidx.compose.animation.core.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -14,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.draw.alpha
 import ai.openbot.android.*
 import ai.openbot.core.*
 
@@ -46,7 +48,12 @@ import ai.openbot.core.*
                             }
                         }
                     }
-                } else if(message.state==MessageState.GENERATING)Text(if(state.stopping)"Stopping…" else "Working…",color=p.mutedForeground)
+                } else if(message.state==MessageState.GENERATING) {
+                    Column(verticalArrangement=Arrangement.spacedBy(8.dp)) {
+                        if(message.text.isNotBlank()&&message.text!="Working…")SelectionContainer{MarkdownBody(message.text)}
+                        WorkingIndicator(state.stopping)
+                    }
+                }
                 else if(message.state==MessageState.WAITING) {
                     val pending=state.pendingActions.filter{it.turnId==message.id&&it.status==LocalActionStatus.PENDING}
                     pending.forEach{ApprovalCard(it,state,vm)}
@@ -62,6 +69,13 @@ import ai.openbot.core.*
         SourceComposer(text,{text=it},{if(question!=null)vm.answerQuestion(question.id,text){text=""} else vm.send(text){text=""}},!state.busy&&!state.attachmentsLoading&&bot?.paused==false&&(question!=null||state.messages.none{it.state in listOf(MessageState.WAITING,MessageState.GENERATING)}),compact=true,onStop=stop,stopping=state.stopping,dictationEnabled=state.dictationConfigured,hasAttachments=question==null&&state.draftAttachments.isNotEmpty(),onAttach=if(question==null)attach else null,attachments={if(question==null)AttachmentStrip(state.draftAttachments,vm,removable=true,enabled=!state.busy)})
         Spacer(Modifier.height(4.dp))
     }
+}
+
+@Composable private fun WorkingIndicator(stopping:Boolean) {
+    val transition=rememberInfiniteTransition(label="working")
+    val opacity by transition.animateFloat(initialValue=.45f,targetValue=1f,
+        animationSpec=infiniteRepeatable(tween(1200,easing=LinearEasing),RepeatMode.Reverse),label="working opacity")
+    Text(if(stopping)"Stopping…" else "Working…",color=LocalOpenBotPalette.current.mutedForeground,modifier=Modifier.alpha(opacity))
 }
 
 @Composable private fun ToolActivity(events:List<LocalToolEvent>,state:AppState) {

@@ -88,8 +88,9 @@ class AgentRuntime(private val context:Context,private val store:LocalStore,priv
                 if(routineRunId!=null||goalRunId!=null)runCatching{ai.openbot.android.notifications.LocalNotifications.reply(context,store,completed,bot.id)}
                 return TurnOutcome.COMPLETED
             }catch(failure:Exception) {
+                val failed=failedMessage(pending,failure)
                 store.checkpoints().firstOrNull{it.turnId==pending.id}?.let{store.interruptContinuation(it,if(failure is CancellationException)"Generation was interrupted." else "Could not continue this turn.",failure is CancellationException)}
-                store.saveMessage(pending.copy(text=if(failure is CancellationException)"Generation was interrupted." else "Could not generate an answer. ${failure.message.orEmpty()}",state=if(failure is CancellationException)MessageState.INTERRUPTED else MessageState.FAILED))
+                store.saveMessage(failed)
                 throw failure
             }finally {onChanged();runCatching{ai.openbot.android.notifications.LocalNotifications.sync(context,store)}}
         }finally {attachmentWire.clear();currentGoalRunId=null;currentRoutineRunId=null;AgentGate.mutex.unlock()}
@@ -119,10 +120,19 @@ class AgentRuntime(private val context:Context,private val store:LocalStore,priv
                 runCatching{ai.openbot.android.notifications.LocalNotifications.reply(context,store,completed,checkpoint.botId)}
                 return TurnOutcome.COMPLETED
             }catch(failure:Exception) {
+                val failed=failedMessage(pending,failure)
                 store.interruptContinuation(checkpoint,"Could not continue this turn. ${failure.message.orEmpty()}",failure is CancellationException)
+                store.saveMessage(failed)
                 throw failure
             }finally{onChanged();runCatching{ai.openbot.android.notifications.LocalNotifications.sync(context,store)}}
         }finally{attachmentWire.clear();currentGoalRunId=null;currentRoutineRunId=null;AgentGate.mutex.unlock()}
+    }
+
+    private fun failedMessage(pending:LocalMessage,failure:Exception):LocalMessage {
+        val latest=store.messages(pending.conversationId).firstOrNull{it.id==pending.id}
+        val partial=latest?.takeIf{it.state==MessageState.GENERATING&&it.text!="Working…"}?.text?.takeIf{it.isNotBlank()}
+        val notice=if(failure is CancellationException)"Generation was interrupted." else "Could not generate an answer. ${failure.message.orEmpty()}"
+        return pending.copy(text=listOfNotNull(partial,notice).joinToString("\n\n"),state=if(failure is CancellationException)MessageState.INTERRUPTED else MessageState.FAILED)
     }
 
     /** Local tool effects and their successful result commit together, once per provider call. */

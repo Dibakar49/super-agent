@@ -63,6 +63,18 @@ class LocalStoreTest {
         assertEquals("Generated summary", conversationTitle(store.conversations().single()))
     }
 
+    @Test fun `process recovery preserves partial streamed text without replaying a turn`() {
+        val channel = store.newConversation(store.bots().single().id)
+        store.saveMessage(LocalMessage("stream", channel.id, "assistant", "A saved partial answer", "2026-11-12T10:00:00Z", MessageState.GENERATING))
+        store.recoverInterruptedMessages()
+        store.recoverInterruptedMessages()
+        val answer = store.messages(channel.id).single()
+        assertEquals(MessageState.INTERRUPTED, answer.state)
+        assertContains(answer.text, "A saved partial answer")
+        assertEquals(1, Regex("Generation was interrupted").findAll(answer.text).count())
+        assertTrue(store.checkpoints().isEmpty())
+    }
+
     @Test fun `turn writes are atomic when a message identity conflicts`() {
         val conversation = store.newConversation(store.bots().single().id)
         store.saveMessage(LocalMessage("existing", conversation.id, "assistant", "Keep", "2026-11-09T08:00:00Z"))

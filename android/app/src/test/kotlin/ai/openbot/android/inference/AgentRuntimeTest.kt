@@ -28,6 +28,34 @@ class AgentRuntimeTest {
     @BeforeTest fun reset(){context.deleteDatabase("openbot.db")}
     @AfterTest fun cleanup(){context.deleteDatabase("openbot.db")}
 
+    @Test fun `streamed text is durable while generating and survives cancellation`() = runBlocking<Unit> {
+        LocalStore(context).use { store ->
+            val channel = store.newConversation(store.bots().single().id)
+            val model = LocalModel(context)
+            val visible = CompletableDeferred<Unit>()
+            val provider = object : ProviderTransport {
+                override suspend fun request(settings: ProviderSettings, key: String, request: JsonObject): JsonObject = error("Streaming path expected")
+                override suspend fun stream(settings: ProviderSettings, key: String, request: JsonObject, onText: suspend (String) -> Unit): JsonObject {
+                    onText("First part of the answer")
+                    visible.complete(Unit)
+                    awaitCancellation()
+                }
+            }
+            try {
+                val job = launch { AgentRuntime(context, store, model, configuration, provider).turn(channel.id, "Hello") }
+                visible.await()
+                assertEquals(MessageState.GENERATING, store.messages(channel.id).last().state)
+                assertEquals("First part of the answer", store.messages(channel.id).last().text)
+                job.cancelAndJoin()
+                val answer = store.messages(channel.id).last()
+                assertEquals(MessageState.INTERRUPTED, answer.state)
+                assertContains(answer.text, "First part of the answer")
+                assertContains(answer.text, "Generation was interrupted.")
+                assertTrue(store.toolEvents(channel.id).isEmpty())
+            } finally { model.close() }
+        }
+    }
+
     @Test fun `a provider tool turn actually saves a routine and returns its result before the answer`()=runBlocking<Unit> {
         LocalStore(context).use {store->
             val model=LocalModel(context)

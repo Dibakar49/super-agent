@@ -303,6 +303,22 @@ class LocalAppJourneyTest {
         LocalStore(compose.activity).use{assertTrue(it.memories().isEmpty())}
     }
 
+    @Test fun `partial streamed answer renders before completion with a working indicator`() {
+        readyMessage()
+        LocalStore(compose.activity).use { store ->
+            val channel = store.newConversation(store.bots().single().id)
+            store.saveConversation(channel.copy(title = "Streaming thread"))
+            store.saveMessage(ai.openbot.core.LocalMessage("partial-ui", channel.id, "assistant", "A partial streamed answer", java.time.Instant.now().toString(), ai.openbot.core.MessageState.GENERATING))
+        }
+        compose.onNodeWithContentDescription("Show sidebar").performClick()
+        compose.waitUntil(10_000) { compose.onAllNodesWithText("Streaming thread", substring = false).fetchSemanticsNodes().isNotEmpty() }
+        compose.onNodeWithText("Streaming thread", substring = false).performClick()
+        compose.waitUntil(10_000) { compose.onAllNodesWithText("A partial streamed answer", substring = true).fetchSemanticsNodes().isNotEmpty() }
+        compose.onNodeWithText("A partial streamed answer", substring = true).assertIsDisplayed()
+        compose.onNodeWithText("Working…", substring = false).assertIsDisplayed()
+        capture("native-streaming")
+    }
+
     @Test fun `sidebar renames a conversation and restores its generated name when cleared`() {
         readyMessage()
         LocalStore(compose.activity).use { store ->

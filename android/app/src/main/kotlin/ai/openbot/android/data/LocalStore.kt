@@ -484,7 +484,8 @@ class LocalStore(context: Context) : SQLiteOpenHelper(context, "openbot.db", nul
         try {
             val interrupted: List<LocalMessage> = query("SELECT payload FROM messages")
             interrupted.filter { it.state == MessageState.GENERATING }.forEach {
-                saveMessage(it.copy(text = "Generation was interrupted. Send your message again to retry.", state = MessageState.INTERRUPTED))
+                val partial=it.text.takeIf{text->text.isNotBlank()&&text!="Working…"}
+                saveMessage(it.copy(text = listOfNotNull(partial,"Generation was interrupted. Send your message again to retry.").joinToString("\n\n"), state = MessageState.INTERRUPTED))
             }
             writableDatabase.setTransactionSuccessful()
             databaseChanged()

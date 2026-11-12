@@ -1,62 +1,107 @@
 package ai.openbot.android.inference
 
 import ai.openbot.core.*
-import java.io.ByteArrayOutputStream
-import javax.net.ssl.HttpsURLConnection
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.awaitCancellation
-import kotlinx.coroutines.CoroutineStart
-import kotlinx.coroutines.withContext
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.jsonObject
+import java.io.FilterInputStream
+import java.io.InputStream
+import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.*
+import kotlinx.serialization.json.*
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
+import okio.BufferedSink
 
-fun interface ProviderTransport { suspend fun request(settings:ProviderSettings,key:String,request:kotlinx.serialization.json.JsonObject):kotlinx.serialization.json.JsonObject }
+fun interface ProviderTransport {
+    suspend fun request(settings: ProviderSettings, key: String, request: JsonObject): JsonObject
+    suspend fun stream(settings: ProviderSettings, key: String, request: JsonObject, onText: suspend (String) -> Unit): JsonObject = request(settings, key, request)
+}
 
-class ProviderModel(private val attachments:AttachmentWireSource?=null):ProviderTransport {
-    suspend fun generate(settings: ProviderSettings, key: String, prompt: String): String = providerAnswer(settings.apiStyle, request(settings,key,providerRequest(settings,prompt)))
+/** HTTPS only; never redirects or retries a POST, including a turn containing tool results. */
+class ProviderModel(private val attachments: AttachmentWireSource? = null, client: OkHttpClient = sharedClient): ProviderTransport {
+    private val client = client.newBuilder().followRedirects(false).followSslRedirects(false).retryOnConnectionFailure(false).build()
 
-    override suspend fun request(settings:ProviderSettings,key:String,request: kotlinx.serialization.json.JsonObject): kotlinx.serialization.json.JsonObject = withContext(Dispatchers.IO) {coroutineScope {
+    suspend fun generate(settings: ProviderSettings, key: String, prompt: String): String = providerAnswer(settings.apiStyle, request(settings, key, providerRequest(settings, prompt)))
+
+    override suspend fun request(settings: ProviderSettings, key: String, request: JsonObject): JsonObject = exchange(settings, key, request, null)
+    override suspend fun stream(settings: ProviderSettings, key: String, request: JsonObject, onText: suspend (String) -> Unit): JsonObject = exchange(settings, key, request, onText)
+
+    private suspend fun exchange(settings: ProviderSettings, key: String, request: JsonObject, onText: (suspend (String) -> Unit)?): JsonObject = withContext(Dispatchers.IO) { coroutineScope {
         require(key.isNotBlank() && key.none { it == '\r' || it == '\n' }) { "Save a valid model provider key in Model settings first." }
-        val body=AttachmentRequestBody(request,attachments)
-        val length=body.byteCount()
-        val connection = providerEndpoint(settings).toURL().openConnection() as HttpsURLConnection
-        val cancellationWatcher=launch(Dispatchers.IO,start=CoroutineStart.UNDISPATCHED) {
-            try {awaitCancellation()} finally {connection.disconnect()}
+        val payload = if (onText == null) request else JsonObject(request + ("stream" to JsonPrimitive(true)))
+        val body = AttachmentRequestBody(payload, attachments)
+        val length = body.byteCount()
+        val requestBody = object: RequestBody() {
+            override fun contentType() = "application/json".toMediaType()
+            override fun contentLength() = length
+            override fun writeTo(sink: BufferedSink) = body.writeTo(sink.outputStream())
+            override fun isOneShot() = true
+        }
+        val wire = Request.Builder().url(providerEndpoint(settings).toString())
+            .header("Authorization", "Bearer $key")
+            .header("Accept", if (onText == null) "application/json" else "text/event-stream, application/json")
+            .post(requestBody).build()
+        val call = client.newCall(wire)
+        val watcher = launch(Dispatchers.IO, start = CoroutineStart.UNDISPATCHED) {
+            try { awaitCancellation() } finally { call.cancel() }
         }
         try {
-            connection.requestMethod = "POST"
-            connection.instanceFollowRedirects = false
-            connection.connectTimeout = 20_000
-            connection.readTimeout = 120_000
-            connection.setRequestProperty("Authorization", "Bearer $key")
-            connection.setRequestProperty("Content-Type", "application/json")
-            connection.setRequestProperty("Accept", "application/json")
-            connection.doOutput = true
-            connection.setFixedLengthStreamingMode(length)
-            connection.outputStream.use { body.writeTo(it) }
-            val status = connection.responseCode
-            check(status in 200..299) {
-                when (status) {
-                    401, 403 -> "The model provider refused the saved key. Check it in Model settings."
-                    429 -> "The model provider is rate limited or out of quota. Try later."
-                    in 300..399 -> "The model API redirected the request. Enter its final HTTPS endpoint; keys are never forwarded to redirects."
-                    else -> "The model API request failed (HTTP $status). Check the API URL, model name and API style."
+            call.execute().use { response ->
+                check(response.isSuccessful) {
+                    when (response.code) {
+                        401, 403 -> "The model provider refused the saved key. Check it in Model settings."
+                        429 -> "The model provider is rate limited or out of quota. Try later."
+                        in 300..399 -> "The model API redirected the request. Enter its final HTTPS endpoint; keys are never forwarded to redirects."
+                        else -> "The model API request failed (HTTP ${response.code}). Check the API URL, model name and API style."
+                    }
+                }
+                val responseBody = response.body ?: error("The model API returned no response.")
+                BoundedResponse(responseBody.byteStream()).bufferedReader(Charsets.UTF_8).use { reader ->
+                    if (onText == null || responseBody.contentType()?.subtype != "event-stream") {
+                        return@coroutineScope runCatching { Json.parseToJsonElement(reader.readText()).jsonObject }.getOrElse { error("The model API returned an invalid JSON response.") }
+                    }
+                    val events = ServerSentEvents()
+                    val stream = ProviderStream(settings.apiStyle)
+                    var lastText = ""
+                    var lastUpdate = 0L
+                    while (true) {
+                        currentCoroutineContext().ensureActive()
+                        val line = reader.readLine() ?: break
+                        val event = events.line(line) ?: continue
+                        val complete = stream.accept(event)
+                        val text = stream.visibleText
+                        val now = System.nanoTime()
+                        if (text != lastText && (lastText.isEmpty() || complete || now - lastUpdate >= 100_000_000)) {
+                            onText(text); lastText = text; lastUpdate = now
+                        }
+                        if (complete) {
+                            if (text != lastText) onText(text)
+                            break
+                        }
+                    }
+                    stream.finish()
                 }
             }
-            val response = connection.inputStream.use { input ->
-                val output = ByteArrayOutputStream()
-                val buffer = ByteArray(8192)
-                while (true) {
-                    val count = input.read(buffer)
-                    if (count < 0) break
-                    check(output.size() + count <= 2 * 1024 * 1024) { "The model API response was too large." }
-                    output.write(buffer, 0, count)
-                }
-                output.toString("UTF-8")
-            }
-            Json.parseToJsonElement(response).jsonObject
-        } finally { cancellationWatcher.cancel();connection.disconnect() }
-    }}
+        } catch (failure: Exception) {
+            currentCoroutineContext().ensureActive()
+            throw failure
+        } finally { watcher.cancel(); call.cancel() }
+    } }
+
+    private class BoundedResponse(input: InputStream): FilterInputStream(input) {
+        private var count = 0L
+        private fun account(size: Int): Int {
+            if (size > 0) count += size
+            check(count <= 2 * 1024 * 1024) { "The model API response was too large." }
+            return size
+        }
+        override fun read(): Int = super.read().also { if (it >= 0) account(1) }
+        override fun read(buffer: ByteArray, offset: Int, length: Int): Int = account(`in`.read(buffer, offset, length))
+    }
+
+    companion object {
+        private val sharedClient = OkHttpClient.Builder().followRedirects(false).followSslRedirects(false)
+            .retryOnConnectionFailure(false).connectTimeout(20, TimeUnit.SECONDS)
+            .readTimeout(120, TimeUnit.SECONDS).callTimeout(180, TimeUnit.SECONDS).build()
+    }
 }

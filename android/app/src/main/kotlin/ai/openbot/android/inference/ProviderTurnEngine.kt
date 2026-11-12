@@ -38,7 +38,14 @@ internal class ProviderTurnEngine(
                 val (active,keyValue)=configuration.snapshot()
                 check(active==settings){"Model settings changed during this turn. Saved actions were kept; send a new message to continue."}
                 val key=keyValue?.takeIf{it.isNotBlank()}?:error("Add your model provider key in Model settings first.")
-                current=protocol.read(provider.request(settings,key,protocol.request()));rounds++
+                current=protocol.read(provider.stream(settings,key,protocol.request()) { partial ->
+                    currentCoroutineContext().ensureActive()
+                    val latest=store.messages(pending.conversationId).firstOrNull{it.id==pending.id}
+                    if(latest?.state==MessageState.GENERATING) {
+                        store.saveMessage(latest.copy(text=partial))
+                        onChanged()
+                    }
+                });rounds++
                 outputs=mutableListOf()
             }
             val round=requireNotNull(current)

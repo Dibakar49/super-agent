@@ -25,13 +25,14 @@ transcription, cancellation/retry and separate encrypted credentials.
 
 ## Missing or partial
 
-- Streaming text, actual subagent/delegation execution, queued foreground turns.
+- Actual subagent/delegation execution and queued foreground turns.
 - OAuth/catalogue accounts, goal event adapters, check-ins/tasks, learning and
   workspace/team/sharing/admin flows; live two-way voice calls.
 - On-device model tool execution; clipboard/drag image import.
 - Tablet/landscape polish, complete UI parity, clear-data settings and reusable CI.
 - Architecture currently uses a large AndroidViewModel, SQLiteOpenHelper and
-  direct HTTPS; Hilt/Room/DataStore/OkHttp migration is not implemented.
+  OkHttp for model calls (other transports still use direct HTTPS);
+  Hilt/Room/DataStore migration is not implemented.
 - No ktlint/detekt gate yet. Computer use remains deliberately excluded.
 
 ## Known risks / unverified behavior
@@ -52,3 +53,12 @@ transcription, cancellation/retry and separate encrypted credentials.
   `FEATURES.md`; selected-file static coverage does not establish full parity.
 
 See `android/MIGRATION.md` and `android/VALIDATION.md` for mapping and evidence.
+
+## Streaming verification
+
+Responses and Chat Completions SSE are implemented with OkHttp. Partial text is
+persisted and shown in Compose; malformed/truncated streams never execute tools.
+Real local HTTPS socket tests cover Unicode chunk boundaries, redirects, JSON-only
+providers and cancellation. Runtime/recovery tests preserve partial answers, and
+Compose journeys verify visible partial text on API 34 and 35. This does not
+implement provider-side resumable streams or prove live-provider compatibility.
