@@ -31,7 +31,8 @@ when available, with an actionable unsupported-device message otherwise.
 - OAuth/catalogue accounts, goal event adapters, check-ins/tasks, learning and
   workspace/team/sharing/admin flows; live two-way voice calls.
 - On-device model tool execution; clipboard/drag image import.
-- Complete UI parity and clear-data settings. Tablet and landscape navigation
+- Complete UI parity remains pending. Confirmed clear-data settings are added.
+  Tablet and landscape navigation
   now have dedicated passing journeys; reusable Android CI is added.
 - Architecture currently uses a large AndroidViewModel, SQLiteOpenHelper and
   OkHttp for model calls (other transports still use direct HTTPS);

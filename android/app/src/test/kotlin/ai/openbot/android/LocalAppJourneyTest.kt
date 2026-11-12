@@ -32,6 +32,35 @@ class LocalAppJourneyTest {
         compose.waitUntil(10_000) { runCatching { compose.onNodeWithContentDescription("Message").assertIsEnabled() }.isSuccess }
     }
 
+    @Test fun `clear data requires confirmation and removes conversation data`() {
+        readyMessage()
+        LocalStore(compose.activity).use { store ->
+            val channel = store.newConversation(store.bots().single().id)
+            store.saveMessage(
+                ai.openbot.core.LocalMessage(
+                    "reset-ui",
+                    channel.id,
+                    "user",
+                    "Remove this conversation",
+                    java.time.Instant
+                        .now()
+                        .toString(),
+                ),
+            )
+        }
+        navigate("Settings")
+        compose.onNodeWithTag("clear-local-data").performScrollTo().performClick()
+        compose.onNodeWithText("Cancel", substring = false).performClick()
+        LocalStore(compose.activity).use { assertEquals(1, it.conversations().size) }
+        compose.onNodeWithTag("clear-local-data").performClick()
+        compose.onNodeWithTag("confirm-clear-local-data").performClick()
+        compose.waitUntil(10_000) { compose.onAllNodesWithTag("confirm-clear-local-data").fetchSemanticsNodes().isEmpty() }
+        LocalStore(compose.activity).use {
+            assertTrue(it.conversations().isEmpty())
+            assertEquals(1, it.bots().size)
+        }
+    }
+
     @Test
     @Config(sdk = [35], qualifiers = "w891dp-h411dp")
     fun `landscape navigation scrolls to settings without clipping the destinations`() {

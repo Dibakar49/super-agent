@@ -16,6 +16,10 @@ class ConnectionSecrets(
 ) {
     private val preferences = context.applicationContext.getSharedPreferences("connection-secrets", Context.MODE_PRIVATE)
 
+    fun clear() {
+        check(preferences.edit().clear().commit()) { "The connection credentials could not be removed." }
+    }
+
     fun hasToken(id: String) = preferences.contains(id)
 
     fun token(id: String): String? {

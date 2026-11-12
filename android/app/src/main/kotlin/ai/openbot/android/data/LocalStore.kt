@@ -43,15 +43,7 @@ class LocalStore(
         db.execSQL("CREATE TABLE messages (id TEXT PRIMARY KEY, conversation_id TEXT NOT NULL REFERENCES conversations(id) ON DELETE CASCADE, created_at TEXT NOT NULL, payload TEXT NOT NULL)")
         db.execSQL("CREATE INDEX messages_conversation ON messages(conversation_id, created_at)")
         db.execSQL("CREATE TABLE memories (id TEXT PRIMARY KEY, updated_at TEXT NOT NULL, payload TEXT NOT NULL)")
-        val bot = LocalBot(UUID.randomUUID().toString(), "OpenBot", "You are a helpful AI coworker. Answer clearly and honestly. Use only the tools made available for this turn, and never claim an action succeeded without its result. Computer use is not available.")
-        db.insertOrThrow(
-            "bots",
-            null,
-            ContentValues().apply {
-                put("id", bot.id)
-                put("payload", json.encodeToString(bot))
-            },
-        )
+        insertDefaultBot(db)
         createCapabilityTables(db)
         createRoutineTables(db)
         createMemoryTombstones(db)
@@ -62,6 +54,37 @@ class LocalStore(
         ApprovalRuleStore.createTables(db)
         QuestionStore.createTables(db)
         AttachmentStore.createTables(db)
+    }
+
+    private fun insertDefaultBot(db: SQLiteDatabase) {
+        val bot = LocalBot(UUID.randomUUID().toString(), "OpenBot", "You are a helpful AI coworker. Answer clearly and honestly. Use only the tools made available for this turn, and never claim an action succeeded without its result. Computer use is not available.")
+        db.insertOrThrow(
+            "bots",
+            null,
+            ContentValues().apply {
+                put("id", bot.id)
+                put("payload", json.encodeToString(bot))
+            },
+        )
+    }
+
+    /** Reset records in one transaction. File/credential cleanup happens only after it commits. */
+    fun clearUserData() {
+        val db = writableDatabase
+        db.beginTransaction()
+        try {
+            db.execSQL("PRAGMA defer_foreign_keys=ON")
+            val tables = mutableListOf<String>()
+            db.rawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name!='android_metadata'", null).use { cursor ->
+                while (cursor.moveToNext()) tables += cursor.getString(0)
+            }
+            tables.forEach { table -> db.delete("\"" + table.replace("\"", "\"\"") + "\"", null, null) }
+            insertDefaultBot(db)
+            db.setTransactionSuccessful()
+        } finally {
+            db.endTransaction()
+            databaseChanged()
+        }
     }
 
     override fun onUpgrade(

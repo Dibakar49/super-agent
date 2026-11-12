@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
     val p = LocalOpenBotPalette.current
     var name by rememberSaveable(state.preferences.name) { mutableStateOf(state.preferences.name) }
     var instructions by rememberSaveable(state.preferences.standingInstructions) { mutableStateOf(state.preferences.standingInstructions) }
+    var confirmingClear by remember { mutableStateOf(false) }
     val dark = state.preferences.darkTheme ?: isSystemInDarkTheme()
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(start = 16.dp, end = 16.dp, top = 32.dp, bottom = 64.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
         Title("General")
@@ -68,5 +69,23 @@ import androidx.compose.ui.unit.dp
         Spacer(Modifier.height(16.dp))
         Text("Models", style = MaterialTheme.typography.titleSmall)
         OpenBotTextButton(onClick = onModel) { Text("Model settings") }
+        HorizontalDivider(color = p.border)
+        Text("Local data", style = MaterialTheme.typography.titleSmall)
+        Text("Manage the data saved on this phone.", color = p.mutedForeground)
+        OpenBotOutlineButton(onClick = { confirmingClear = true }, enabled = !state.busy, modifier = Modifier.testTag("clear-local-data")) { Text("Clear local data…") }
+    }
+    if (confirmingClear) {
+        SourceDialog("Clear local data?", { if (!state.busy) confirmingClear = false }) {
+            Text("Deletes conversations, Bots, memories, skills, goals, routines, attachments, settings and saved API/connection keys from this phone. Imported local models stay installed.", color = p.mutedForeground)
+            state.error?.let { Text(it, color = p.destructive) }
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                OpenBotTextButton(onClick = { confirmingClear = false }, enabled = !state.busy) { Text("Cancel") }
+                OpenBotButton(
+                    onClick = { vm.clearLocalData { confirmingClear = false } },
+                    enabled = !state.busy,
+                    modifier = Modifier.testTag("confirm-clear-local-data"),
+                ) { Text(if (state.busy) "Clearing…" else "Clear local data") }
+            }
+        }
     }
 }

@@ -210,6 +210,31 @@ class OpenBotViewModel(
             withContext(Dispatchers.Main) { onSaved() }
         }
 
+    fun clearLocalData(onCleared: () -> Unit) =
+        action {
+            val context = getApplication<Application>()
+            androidx.work.WorkManager
+                .getInstance(context)
+                .cancelAllWork()
+                .result
+                .get()
+            ai.openbot.android.inference.AgentGate.mutex
+                .lock()
+            try {
+                ai.openbot.android.data
+                    .LocalDataResetRepository(context, store)
+                    .clear()
+                state.value = AppState(busy = true)
+                refresh()
+            } finally {
+                ai.openbot.android.inference.AgentGate.mutex
+                    .unlock()
+            }
+            ai.openbot.android.background.RoutineWorker
+                .register(context)
+            withContext(Dispatchers.Main) { onCleared() }
+        }
+
     fun savePreferences(
         preferences: LocalPreferences,
         onSaved: () -> Unit = {},

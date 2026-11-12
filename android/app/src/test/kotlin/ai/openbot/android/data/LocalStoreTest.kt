@@ -25,6 +25,63 @@ class LocalStoreTest {
         context.deleteDatabase("openbot.db")
     }
 
+    @Test fun `clearing local data removes related records files and keys but retains imported models`() {
+        val channel = store.newConversation(store.bots().single().id)
+        store.saveMessage(LocalMessage("reset-message", channel.id, "user", "Private message", "2026-11-12T10:00:00Z"))
+        store.savePreferences(LocalPreferences(name = "Private name"))
+        val attachment =
+            java.io.File(context.filesDir, "attachments/reset-fixture").apply {
+                requireNotNull(parentFile).mkdirs()
+                writeText("Private attachment")
+            }
+        val model =
+            java.io.File(context.filesDir, "models/local.task").apply {
+                requireNotNull(parentFile).mkdirs()
+                writeText("Retained model fixture")
+            }
+        for (name in listOf("model-settings", "transcription-settings", "connection-secrets")) {
+            context
+                .getSharedPreferences(name, Context.MODE_PRIVATE)
+                .edit()
+                .putString("encrypted-key", "ciphertext-fixture")
+                .commit()
+        }
+        try {
+            LocalDataResetRepository(context, store).clear()
+            assertEquals(1, store.bots().size)
+            assertTrue(store.conversations().isEmpty())
+            assertTrue(store.memories().isEmpty())
+            assertEquals("", store.preferences().name)
+            assertFalse(attachment.exists())
+            assertTrue(model.exists())
+            for (name in listOf("model-settings", "transcription-settings", "connection-secrets")) assertTrue(context.getSharedPreferences(name, Context.MODE_PRIVATE).all.isEmpty())
+            store.readableDatabase.rawQuery("PRAGMA foreign_key_check", null).use { assertEquals(0, it.count) }
+        } finally {
+            model.delete()
+        }
+    }
+
+    @Test fun `a failed reset rolls back records before deleting any files or credentials`() {
+        val channel = store.newConversation(store.bots().single().id)
+        val file =
+            java.io.File(context.filesDir, "attachments/reset-rollback").apply {
+                requireNotNull(parentFile).mkdirs()
+                writeText("Keep me")
+            }
+        val prefs = context.getSharedPreferences("model-settings", Context.MODE_PRIVATE)
+        prefs.edit().putString("encrypted-key", "keep-ciphertext").commit()
+        store.writableDatabase.execSQL("CREATE TRIGGER reject_reset_bot BEFORE INSERT ON bots BEGIN SELECT RAISE(ABORT, 'test reset rejection'); END")
+        try {
+            assertFails { LocalDataResetRepository(context, store).clear() }
+            assertEquals(channel.id, store.conversations().single().id)
+            assertTrue(file.exists())
+            assertEquals("keep-ciphertext", prefs.getString("encrypted-key", null))
+        } finally {
+            file.delete()
+            prefs.edit().clear().commit()
+        }
+    }
+
     @Test fun `bot edits preserve conversations and data survives reopening`() {
         val bot = store.bots().single()
         val conversation = store.newConversation(bot.id)
